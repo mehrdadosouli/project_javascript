@@ -1,0 +1,114 @@
+.main-header__content,
+.main-header__right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-header__right {
+  margin-right: 2rem;
+}
+.main-header__content {
+  padding: 1rem;
+}
+.main-header__list {
+  display: flex;
+}
+.main-header__link {
+  padding: 1rem;
+}
+.main-header__left {
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+}
+
+.main-header__left-iconbasket {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white-color);
+  background-color: #f0f2f7;
+  border-radius: 1rem;
+  width: 4.4rem;
+  height: 4.4rem;
+  margin-left: 1rem;
+  transition: all 0.3s ease;
+}
+.main-header__left-iconsearch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white-color);
+  background-color: var(--primary-color);
+  border-radius: 1rem;
+  width: 4.4rem;
+  height: 4.4rem;
+  margin-left: 1rem;
+  transition: all 0.3s ease;
+}
+.main-header__left-shop:hover {
+  color: #1e83f0;
+  padding: 1.5rem;
+}
+.main-header__left-shop {
+  font-size: 2.2rem;
+  color: black;
+}
+.main-header__left-search {
+  font-size: 2.2rem;
+}
+.main-header__left-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 1rem;
+  border-radius: 1rem;
+  transition: background-color 0.3s ease;
+}
+.main-header__left-login:hover {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  cursor: pointer;
+}
+/* //////mein-header-list-right */
+.main-header__item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-header-menu {
+  position: absolute;
+  border-bottom: 2px solid var(--primary-color);
+  padding: 1rem;
+  top: 4rem;
+  left: 0;
+  right: 0;
+  background-color: var(--white-color);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 0.5rem;
+  width: 23rem;
+  height: 20rem;
+  opacity: 0;
+  z-index: 1;
+  visibility: hidden;
+}
+
+.main-header__item:hover .main-header-menu {
+  visibility: inherit;
+  opacity: 1;
+  z-index: 0;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+.main-header__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-header__icon {
+  margin-right: 1rem;
+}

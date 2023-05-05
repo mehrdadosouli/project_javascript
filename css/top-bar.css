@@ -1,0 +1,31 @@
+.top-bar{
+    color: var(--dark-color);
+    padding: 1rem;
+    background-color:#f0f2f7 ;
+}
+.top-bar__content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.top-bar__list{
+    display: flex;
+}
+.top-bar__item{
+    padding: 1rem;
+}
+.top-bar__item-link{
+    color: var(--dark-color);
+    font-size: 1.5rem;
+}
+.top-bar__left{
+    display:flex ;
+}
+.top-bar__email,.top-bar__phone{
+    padding: 1rem;
+}
+.top-bar__icon-phone,.top-bar__icon-email{
+    color:var(--primary-color);
+    font-size: 2rem;
+    padding:0 0.5rem;
+}
