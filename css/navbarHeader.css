@@ -48,7 +48,6 @@
 }
 .main-header__left-shop:hover {
   color: #1e83f0;
-  padding: 1.5rem;
 }
 .main-header__left-shop {
   font-size: 2.2rem;
@@ -99,7 +98,7 @@
 .main-header__item:hover .main-header-menu {
   visibility: inherit;
   opacity: 1;
-  z-index: 0;
+  z-index: 2;
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
@@ -110,5 +109,5 @@
   align-items: center;
 }
 .main-header__icon {
-  margin-right: 1rem;
+  margin-left: 1rem;
 }

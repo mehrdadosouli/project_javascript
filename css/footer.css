@@ -30,7 +30,7 @@
   display: inline-block;
   margin-bottom: 1rem;
   position: relative;
-  z-index: 10;
+  z-index: 1;
 }
 .footer-box__text {
   text-align: justify;
