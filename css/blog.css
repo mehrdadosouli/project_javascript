@@ -83,3 +83,6 @@
 .line:hover .product-list__icon{
     color: var(--primary-color);
 }
+.product-list__link{
+    font-size: 1.3rem;
+}
