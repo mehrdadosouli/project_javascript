@@ -7,6 +7,36 @@
 @import "footer.css";
 @import "./pagination.css";
 @import "./helper-class.css";
-@import "./bread-crumb.css"
+@import "./bread-crumb.css";
 
-/* -----------------------------------bread-crumb--------------------------------- */
+/*----------------------------- information products    ---------------------------------- */
+.course-products{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-evenly; */
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: var(--light-shadow);
+}
+.course-product__title{
+    font-weight: bold;
+    font-size: 1.7rem;
+}
+.product-item{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem 0;
+}
+.product-item__img{
+    width: 7rem;
+    height: auto;
+    border-radius: 0.5rem;
+    margin-left: 1rem;
+}
+.product-item__text{
+    color: var(--light-text);
+}
+.course-products__price{
+    color: var(--primary-color);
+}
