@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../vendor/bootstrap/bootstrap.min.css" />
+  <link rel="stylesheet" href="../vendor/font-awsome5/all.min.css" />
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/course.css" />
+  <title>جاوااسکریپت</title>
+</head>
+
+<body>
+  <!-------------------------- header     -------------------------------------->
+  <header class="header">
+    <div class="top-bar">
+      <div class="container-fluid">
+        <div class="top-bar__content">
+          <div class="top-bar__right">
+            <ul class="top-bar__list">
+              <li class="top-bar__item">
+                <a href="#" class="top-bar__item-link"> اموزش html</a>
+              </li>
+              <li class="top-bar__item">
+                <a href="#" class="top-bar__item-link"> اموزش css</a>s
+              </li>
+              <li class="top-bar__item">
+                <a href="#" class="top-bar__item-link"> اموزش javascript</a>
+              </li>
+              <li class="top-bar__item">
+                <a href="#" class="top-bar__item-link"> اموزش payton</a>
+              </li>
+              <li class="top-bar__item">
+                <a href="#" class="top-bar__item-link"> اموزش react</a>
+              </li>
+              <li class="top-bar__item">
+                <a href="#" class="top-bar__item-link"> 20000 تومان</a>
+              </li>
+            </ul>
+          </div>
+          <div class="top-bar__left">
+            <div class="top-bar__email">
+              <a href="#" id="top-bar__email-linK">mehrdadosoulisaran@gmail.com</a>
+              <i class="fa fa-envelope top-bar__icon-email"></i>
+            </div>
+            <div class="top-bar__phone">
+              <a href="#" id="top-bar__phone-link">09905354491</a>
+              <i class="fas fa-phone top-bar__icon-phone"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-header">
+      <div class="container-fluid">
+        <div class="main-header__content">
+          <div class="main-header__right">
+            <img src="../" alt="" id="main-header__logo" />
+            <ul class="main-header__list">
+              <li class="main-header__item">
+                <a href="#" class="main-header__link mains"> صفحه اصلی </a>
+              </li>
+              <li class="main-header__item">
+                <a href="#" class="main-header__link mains"> فرانت اند </a>
+                <i class="fa-solid fa-chevron-down main-header__icon"></i>
+                <ul class="main-header-menu">
+                  <li class="main-header-menu__item">
+                    <a href="#" class="main-header-menu__link">
+                      امورش JavaScript
+                    </a>
+                  </li>
+                  <li class="main-header-menu__item">
+                    <a href="#" class="main-header-menu__link">
+                      امورش html
+                    </a>
+                  </li>
+                  <li class="main-header-menu__item">
+                    <a href="#" class="main-header-menu__link"> امورش css </a>
+                  </li>
+                  <li class="main-header-menu__item">
+                    <a href="#" class="main-header-menu__link">
+                      امورش FlexBox
+                    </a>
+                  </li>
+                  <li class="main-header-menu__item">
+                    <a href="#" class="main-header-menu__link">
+                      امورش React
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="main-header__item">
+                <a href="#" class="main-header__link mains"> امنیت </a>
+                <i class="fa-solid fa-chevron-down main-header__icon"></i>
+                <ul class="main-header-menu">
+                  <li class="main-header-menu__item">
+                    <a href="#" class="main-header-menu__link">
+                      امورش کالی لینوکس
+                    </a>
+                  </li>
+                  <li class="main-header-menu__item">
+                    <a href="#" class="main-header-menu__link">
+                      امورش پایتون سیاه
+                    </a>
+                  </li>
+                  <li class="main-header-menu__item">
+                    <a href="#" class="main-header-menu__link">
+                      امورش جاوااسکریپت سیاه
+                    </a>
+                  </li>
+                  <li class="main-header-menu__item">
+                    <a href="#" class="main-header-menu__link">
+                      امورش شبکه
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="main-header__item">
+                <a href="#" class="main-header__link mains"> مقالات </a>
+                <i class="fa-solid fa-chevron-down main-header__icon"></i>
+                <ul class="main-header-menu">
+                  <li class="main-header-menu__item">
+                    <a href="#" class="main-header-menu__link"> توسعه وب </a>
+                  </li>
+                  <li class="main-header-menu__item">
+                    <a href="#" class="main-header-menu__link">جاوااسکریپت
+                    </a>
+                  </li>
+                  <li class="main-header-menu__item">
+                    <a href="#" class="main-header-menu__link">فرانت اند </a>
+                  </li>
+                  <li class="main-header-menu__item">
+                    <a href="#" class="main-header-menu__link">FlexBox امورش
+                    </a>
+                  </li>
+                  <li class="main-header-menu__item">
+                    <a href="#" class="main-header-menu__link">React امورش
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="main-header__item">
+                <a href="#" class="main-header__link mains"> پایتون </a>
+                <i class="fa-solid fa-chevron-down main-header__icon"></i>
+                <ul class="main-header-menu">
+                  <li class="main-header-menu__item">
+                    <a href="#" class="main-header-menu__link">
+                      دوره متخصص پایتون
+                    </a>
+                  </li>
+                  <li class="main-header-menu__item">
+                    <a href="#" class="main-header-menu__link">
+                      دوره هوش مصنوعی با پایتون
+                    </a>
+                  </li>
+                  <li class="main-header-menu__item">
+                    <a href="#" class="main-header-menu__link">
+                      دوره متخصص جنگو
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="main-header__item">
+                <a href="#" class="main-header__link mains">
+                  مهارت های نرم افزار
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="main-header__left">
+            <a href="#" class="main-header__left-iconsearch">
+              <i class="fas fa-search main-header__left-search"></i>
+            </a>
+            <a href="#" class="main-header__left-iconbasket"><i
+                class="fas fa-shopping-basket main-header__left-shop"></i></a>
+            <div class="main-header__left-login">
+              <i class="login-icon"></i>
+              <span class="login-text">ورود/ ثبت نام</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-------------------------- bread crumb     --------------------------------->
+  <div class="bread-crumb">
+    <div class="container">
+      <div class="bread-crumb__content">
+        <i class="bread-crumb__icon fas fa-home"></i>
+        <ul class="bread-crumb__list">
+          <li class="bread-crumb__item">
+            <a href="#" class="bread-crumb__link"> خانه </a>
+          </li>
+          <i class="bread-crumb__icon-left fas fa-arrow-left"></i>
+          <li class="bread-crumb__item">
+            <a href="#" class="bread-crumb__link">
+              آموزش برنامه نویسی فرانت اند
+            </a>
+          </li>
+          <i class="bread-crumb__icon-left fas fa-arrow-left"></i>
+          <li class="bread-crumb__item">
+            <a href="#" class="bread-crumb__link">
+              اموزش 20 کتابخانه جاوااسکریپت
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!---------------------------- course info     --------------------------------->
+  <div class="course-info">
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <div class="course-info__right-side">
+            <span class="course-info__right-side-title">
+              <a href="#" class="course-info__right-side-title-link">
+                امورش برنامه نویسی فرانت اند
+              </a>
+            </span>
+            <h1 class="course-info__right-side-heading">
+              اموزش 20 کتابخانه جاوااسکریپت برای بازار کار
+            </h1>
+            <div class="course-info__right-side-text">
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+              استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله
+              در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد
+              نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد،
+              کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان
+              جامعه و متخصصان
+            </div>
+            <div class="course-info__right-side-icon">
+              <a href="#" class="course-info__right-side-icon-link">
+                <i class="fab fa-facebook"></i>
+              </a>
+              <a href="#" class="course-info__right-side-icon-link">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="course-info__right-side-icon-link">
+                <i class="fab fa-telegram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="course-info__left-side">
+            <video src="" poster="../image/courses/js_project.png" class="course-info__left-side-video"
+              controls></video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-------------------------- course status     --------------------------------->
+  <div class="courses">
+    <div class="container">
+      <div class="row">
+        <!-- -------------------   course status-right-------------------------------->
+        <div class="col-8">
+          <div class="course-right">
+            <div class="course-right-boxinfo">
+              <div class="row">
+                <div class="col-4">
+                  <div class="course-box">
+                    <i class="course-box__icon fas fa-graduation-cap"></i>
+                    <div class="course-box__contents">
+                      <span class="course-box__header">وضعیت دوره</span>
+                      <span class="course-box__description">به اتمام رسیده</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="course-box">
+                    <i class="course-box__icon fas fa-clock"></i>
+                    <div class="course-box__contents">
+                      <span class="course-box__header">مدت زمان دوره</span>
+                      <span class="course-box__description">15 ساعت</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="course-box">
+                    <i class="course-box__icon fas fa-calendar-alt"></i>
+                    <div class="course-box__contents">
+                      <span class="course-box__header">اخرین بروزرسانی</span>
+                      <span class="course-box__description">1401/03/02</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-4">
+                  <div class="course-box">
+                    <i class="course-box__icon fas fa-user"></i>
+                    <div class="course-box__contents">
+                      <span class="course-box__header">روش</span>
+                      <span class="course-box__description">پشتیبانی انلاین</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="course-box">
+                    <i class="course-box__icon fas fa-info-circle"></i>
+                    <div class="course-box__contents">
+                      <span class="course-box__header">پیش نیاز</span>
+                      <span class="course-box__description">html css</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="course-box">
+                    <i class="course-box__icon fas fa-play"></i>
+                    <div class="course-box__contents">
+                      <span class="course-box__header">نوع مشاهده</span>
+                      <span class="course-box__description">ظبط شده / انلاین</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- -------------------   course box progress-------------------------------->
+            <div class="course-right-boxprogress">
+              <div class="course-boxprogress__title">
+                <i class="course-boxprogress__icon fas fa-chart-line"></i>
+                <span class="course-boxprogress__header">درصد پیشرفت دوره 100%</span>
+              </div>
+              <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                  aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+              </div>
+            </div>
+            <!---------------------   course box progress -------------------------------->
+            <div class="course-intrudoction">
+              <div class="course-intrudoction__item">
+                <h2 class="course-intrudoction__item-header title">اموزش 20 کتابخانه جاوااسکریپت برای بازار کار</h2>
+                <img src="../image/info/1.gif" alt=" کتابخانه جاوااسکریپت" class="course-intrudoction__item-img">
+                <p class="course-intrudoction__item-discription">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                  چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم
+                  است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد،
+                  کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم
+                  افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی
+                  ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به
+                  پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود
+                  طراحی اساسا مورد استفاده قرار گیرد.</p>
+              </div>
+              <div class="course-intrudoction__item">
+                <h2 class="course-intrudoction__item-header title">هدف از این دوره چیست؟</h2>
+                <img src="../image/info/2.jpg" alt=" کتابخانه جاوااسکریپت" class="course-intrudoction__item-img">
+                <p class="course-intrudoction__item-discription">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                  چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم
+                  است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد،
+                  کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم
+                  افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی
+                  ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به
+                  پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود
+                  طراحی اساسا مورد استفاده قرار گیرد.</p>
+              </div>
+              <div class="course-intrudoction__item-btns">
+                <button class="intrudoction__item-btn-video">دانلود همگانی ویدیو ها</button>
+                <button class="intrudoction__item-btn-files">دانلود همگانی پیوست ها</button>
+              </div>
+              <!---------------------   course box progress -------------------------------->
+              <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      معرفی دوره
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body accordion-body1">
+                      <div class="accordion-body-headers">
+                        <span class="accordion-body__number">1</span>
+                        <i class="accordion-body__icon fab fa-youtube"></i>
+                        <p class="accordion-body__title">معرفی دوره + چرا یادگیری کتابخانه ضروری است؟</p>
+                      </div>
+                      <div class="accordion-body-timer">
+                        <span class="accordion-body__time">17:30</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      کتابخانه swipper
+                    </button>
+                  </h2>
+                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body accordion-body2">
+                      <p class="accordion-body__text">
+                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است،
+                        چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است،
+
+                        <strong>
+                          کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا
+                          با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در
+                          زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها،
+                          و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات
+                          پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                        </strong>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!---------------------   course info teacher -------------------------------->
+              <div class="course-info__teacher">
+                <div class="course-info__header">
+                  <div class="course-info__header-right">
+                    <img src="../image/logo/Bundling-in-.NET-Core-MVC-Applications-with-Gulp-Header-Image.jpg"
+                      class="course-info__header-right-img" alt="img">
+                    <div class="course-info__header-right-info">
+                      <span class="course-info__header-name"><a href="#" class="course-info__header-link"> مهرداد اصولی
+                          ساران</a></span>
+                      <span class="course-info__header-job">Front End</span>
+                    </div>
+                  </div>
+                  <div class="course-info__header-left">
+                    <i class="course-info__header-icon fas fa-chalkboard-teacher"></i>
+                    <span class="course__header-left-infoteachers">مدرس</span>
+                  </div>
+                </div>
+                <div class="course-info__discription">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+                  استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و
+                  برای شناخت فراوان جامعه و متخصصان را می طلبد،</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- -------------------   course information student-left--------------------------------------->
+        <div class="col-4">
+          <div class="course__left">
+            <div class="course-information">
+              <div class="course-information-student">
+                <i class="course-information-student__icon fas fa-graduation-cap"></i>
+                <span class="course-information-student__text">دانشجوی دوره هستید.</span>
+              </div>
+            </div>
+            <!-- -------------------   course information all students-left-------------------------------->
+            <div class="course-information-allstudents">
+              <div class="course-information-header">
+                <i class="fa-solid fa-user-graduate course-information__header"></i>
+                <span class="course-information__status-number-students">تعداد دانشجو : </span>
+                <span class="course-information__number-students">178 </span>
+              </div>
+              <div class="course-information-footer">
+                <div class="course-point-of-view">
+                  <i class="course-point-of-view__icon fas fa-message"></i>
+                  <span class="course-point-of-view__text">67 دیدگاه</span>
+                </div>
+                <div class="course-visit">
+                  <i class="course-visit-icon fas fa-eye"></i>
+                  <span class="course-visit-text">14,350 بازدید</span>
+                </div>
+              </div>
+            </div>
+            <!-- -------------------   course information link--------------------------------------------->
+            <div class="course-information-links">
+              <div class="course-information__header">
+                <i class="course-information__header-icon fas fa-link"></i>
+                <span class="course-information__header-text">لینک کوتاه</span>
+              </div>
+              <div class="course-information__footer">
+                <a href="#" class="course-information-link">
+                  https://mehrdadosoulisaran.com
+                </a>
+              </div>
+            </div>
+            <!----------------------   course information seasons------------------------------------------>
+            <div class="course-seasons">
+              <h3 class="course-season-heading">سر فصل دوره ها</h3>
+              <span class="course-season-text">برای مشاهده و یا دانلود لینک روی <a href="#"
+                  class="course-season-link">دوره </a>کلیک کنید</span>
+            </div>
+            <!----------------------   course products ------------------------------------------>
+            <div class="course-products">
+              <h4 class="course-product__title">محصولات</h4>
+              <div class="product-item">
+                <a href="#" class="product-item-link">
+                  <img src="../image/courses/fareelancer.png" class="product-item__img" alt="fareelancer">
+                  <span class="product-item__text">دوره اموزش جاوااسکریپت</span>
+                </a>
+              </div>
+              <div class="product-item">
+                <a href="#" class="product-item-link">
+                  <img src="../image/courses/jango.png" class="product-item__img" alt="jango">
+                  <span class="product-item__text">دوره اموزش جنگو</span>
+                </a>
+              </div>
+              <div class="product-item">
+                <a href="#" class="product-item-link">
+                  <img src="../image/courses/nodejs.png" class="product-item__img" alt="nodejs">
+                  <span class="product-item__text">دوره اموزش نود جی اس</span>
+                </a>
+              </div>
+              <div class="product-item">
+                <a href="#" class="product-item-link">
+                  <img src="../image/courses/python.png" class="product-item__img" alt="python">
+                  <span class="product-item__text">دوره اموزش پایتون</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-------------------------- courses paginations   ---------------------------->
+  <div class="courses-pagination">
+    <ul class="course-pagination__list">
+      <li class="course-pagination__item">
+        <a href="#" class="course-pagination__link">
+          <i class="course-pagination__icon fas fa-long-arrow-alt-right"></i>
+        </a>
+      </li>
+      <li class="course-pagination__item">
+        <a href="#" class="course-pagination__link"> 1 </a>
+      </li>
+      <li class="course-pagination__item course-pagination__item-active">
+        <a href="#" class="course-pagination__link"> 2 </a>
+      </li>
+      <li class="course-pagination__item">
+        <a href="#" class="course-pagination__link"> 3 </a>
+      </li>
+      <li class="course-pagination__item">
+        <a href="#" class="course-pagination__link">
+          <i class="course-pagination__icon fas fa-long-arrow-alt-left"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <!--------------------------- footer  ----------------------------------------->
+  <footer>
+    <div class="footer__contents">
+      <div class="container">
+        <div class="footer-box">
+          <div class="row">
+            <div class="col-4">
+              <div class="footer-box__item">
+                <span class="footer-box__header">درباره ی ما</span>
+                <p class="footer-box__text">
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و
+                  با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه
+                  و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی
+                  تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای
+                  کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و
+                  آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم
+                  افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص
+                  طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این
+                  صورت می توان امید داشت که تمام و دشواری موجود در ارائه
+                  راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز
+                  شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل
+                  دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                </p>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="footer-box__item">
+                <span class="footer-box__header">اخرین مطالب</span>
+                <p class="footer-box__text">
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و
+                  با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه
+                  و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی
+                  تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای
+                  کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و
+                  آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم
+                  افزارها شناخت بیشتری پیوسته اهل دنیای موجود طراحی اساسا مورد
+                  استفاده قرار گیرد.
+                </p>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="footer-box__item">
+                <span class="footer-box__header">دسترسی سریع</span>
+                <div class="row">
+                  <div class="col-6">
+                    <div class="footer-box__items">
+                      <h6 class="footer-box__text">جاوا</h6>
+                      <h6 class="footer-box__text">سریع</h6>
+                      <h6 class="footer-box__text">دسترسی</h6>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="footer-box__items">
+                      <h6 class="footer-box__text">جاوا</h6>
+                      <h6 class="footer-box__text">سریع</h6>
+                      <h6 class="footer-box__text">دسترسی</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__content-copyright">
+        © کلیه حقوق برای سبز لرن محفوظ است 1401
+      </div>
+    </div>
+  </footer>
+  <script src="../vendor/Bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="../vendor/font-awsome5/all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="../js/script.js"></script>
+</body>
+
+</html>

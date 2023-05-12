@@ -1,0 +1,341 @@
+@import "variables.css";
+@import "fonts.css";
+@import "top-bar.css";
+@import "defaults.css";
+@import "navbarHeader.css";
+@import "course-box.css";
+@import "footer.css";
+@import "./pagination.css";
+@import "./helper-class.css";
+@import "./bread-crumb.css";
+
+
+/* ------------------  course info-------------------- */
+.course__left{
+    position: sticky;
+    top:2rem;
+}
+.course-info__right-side{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+}
+.course-info__right-side-title{
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    color: var(--primary-color);
+    background-color: rgba(210, 243, 232, 0.436);
+    padding: 0.5rem;
+    width: 18rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+.course-info__right-side-heading{
+    font-weight: bold;
+    font-size: 1.8rem;
+    padding: 2rem 0;
+}
+.course-info__right-side-text{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+.course-info__left-side{
+    padding: 2rem;
+}
+.course-info__left-side-video{
+    border-radius: 1rem;
+    width: 100%;
+    height: 100%;
+}
+.course-info__right-side-icon-link{
+    padding: 0.5rem;
+}
+/* ---------------------------  course-box    ---------------------------------- */
+.course-right-boxinfo{
+    box-shadow: var(--light-shadow);
+    border-radius: 0.5rem;
+    padding: 3rem;
+}
+.course-box{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: var(--light-shadow);
+    margin: 1rem;
+    border-radius: 1rem;
+}
+.course-box__contents{
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+.course-box__icon{
+    color:var(--primary-color);
+    font-size: 3.2rem;
+}
+/*-------------------------------------- progress    ---------------------------------- */
+.course-right-boxprogress{
+    background-color: #706e6e29;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin: 2rem 0;
+}
+.progress{
+    margin-top: 1rem;
+}
+/*----------------------------- course-intrudoction    ---------------------------------- */
+.course-intrudoction{
+    box-shadow: var(--light-shadow);
+    border-radius: 0.5rem;
+    padding: 3rem;
+}
+.course-intrudoction__item-img{
+    width: 100%;
+    border-radius: 1rem;
+    margin: 2rem 0;
+}
+.course-intrudoction__item{
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+.course-intrudoction__item-discription{
+    font-size: 1.5rem;
+    text-align: justify;
+    margin-bottom: 1rem;
+}
+.course-intrudoction__item-btns{
+    margin: 2rem 0;
+}
+.intrudoction__item-btn-video,.intrudoction__item-btn-files{
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 1rem;
+    border-radius: 1rem;
+    margin: 0 0.5rem;
+    transition: background-color 0.3s ease-in-out;
+}
+.intrudoction__item-btn-video:hover,.intrudoction__item-btn-files:hover{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+/*----------------------------- accordion    ---------------------------------- */
+.accordion-button::after{
+    position: absolute;
+    left: 1rem;
+}
+.accordion-button{
+    font-size: 1.8rem;
+}
+.accordion-button:not(.collapsed){
+    background-color: #f0f2f7; 
+}
+.accordion-body1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.accordion-body-headers{
+    display: flex;
+    align-items: center;
+}
+.accordion-body__number{
+    background-color: #f0f2f7;
+    border: 1px solid #706e6e;
+    color: var(--light-text);
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1rem;
+}
+.accordion-body__icon{
+    color: var(--light-text);
+    margin-left: 1rem;
+}
+.accordion-body__time{
+    color: var(--light-text);
+}
+.accordion-body__text{
+    font-size: 1.3rem;
+    padding: 1rem;
+    text-align: justify;
+}
+/*----------------------------- accordion    ---------------------------------- */
+.course-info__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+.course-info__header-right{
+    display: flex;
+    align-items: center;
+}
+.course-info__header-right-info{
+    display: flex;
+    flex-direction: column;
+    margin-right: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+.course-info__header-right-img{
+    width: 7rem;
+    height: 7rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.course-info__header-link{
+    font-weight: bold;
+}
+.course-info__header-left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border-radius: 1rem;
+    transition: background-color 0.5s ease-out;
+}
+.course-info__discription{
+    padding: 1rem;
+}
+/*----------------------------- information student    ---------------------------------- */
+.course-information{   
+    box-shadow: var(--light-shadow);
+    padding: 2rem;
+    border-radius: 0.5rem;
+}
+.course-information-student{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+.course-information-student__icon{
+    margin-left: 1rem;
+}
+/*----------------------------- information all asudents    ---------------------------------- */
+.course-information-allstudents{
+    box-shadow: var(--light-shadow);
+    padding: 2rem;
+    margin:2rem 0;
+    border-radius: 0.5rem;
+}
+.course-information-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    box-shadow: var(--light-shadow);
+    border:1px solid #706e6e30;
+}
+.course-information__header{
+    font-size: 2rem;
+    margin-left: 1rem;
+}
+.course-information__number-students{
+    margin-right: 1rem;
+    background-color: var(--light-text);
+    width: 5rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    color: var(--white-color);
+}
+.course-information__status-number-students{
+    color: var(--light-text);
+}
+.course-information-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.course-point-of-view,.course-visit{
+    padding: 1rem;
+    color: var(--light-text);
+    margin-top: 1rem;
+}
+.course-point-of-view{
+    position: relative;
+
+}
+.course-point-of-view::before{
+    position: absolute;
+    content: "|";
+    left: -5rem;
+    color: var(--light-text);
+}
+/*----------------------------- information link    ---------------------------------- */
+.course-information-links{
+    padding: 2rem;
+    box-shadow: var(--light-shadow);
+}
+.course-information__header{
+    color: var(--light-text);
+}
+.course-information__footer{
+    border: 1px solid var(--light-text);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+.course-information-link{
+    color: var(--light-text);
+}
+/*----------------------------- information seasons    ---------------------------------- */
+.course-seasons{
+    box-shadow: var(--light-shadow);
+    padding: 2rem;
+    margin-top: 2rem;
+}
+.course-season-heading{
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+.course-season-text{
+    color: var(--light-text);
+}
+.course-season-link{
+    color: rgba(38, 62, 118, 0.968);
+    font-weight: bold;
+}
+/*----------------------------- information products    ---------------------------------- */
+.course-products{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: var(--light-shadow);
+}
+.course-product__title{
+    font-weight: bold;
+    font-size: 1.7rem;
+}
+.product-item{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem 0;
+}
+.product-item__img{
+    width: 7rem;
+    height: auto;
+    border-radius: 0.5rem;
+    margin-left: 1rem;
+}
+.product-item__text{
+    color: var(--light-text);
+}

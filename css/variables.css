@@ -3,4 +3,6 @@
     --primary-color:#2bce56;
     --white-color:#fff;
     --dark-color:#464749; 
+    --light-shadow:0 0 13px 1px rgba(70,72,77,0.08);
+    --light-text:#7b868a;
 }

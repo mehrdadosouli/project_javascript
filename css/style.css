@@ -5,6 +5,8 @@
 @import "navbarHeader.css";
 @import "course-box.css";
 @import "footer.css";
+@import "./pagination.css";
+@import "./helper-class.css";
 
 /*          section landing               */
 
@@ -129,30 +131,7 @@
 .about-us__caption{
     font-size: 1.5remcc;
 }
-/*             helper class            */
-.title{
-    position: relative;
-}
-.title::before{
-    content: "";
-    position: absolute;
-    right: -1rem;
-    width: 0.4rem;
-    height: 4.4rem;
-    background-color: var(--primary-color);
-    transform: rotate(10deg);
-    border-radius: 2rem;
-}
-.title::after{
-    content: "";
-    position: absolute;
-    width: 100%;
-    max-width: 250px;
-    height: 2rem;
-    right: 0;
-    bottom: 0rem;
-    background-color: rgba(80, 140, 97, 0.329);
-}
+
 
 /* about__us-box */
 .about__us-box{

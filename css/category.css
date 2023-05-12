@@ -1,3 +1,14 @@
+@import "variables.css";
+@import "fonts.css";
+@import "top-bar.css";
+@import "defaults.css";
+@import "navbarHeader.css";
+@import "course-box.css";
+@import "footer.css";
+@import "./pagination.css";
+@import "./helper-class.css";
+
+
 .courses-top-bar {
   display: flex;
   justify-content: space-between;
@@ -95,36 +106,4 @@
 .courses-top-bar__left-icon {
   cursor: pointer;
   padding: 0.5rem;
-}
-/* --------------pagination-------------------- */
-.courses-pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 2rem 0;
-}
-.course-pagination__list {
-  display: flex;
-}
-.course-pagination__item {
-  box-shadow: 0 0 1px 0px gray;
-  background-color: rgba(207, 209, 209, 0.574);
-  border-radius: 1rem;
-  margin: 0 0.5rem;
-}
-.course-pagination__link {
-  width: 4rem;
-  height: 4rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 1rem;
-}
-.course-pagination__item-active {
-  background-color: var(--primary-color);
-}
-.course-pagination__item:hover .course-pagination__link {
-  background-color: var(--primary-color);
-  cursor: pointer;
-  color: var(--white-color);
 }
