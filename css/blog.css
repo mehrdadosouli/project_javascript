@@ -13,10 +13,11 @@
 .course-products{
     display: flex;
     flex-direction: column;
-    /* justify-content: space-evenly; */
+    justify-content: space-evenly;
     padding: 2rem;
     margin: 2rem 0;
     box-shadow: var(--light-shadow);
+    overflow: hidden;
 }
 .course-product__title{
     font-weight: bold;
@@ -38,5 +39,47 @@
     color: var(--light-text);
 }
 .course-products__price{
+    color: var(--primary-color);
+}
+/* ---------------------------------------background movarab--------------------------------------- */
+.movarab{
+    position: relative;
+}
+.movarab::after{
+    position: absolute;
+    content: "";
+    width: 2rem;
+    height: 5rem;
+    background-color: var(--primary-color);
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    transform: rotate(10deg);
+    right: -25px;
+    top: -10px;
+}
+/* ----------------------------------------product-list----------------------------------------- */
+.product-list__item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.course-all-items{
+    margin-top: 1rem;
+}
+.product-list__icon{
+    margin-left: 1rem;
+    color: var(--light-text);
+}
+.line{
+    border-bottom: 1px solid rgba(128, 128, 128, 0.218);
+    transition: all 0.3s ease-in-out;
+}
+.line:hover{
+    background-color: rgba(144, 144, 144, 0.16);
+}
+.line:hover .product-list__item{
+    transform: translateX(-10px);
+}
+.line:hover .product-list__icon{
     color: var(--primary-color);
 }
