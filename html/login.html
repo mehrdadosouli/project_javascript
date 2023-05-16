@@ -186,87 +186,114 @@
             </div>
         </div>
     </header>
-    <div class="container">
-        <div class="login-forms">
-            <!-------------------------- login form   ---------------------------------------------->
-            <div class="login-form">
-                <h1 class="login-form__header">ورود به حساب کاربری</h1>
-                <span class="login-form__section">خوشحالیم دوباره میبینیمت دوست عزیز :)</span>
-                <div class="login-form__title">
-                    <span class="login-form__title-text">کاربر جدید هستید؟</span>
-                    <button class="login-form__title-btn">ثبت نام</button>
-                </div>
-                <div class="login-form__information1">
-                    <input type="text" class="login-form__information-email" placeholder="نام کاربری یا ادرس ایمیل">
-                    <i class="form-login__information-icon1 fas fa-user"></i>
-                </div>
-                <div class="login-form__information2">
-                    <i class="form-login__information-icon2 fas fa-lock-open"></i>
-                    <input type="password" class="login-form__information-password" placeholder="رمز عبور">
-                    <div class="login-form__btn-submit">
-                        <i class="login-form__btn-submit-icon fas fa-arrow-right-to-bracket"></i>
-                        <button class="form-login__btn-submit-login">ورود</button>
-                    </div>
-                    <div class="login-form__rememmbers">
-                        <div class="login-form__rememmberMe">
-                            <input type="checkbox" class="login-form__rememmberMe-checkbox">
-                            <span class="login-form__rememmberMe-text">مرا بخاطر داشته باش</span>
-                        </div>
-                        <div class="form-login__forget">
-                            <span class="login-form__forget-text">رمز عبور را فراموش کرده اید؟</span>
-                        </div>
-                    </div>
-
-                    <div class="login-form__tip">
-                        <span class="login-form__tip-title">سلام کاربر محترم</span>
-                        <ul class="login-form__tip-list">
-                            <li class="login-form__tip-item">لطفا از مرورگر مطمئن و بروز مانند گوگل کروم و فایر فاکس
-                                استفاده کنید</li>
-                            <li class="login-form__tip-item">هرگز اطلاعات شما را از طریق ایمیل استفاده نمیکنیم</li>
-                            <li class="login-form__tip-item">لطفا کلمه عبور خود را در فواصل زمانی تغییر دهید</li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-            <!-------------------------- sign in form   ---------------------------------------------->
-            <div class="login-form">
-                <h1 class="login-form__header">ورود به حساب کاربری</h1>
-                <span class="login-form__section">خوشحالیم قراره به جمع ما بپیوندی</span>
-                <div class="login-form__title">
-                    <span class="login-form__title-text">قبلا ثبت نام کرده اید؟</span>
-                    <button class="login-form__title-btn">وارد شوید</button>
-                </div>
-                <div class="login-form__information1">
-                    <input type="text" class="login-form__information-email" placeholder="نام کاربری ">
-                    <i class="form-login__information-icon1 fas fa-user"></i>
-                </div>
-                <div class="login-form__information2">
-                    <input type="text" class="login-form__information-email" placeholder="ادرس ایمیل">
-                    <i class="form-login__information-icon1 fas fa-envelope"></i>
-                </div>
-                <div class="login-form__information2">
-                    <i class="form-login__information-icon2 fas fa-lock-open"></i>
-                    <input type="password" class="login-form__information-password" placeholder="رمز عبور">
-                    <div class="login-form__btn-submit">
-                        <i class="login-form__btn-submit-icon fas fa-user-plus"></i>
-                        <button class="form-login__btn-submit-login">عضویت</button>
-                    </div>
-                    <div class="login-form__tip">
-                        <span class="login-form__tip-title">سلام کاربر محترم</span>
-                        <ul class="login-form__tip-list">
-                            <li class="login-form__tip-item">لطفا از مرورگر مطمئن و بروز مانند گوگل کروم و فایر فاکس
-                                استفاده کنید</li>
-                            <li class="login-form__tip-item">هرگز اطلاعات شما را از طریق ایمیل استفاده نمیکنیم</li>
-                            <li class="login-form__tip-item">لطفا کلمه عبور خود را در فواصل زمانی تغییر دهید</li>
-                        </ul>
-                    </div>
-
-                </div>
+    <!-------------------------- bread crumb     -------------------------------------------->
+    <div class="bread-crumb">
+        <div class="container">
+            <div class="bread-crumb__content">
+                <i class="bread-crumb__icon fas fa-home"></i>
+                <ul class="bread-crumb__list">
+                    <li class="bread-crumb__item">
+                        <a href="#" class="bread-crumb__link"> خانه </a>
+                    </li>
+                    <i class="bread-crumb__icon-left fas fa-arrow-left"></i>
+                    <li class="bread-crumb__item">
+                        <a href="#" class="bread-crumb__link">
+                            آموزش برنامه نویسی فرانت اند
+                        </a>
+                    </li>
+                    <i class="bread-crumb__icon-left fas fa-arrow-left"></i>
+                    <li class="bread-crumb__item">
+                        <a href="#" class="bread-crumb__link">
+                            اموزش 20 کتابخانه جاوااسکریپت
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
+    <!-------------------------- login-register -------------------0------------------------->
+    <section class="login-register">
+        <div class="container">
+            <div class="login-forms">
+                <!-------------------------- login form   ---------------------------------------------->
+                <div class="login-form">
+                    <h1 class="login-form__header">ورود به حساب کاربری</h1>
+                    <span class="login-form__section">خوشحالیم دوباره میبینیمت دوست عزیز :)</span>
+                    <div class="login-form__title">
+                        <span class="login-form__title-text">کاربر جدید هستید؟</span>
+                        <button class="login-form__title-btn">ثبت نام</button>
+                    </div>
+                    <div class="login-form__information1">
+                        <input type="text" class="login-form__information-email" placeholder="نام کاربری یا ادرس ایمیل">
+                        <i class="form-login__information-icon1 fas fa-user"></i>
+                    </div>
+                    <div class="login-form__information2">
+                        <i class="form-login__information-icon2 fas fa-lock-open"></i>
+                        <input type="password" class="login-form__information-password" placeholder="رمز عبور">
+                        <div class="login-form__btn-submit">
+                            <i class="login-form__btn-submit-icon fas fa-arrow-right-to-bracket"></i>
+                            <button class="form-login__btn-submit-login">ورود</button>
+                        </div>
+                        <div class="login-form__rememmbers">
+                            <div class="login-form__rememmberMe">
+                                <input type="checkbox" class="login-form__rememmberMe-checkbox">
+                                <span class="login-form__rememmberMe-text">مرا بخاطر داشته باش</span>
+                            </div>
+                            <div class="form-login__forget">
+                                <span class="login-form__forget-text">رمز عبور را فراموش کرده اید؟</span>
+                            </div>
+                        </div>
 
+                        <div class="login-form__tip">
+                            <span class="login-form__tip-title">سلام کاربر محترم</span>
+                            <ul class="login-form__tip-list">
+                                <li class="login-form__tip-item">لطفا از مرورگر مطمئن و بروز مانند گوگل کروم و فایر فاکس
+                                    استفاده کنید</li>
+                                <li class="login-form__tip-item">هرگز اطلاعات شما را از طریق ایمیل استفاده نمیکنیم</li>
+                                <li class="login-form__tip-item">لطفا کلمه عبور خود را در فواصل زمانی تغییر دهید</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- ------------------------ sign in form   --------------------------------------------
+                <div class="login-form">
+                    <h1 class="login-form__header">ورود به حساب کاربری</h1>
+                    <span class="login-form__section">خوشحالیم قراره به جمع ما بپیوندی</span>
+                    <div class="login-form__title">
+                        <span class="login-form__title-text">قبلا ثبت نام کرده اید؟</span>
+                        <button class="login-form__title-btn">وارد شوید</button>
+                    </div>
+                    <div class="login-form__information1">
+                        <input type="text" class="login-form__information-email" placeholder="نام کاربری ">
+                        <i class="form-login__information-icon1 fas fa-user"></i>
+                    </div>
+                    <div class="login-form__information2">
+                        <input type="text" class="login-form__information-email" placeholder="ادرس ایمیل">
+                        <i class="form-login__information-icon1 fas fa-envelope"></i>
+                    </div>
+                    <div class="login-form__information2">
+                        <i class="form-login__information-icon2 fas fa-lock-open"></i>
+                        <input type="password" class="login-form__information-password" placeholder="رمز عبور">
+                        <div class="login-form__btn-submit">
+                            <i class="login-form__btn-submit-icon fas fa-user-plus"></i>
+                            <button class="form-login__btn-submit-login">عضویت</button>
+                        </div>
+                        <div class="login-form__tip">
+                            <span class="login-form__tip-title">سلام کاربر محترم</span>
+                            <ul class="login-form__tip-list">
+                                <li class="login-form__tip-item">لطفا از مرورگر مطمئن و بروز مانند گوگل کروم و فایر فاکس
+                                    استفاده کنید</li>
+                                <li class="login-form__tip-item">هرگز اطلاعات شما را از طریق ایمیل استفاده نمیکنیم</li>
+                                <li class="login-form__tip-item">لطفا کلمه عبور خود را در فواصل زمانی تغییر دهید</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
     <!-------------------------- footer  ---------------------------------------------------->
     <footer>
         <div class="footer__contents">

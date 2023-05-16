@@ -8,12 +8,37 @@
 @import "./pagination.css";
 @import "./helper-class.css";
 @import "./bread-crumb.css";
-
+.login-register{
+    position: relative;
+    overflow: hidden;
+    margin: 2rem 0;
+}
+.login-register::before{
+    z-index: -9;
+    content: "";
+    position: absolute;
+    top: -5rem;
+    background-color: var(--primary-color);
+    width: 150%;
+    height: 380px;
+    transform: rotate(-4deg);
+}
+.login-register::after{
+    position: absolute;
+    content: "";
+    top:317px;
+    height: 50px;
+    width: 120%;
+    background-color: rgba(38, 169, 49, 0.175);
+    z-index: -99;
+    transform: rotate(-4deg);
+}
 .login-forms{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;   
-    gap: 5rem;
+    margin: 10rem 0;
+
 }
 
 .login-form{
@@ -26,6 +51,7 @@
     flex-direction: column;
     border-radius: 1rem;
     border-bottom: 2px solid var(--primary-color);
+    background-color: var(--white-color);
 }
 .login-form__header{
     font-weight: bold;
