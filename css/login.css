@@ -1,0 +1,121 @@
+@import "variables.css";
+@import "fonts.css";
+@import "top-bar.css";
+@import "defaults.css";
+@import "navbarHeader.css";
+@import "course-box.css";
+@import "footer.css";
+@import "./pagination.css";
+@import "./helper-class.css";
+@import "./bread-crumb.css";
+
+.login-forms{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+    gap: 5rem;
+}
+
+.login-form{
+    padding: 2rem;
+    box-shadow: var(--light-shadow);
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 1rem;
+    border-bottom: 2px solid var(--primary-color);
+}
+.login-form__header{
+    font-weight: bold;
+    color: var(--light-text);
+    font-size: 1.8rem;
+}
+.login-form__section{
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: var(--light-text);
+    margin: 1rem;
+}
+.login-form__title{
+    margin: 1rem 0;
+}
+.login-form__title-btn{
+    border: none;
+    color: white;
+    background-color: var(--light-text);
+    border-radius: 0.5rem;
+}
+.login-form__information1,.login-form__information2{
+    width: 100%;
+    position: relative;
+}
+.login-form__information-email,.login-form__information-password{
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    box-shadow: var(--light-shadow);
+    margin: 0.5rem;
+    border: 1px solid rgba(128, 128, 128, 0.306);
+    border-radius: 1rem;
+}
+.form-login__information-icon1{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 1rem;
+}
+.form-login__information-icon2{
+    position: absolute;
+    left: 0;
+    margin: auto;
+    top: 2rem;
+    left: 1rem;
+
+}
+.login-form__btn-submit{
+    width: 100%;
+    position: relative;
+}
+.form-login__btn-submit-login{
+    border: none;
+    padding: 1rem;
+    border-radius: 1rem;
+    width: 100%;
+    color: var(--white-color);
+    background-color: var(--primary-color);
+    margin: 1rem 0;
+}
+.login-form__btn-submit-icon{
+    position: absolute;
+    right: 1rem;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    color: var(--white-color);
+}
+.login-form__rememmbers{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.login-form__rememmberMe{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.login-form__rememmberMe-checkbox{
+    margin: 2rem 0rem 2rem 1rem;
+}
+.login-form__tip{
+    margin: 1rem 0;
+    font-size: 1.3rem;
+}
+.login-form__tip-list{
+    list-style: circle;
+}
+.login-form__tip-item{
+    margin: 0.5rem 2rem;
+}
