@@ -16,10 +16,10 @@ const register = () => {
         password:passwordInput.value.trim(),
         confirmPassword:confirmPasswordInput.value.trim() 
     };
-    fetch('http://localhost:4000/v1/auth/register',{
+    fetch(`http://localhost:4000/v1/auth/register`,{
         method:'POST',
         headers:{
-            'Content-Type':'application/json'
+            "Content-Type":"application/json"
         },
         body:JSON.stringify(newUserInfo)
     })
