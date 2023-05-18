@@ -3,6 +3,7 @@ let landing__title = $.querySelector('.landing__title');
 let timeCounter = $.querySelector('#time-counter');
 let learnCounter = $.querySelector('#learn-counter');
 let userCounter = $.querySelector('#user-counter');
+
 window.addEventListener('load', () => {
     let textTitle = "ما به هر قیمتی دوره اموزشی تولید نمیکنیم!"
     let index = 0
