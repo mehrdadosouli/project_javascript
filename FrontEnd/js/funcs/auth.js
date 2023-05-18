@@ -1,3 +1,4 @@
+import { showswall } from "./utils.js";
 const register = () => {
     let nameInput = document.querySelector('#name');
     let usernameInput = document.querySelector('#username');
@@ -23,17 +24,11 @@ const register = () => {
     })
     .then(res=>{console.log(res);
         if(res.status==201){
-            swal({
-                title: "با موفقیت ثبت نام انجام شد.",
-                icon: "success",
-                button: "ورود به پنل",
-              }).then(res=>location.href="http://127.0.0.1:5500/FrontEnd/html/index.html")
+            showswall("با موفقیت ثبت نام انجام شد.","success","ورود به پنل",()=>{
+                location.href="http://127.0.0.1:5500/FrontEnd/html/index.html"
+            })
         }else if(res.status==409){
-            swal({
-                title: "شما با این اسم یا ایمیل قبلا ثبت نام کرده اید",
-                icon: "error",
-                button: "تصحیح اطلاعات",
-              });
+            showswall("شما با این اسم یا ایمیل قبلا ثبت نام کرده اید","error","تصحیح اطلاعات",()=>{})
         }
         return res.json()})
     .then(data=>console.log(data))
