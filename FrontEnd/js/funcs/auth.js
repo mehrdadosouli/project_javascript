@@ -1,5 +1,3 @@
-
-
 const register = () => {
     let nameInput = document.querySelector('#name');
     let usernameInput = document.querySelector('#username');
@@ -29,7 +27,7 @@ const register = () => {
                 title: "با موفقیت ثبت نام انجام شد.",
                 icon: "success",
                 button: "ورود به پنل",
-              });
+              }).then(res=>location.href="http://127.0.0.1:5500/FrontEnd/html/index.html")
         }else if(res.status==409){
             swal({
                 title: "شما با این اسم یا ایمیل قبلا ثبت نام کرده اید",
