@@ -23,7 +23,21 @@ const register = () => {
         },
         body:JSON.stringify(newUserInfo)
     })
-    .then(res=>res.json())
+    .then(res=>{console.log(res);
+        if(res.status==201){
+            swal({
+                title: "با موفقیت ثبت نام انجام شد.",
+                icon: "success",
+                button: "ورود به پنل",
+              });
+        }else if(res.status==409){
+            swal({
+                title: "شما با این اسم یا ایمیل قبلا ثبت نام کرده اید",
+                icon: "error",
+                button: "تصحیح اطلاعات",
+              });
+        }
+        return res.json()})
     .then(data=>console.log(data))
 }
 export {register}
