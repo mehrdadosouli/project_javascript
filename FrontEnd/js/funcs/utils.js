@@ -4,7 +4,7 @@ const showswall=(title,icon,button,callback)=>{
 }
 
 const settoLocalStorage=(key,value)=>{
-   return localStorage.setItem(key,value)
+   return localStorage.setItem(key,JSON.stringify(value))
 }
 
 const getFromLocalStorage=(key)=>{

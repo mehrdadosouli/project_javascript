@@ -1,4 +1,4 @@
-import { showswall } from "./utils.js";
+import { showswall,settoLocalStorage } from "./utils.js";
 const register = () => {
     let nameInput = document.querySelector('#name');
     let usernameInput = document.querySelector('#username');
@@ -31,6 +31,7 @@ const register = () => {
             showswall("شما با این اسم یا ایمیل قبلا ثبت نام کرده اید","error","تصحیح اطلاعات",()=>{})
         }
         return res.json()})
-    .then(data=>console.log(data))
+    .then(data=>settoLocalStorage('user',{token:data.accessToken})
+    )
 }
 export {register}
