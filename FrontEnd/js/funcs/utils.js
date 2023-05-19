@@ -12,7 +12,8 @@ const getFromLocalStorage=(key)=>{
 }
 
 const getToken=()=>{
-    JSON.parse(localStorage.getItem('user')).token
+   const gettokens= JSON.parse(localStorage.getItem('user'));
+    return gettokens ? gettokens.token : null
 }
 
 export { showswall , settoLocalStorage , getFromLocalStorage , getToken}

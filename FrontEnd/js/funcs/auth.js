@@ -1,4 +1,4 @@
-import { showswall,settoLocalStorage } from "./utils.js";
+import { showswall,settoLocalStorage , getToken } from "./utils.js";
 const register = () => {
     let nameInput = document.querySelector('#name');
     let usernameInput = document.querySelector('#username');
@@ -62,4 +62,19 @@ const userinfos={
        return res.json()})
         .then(data=>settoLocalStorage('user',{token:data.accessToken}))
 }
-export {register , login}
+
+const getMe=async()=>{
+    const tokens=getToken()
+    if(!tokens){
+        return false
+    }
+   const res=await fetch(`http://localhost:4000/v1/auth/me`,{
+        headers:{
+            Authorization:`Bearer ${tokens}`
+        }
+    })
+    const data=await res.json()
+    return data
+}
+
+export {register , login , getMe}
