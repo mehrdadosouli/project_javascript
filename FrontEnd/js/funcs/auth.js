@@ -34,4 +34,32 @@ const register = () => {
     .then(data=>settoLocalStorage('user',{token:data.accessToken})
     )
 }
-export {register}
+
+const login=()=>{
+    const identifierInput=document.querySelector('#identifier')
+    const passwordInput=document.querySelector('#password')
+const userinfos={
+    identifier:identifierInput.value.trim(),
+    password:passwordInput.value.trim()
+}
+
+    fetch(`http://localhost:4000/v1/auth/login`,{
+        method:'POST',
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body:JSON.stringify(userinfos)
+    })
+    .then(res=>{
+        console.log(res);
+        if(res.status==401){
+            showswall(" نام کاربری یا پسورد اشتباه است","error","تصحیح اطلاعات",()=>{})
+        }else if(res.status==200){
+            showswall("با موفقیت لاگین انجام شد.","success","ورود به پنل",()=>{
+                location.href="http://127.0.0.1:5500/FrontEnd/html/index.html"
+            })
+        }
+       return res.json()})
+        .then(data=>settoLocalStorage('user',{token:data.accessToken}))
+}
+export {register , login}

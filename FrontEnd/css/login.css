@@ -145,3 +145,8 @@
 .login-form__tip-item{
     margin: 0.5rem 2rem;
 }
+/* ----------------------------swall -----------------------------------*/
+.swal-footer{
+    display: flex;
+    justify-content: center;
+}

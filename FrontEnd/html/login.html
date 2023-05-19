@@ -211,7 +211,7 @@
             </div>
         </div>
     </div>
-    <!-------------------------- login-register -------------------0------------------------->
+    <!-------------------------- login-register -------------------------------------------->
     <section class="login-register">
         <div class="container">
             <div class="login-forms">
@@ -224,15 +224,15 @@
                         <button class="login-form__title-btn">ثبت نام</button>
                     </div>
                     <div class="login-form__information1">
-                        <input type="text" class="login-form__information-email" placeholder="نام کاربری یا ادرس ایمیل">
+                        <input type="text" id="identifier" class="login-form__information-email" placeholder="نام کاربری یا ادرس ایمیل">
                         <i class="form-login__information-icon1 fas fa-user"></i>
                     </div>
                     <div class="login-form__information2">
                         <i class="form-login__information-icon2 fas fa-lock-open"></i>
-                        <input type="password" class="login-form__information-password" placeholder="رمز عبور">
+                        <input type="password" id="password" class="login-form__information-password" placeholder="رمز عبور">
                         <div class="login-form__btn-submit">
                             <i class="login-form__btn-submit-icon fas fa-arrow-right-to-bracket"></i>
-                            <button class="form-login__btn-submit-login">ورود</button>
+                            <button class="form-login__btn-submit-login" type="submit">ورود</button>
                         </div>
                         <div class="login-form__rememmbers">
                             <div class="login-form__rememmberMe">
@@ -366,7 +366,8 @@
     <script src="../vendor/font-awsome5/all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="../vendor/swiper-slider/swipper.js"></script>
-    <script src="../js/script.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../js/Login.js" type="module"></script>
 </body>
 
 </html>
