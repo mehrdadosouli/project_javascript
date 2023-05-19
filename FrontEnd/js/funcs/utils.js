@@ -16,4 +16,11 @@ const getToken=()=>{
     return gettokens ? gettokens.token : null
 }
 
-export { showswall , settoLocalStorage , getFromLocalStorage , getToken}
+const isLogin=()=>{
+    const isuserLogin= getToken();
+    return isuserLogin ? true : false
+}
+
+
+
+export { showswall , settoLocalStorage , getFromLocalStorage , getToken , isLogin}

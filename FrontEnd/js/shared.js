@@ -1,4 +1,4 @@
-import { getMe } from "./funcs/auth.js";
+import { userInfos} from "./funcs/shared.js";
 window.addEventListener('load',()=>{
-    getMe().then(res=>console.log(res))
+    userInfos()
 })

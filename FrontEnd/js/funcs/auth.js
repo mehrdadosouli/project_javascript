@@ -56,7 +56,7 @@ const userinfos={
             showswall(" نام کاربری یا پسورد اشتباه است","error","تصحیح اطلاعات",()=>{})
         }else if(res.status==200){
             showswall("با موفقیت لاگین انجام شد.","success","ورود به پنل",()=>{
-                location.href="http://127.0.0.1:5500/FrontEnd/html/index.html"
+                location.href="index.html"
             })
         }
        return res.json()})
@@ -77,4 +77,7 @@ const getMe=async()=>{
     return data
 }
 
-export {register , login , getMe}
+
+
+
+export {register , login , getMe }
