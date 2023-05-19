@@ -1,4 +1,5 @@
-import { userInfos} from "./funcs/shared.js";
+import { userInfos , shareTopbarList } from "./funcs/shared.js";
 window.addEventListener('load',()=>{
-    userInfos()
+    userInfos();
+    shareTopbarList()
 })
