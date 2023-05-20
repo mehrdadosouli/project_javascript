@@ -18,9 +18,10 @@ const shareTopbarList=async()=>{
     const topbar__list=document.querySelector('.top-bar__list');
     const data=await fetch('http://localhost:4000/v1/menus/topbar');
     const res=await data.json();
-    console.log(res);
+    const shuffleArray=res.sort((a,b)=>0.5 - Math.random())
+    console.log(0.5 - Math.random());
     topbar__list.innerHTML="";
-    [...res].splice(0,6).map(menu=>{
+    shuffleArray.splice(0,6).map(menu=>{
     topbar__list.innerHTML+=`<li class="top-bar__item">
     <a href="#" class="top-bar__item-link">${menu.title}</a>
   </li>`
