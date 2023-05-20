@@ -19,7 +19,6 @@ const shareTopbarList=async()=>{
     const data=await fetch('http://localhost:4000/v1/menus/topbar');
     const res=await data.json();
     const shuffleArray=res.sort((a,b)=>0.5 - Math.random())
-    console.log(0.5 - Math.random());
     topbar__list.innerHTML="";
     shuffleArray.splice(0,6).map(menu=>{
     topbar__list.innerHTML+=`<li class="top-bar__item">
@@ -29,4 +28,10 @@ const shareTopbarList=async()=>{
 
 }
 
-export{ userInfos , shareTopbarList }
+const getAndRenderCourses=async()=>{
+    const res=await fetch(`http://localhost:4000/v1/courses`)
+    const data=await res.json();
+    return data
+}
+
+export{ userInfos , shareTopbarList , getAndRenderCourses }
