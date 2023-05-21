@@ -1,8 +1,8 @@
-import { userInfos , shareTopbarList , getAndRenderCourses } from "./funcs/shared.js";
+import { userInfos , shareTopbarList , getAndRenderCourses ,swipperSliderPopular, swipperSliderPresell } from "./funcs/shared.js";
 window.addEventListener('load',()=>{
     userInfos();
     shareTopbarList();
-    getAndRenderCourses().then(data=>{console.log(data);
+    getAndRenderCourses().then(data=>{
         const coursesAll=document.querySelector('#coursesAll');
     data.splice(0,6).map(course=>{
         coursesAll.insertAdjacentHTML('beforeend',`
@@ -10,7 +10,7 @@ window.addEventListener('load',()=>{
         <div class="course-box box">
           <a href="#" class="course__box-linkImg">
             <img
-              src="../image/courses/jango.png"
+              src="../image/courses/${course.cover}"
               alt="freelancer"
               class="course__box-img"
             />
@@ -45,4 +45,6 @@ window.addEventListener('load',()=>{
         `)
     })
     })
+    swipperSliderPresell();
+    swipperSliderPopular().then(res=>console.log('data',res))
 })
