@@ -3,6 +3,7 @@ window.addEventListener('load',()=>{
     userInfos();
     shareTopbarList();
     getAndRenderCourses().then(data=>{console.log(data);
+        const coursesAll=document.querySelector('#coursesAll');
     data.splice(0,6).map(course=>{
         coursesAll.insertAdjacentHTML('beforeend',`
         <div class="col-4">
@@ -21,31 +22,9 @@ window.addEventListener('load',()=>{
               <a href="#" class="course__box-teacherLink">${course.creator}</a>
             </div>
             <div class="course__box-rating">
-              <img
-                src="../image/svg/star.svg"
-                alt="rating"
-                class="course__box-ratingIcon"
-              />
-              <img
-                src="../image/svg/star_fill.svg"
-                alt="rating"
-                class="course__box-ratingIcon"
-              />
-              <img
-              alt="rating"
-              src="../image/svg/star_fill.svg"
-                class="course__box-ratingIcon"
-              />
-              <img
-                src="../image/svg/star_fill.svg"
-                alt="rating"
-                class="course__box-ratingIcon"
-              />
-              <img
-                src="../image/svg/star_fill.svg"
-                alt="rating"
-                class="course__box-ratingIcon"
-              />
+            ${Array(5 - course.courseAverageScore).fill(0).map(res=>`<img src="../image/svg/star.svg" alt="rating" class="course__box-ratingIcon"/>`).join('')}
+            ${Array(course.courseAverageScore).fill(0).map(res=>`<img src="../image/svg/star_fill.svg" alt="rating" class="course__box-ratingIcon"/>`).join('')}
+
             </div>
           </div>
           <div class="course__box-users">
