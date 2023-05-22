@@ -175,4 +175,35 @@ const getAndRenderArticle = async () => {
   return data
 }
 
-export { userInfos, shareTopbarList, getAndRenderCourses, swipperSliderPopular, swipperSliderPresell, getAndRenderArticle }
+const getAndRenderMenu =async ()=>{
+  const mainheaderlist=document.querySelector('.main-header__list');
+  const res=await fetch('http://localhost:4000/v1/menus');
+  const data=await res.json();
+
+  data.map((item)=>{
+    mainheaderlist.insertAdjacentHTML('beforeend',
+    `<li class="main-header__item">
+      <a href="#" class="main-header__link mains">${item.title}
+      </a>
+    ${item.submenus.length !==0 ? 
+      `<i class="fa-solid fa-chevron-down main-header__icon"></i>
+       <ul class="main-header-menu">
+
+     ${item.submenus.map((list)=>(
+      `<li class="main-header-menu__item">
+        <a href="#" class="main-header-menu__link">
+          ${list.title}
+        </a>
+      </li>`
+     )).join('')}
+     </ul>`
+  
+    : ""}
+    
+    
+    </li>`)
+  })
+  return data
+}
+
+export { userInfos, shareTopbarList, getAndRenderCourses, swipperSliderPopular, swipperSliderPresell, getAndRenderArticle , getAndRenderMenu }

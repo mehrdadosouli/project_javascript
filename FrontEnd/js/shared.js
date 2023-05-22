@@ -1,4 +1,4 @@
-import { userInfos , shareTopbarList , getAndRenderCourses ,swipperSliderPopular, swipperSliderPresell ,getAndRenderArticle } from "./funcs/shared.js";
+import { userInfos , shareTopbarList , getAndRenderCourses ,swipperSliderPopular, swipperSliderPresell ,getAndRenderArticle , getAndRenderMenu } from "./funcs/shared.js";
 window.addEventListener('load',()=>{
     userInfos();
     shareTopbarList();
@@ -46,6 +46,7 @@ window.addEventListener('load',()=>{
     })
     })
     swipperSliderPresell();
-    swipperSliderPopular()
-    getAndRenderArticle().then(result=>console.log(result))
+    swipperSliderPopular();
+    getAndRenderArticle();
+    getAndRenderMenu().then(result=>console.log(result));
 })  
