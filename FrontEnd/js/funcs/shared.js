@@ -1,45 +1,45 @@
 import { getMe } from "./auth.js";
 import { isLogin } from "./utils.js";
 const userInfos = () => {
-    const navbarUserbtn = document.querySelector('.main-header__left-login');
-    const islogin = isLogin();
-    if (islogin) {
-        getMe().then((data) => {
-            navbarUserbtn.setAttribute('href', "index.html");
-            navbarUserbtn.innerHTML = `<span class="login-text">${data.name}</span>`
-        })
-    } else {
-        navbarUserbtn.setAttribute('href', "login.html");
-        navbarUserbtn.innerHTML = '<span class="login-text">ورود/ ثبت نام</span>'
-    }
+  const navbarUserbtn = document.querySelector('.main-header__left-login');
+  const islogin = isLogin();
+  if (islogin) {
+    getMe().then((data) => {
+      navbarUserbtn.setAttribute('href', "index.html");
+      navbarUserbtn.innerHTML = `<span class="login-text">${data.name}</span>`
+    })
+  } else {
+    navbarUserbtn.setAttribute('href', "login.html");
+    navbarUserbtn.innerHTML = '<span class="login-text">ورود/ ثبت نام</span>'
+  }
 }
 
 const shareTopbarList = async () => {
-    const topbar__list = document.querySelector('.top-bar__list');
-    const data = await fetch('http://localhost:4000/v1/menus/topbar');
-    const res = await data.json();
-    const shuffleArray = res.sort((a, b) => 0.5 - Math.random())
-    topbar__list.innerHTML = "";
-    shuffleArray.splice(0, 6).map(menu => {
-        topbar__list.innerHTML += `<li class="top-bar__item">
+  const topbar__list = document.querySelector('.top-bar__list');
+  const data = await fetch('http://localhost:4000/v1/menus/topbar');
+  const res = await data.json();
+  const shuffleArray = res.sort((a, b) => 0.5 - Math.random())
+  topbar__list.innerHTML = "";
+  shuffleArray.splice(0, 6).map(menu => {
+    topbar__list.innerHTML += `<li class="top-bar__item">
     <a href="#" class="top-bar__item-link">${menu.title}</a>
   </li>`
-    })
+  })
 
 }
 
 const getAndRenderCourses = async () => {
-    const res = await fetch(`http://localhost:4000/v1/courses`)
-    const data = await res.json();
-    return data
+  const res = await fetch(`http://localhost:4000/v1/courses`)
+  const data = await res.json();
+  return data
 }
 
 const swipperSliderPresell = async () => {
-    const presellsliderparent = document.querySelector('#presell-slider-parent');
-    const res = await fetch('http://localhost:4000/v1/courses/presell');
-    const data = await res.json();
-    data.map(course => {
-        presellsliderparent.insertAdjacentHTML('beforeend', `
+  const presellsliderparent = document.querySelector('#presell-slider-parent');
+  const res = await fetch('http://localhost:4000/v1/courses/presell');
+  const data = await res.json();
+  data.map(course => {
+    presellsliderparent.insertAdjacentHTML('beforeend', `
         <div class="swiper-slide" data-swiper-autoplay="2000">
       <div class="course-box box">
         <a href="#" class="course__box-linkImg"
@@ -85,20 +85,20 @@ const swipperSliderPresell = async () => {
       </div>
     </div>
     `)
-    })
-    return data
+  })
+  return data
 }
 
 const swipperSliderPopular = async () => {
-    const popularsliderparent = document.querySelector('#popular-slider-parent');
-    const res = await fetch('http://localhost:4000/v1/courses/popular');
-    const data = await res.json();
-    data.map(course => {
-        popularsliderparent.insertAdjacentHTML('beforeend', `
+  const popularsliderparent = document.querySelector('#popular-slider-parent');
+  const res = await fetch('http://localhost:4000/v1/courses/popular');
+  const data = await res.json();
+  data.map(course => {
+    popularsliderparent.insertAdjacentHTML('beforeend', `
         <div class="swiper-slide" data-swiper-autoplay="2000">
       <div class="course-box box">
-        <a href="#" class="course__box-linkImg"
-          ><img
+        <a href="#" class="course__box-linkImg">
+        <img
             src="../image/courses/${course.cover}"
             alt="freelancer"
             class="course__box-img"
@@ -121,7 +121,6 @@ const swipperSliderPopular = async () => {
             alt="rating"
             class="course__box-ratingIcon"
           />`).join('')}
-            
           </div>
         </div>
         <div class="course__box-users">
@@ -140,8 +139,40 @@ const swipperSliderPopular = async () => {
       </div>
     </div>
     `)
-    })
-    return data
+  })
+  return data
 }
 
-export { userInfos, shareTopbarList, getAndRenderCourses, swipperSliderPopular , swipperSliderPresell}
+const getAndRenderArticle = async () => {
+  const articleWrapper = document.querySelector('#article__wrapper');
+  const res = await fetch('http://localhost:4000/v1/articles');
+  const data = await res.json();
+  data.slice(0,6).map(course => {
+    articleWrapper.insertAdjacentHTML('beforeend', `
+    <div class="col-4">
+              <div class="article-content__card">
+                <div class="article-content__header">
+                  <a href="#" class="article-content__header-link">
+                    <img
+                      src="../image/blogs/${course.cover}"
+                      alt=""
+                      class="article-content-img"
+                    />
+                  </a>
+
+                  <h5 class="article-content-heading">
+                    ${course.title}
+                  </h5>
+                  <h6 class="article-content-caption">
+                    ${course.description}
+                  </h6>
+                  <button class="article-content-btn">بیشتر بخوانید</button>
+                </div>
+              </div>
+            </div>`
+    )
+  })
+  return data
+}
+
+export { userInfos, shareTopbarList, getAndRenderCourses, swipperSliderPopular, swipperSliderPresell, getAndRenderArticle }
