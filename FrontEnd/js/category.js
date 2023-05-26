@@ -1,15 +1,17 @@
-import { getAndShowCategoryCourses,getAndRenderMenu,shareTopbarList,userInfos,showTemplatecourses } from "./funcs/shared.js";
-window.addEventListener('load',()=>{
+import { getAndShowCategoryCourses, getAndRenderMenu, shareTopbarList, userInfos, showTemplatecourses } from "./funcs/shared.js";
+window.addEventListener('load', () => {
     shareTopbarList()
     getAndRenderMenu()
     userInfos()
-    getAndShowCategoryCourses().then(data=>{
+    getAndShowCategoryCourses().then(data => {
+        const categorycourscontents = document.querySelector('.courses-top-bar__selection-contents');
+        const categorycourseSelection = document.querySelectorAll('.courses-top-bar__selection-item');
         const coursesBox = document.getElementById('courses-box');
-        let course=[...data];
-        let bydefault='row';
-        if(course.length){
-            course.forEach(course=>{
-                coursesBox.insertAdjacentHTML('beforeend',`
+        let course = [...data];
+        let bydefault = 'row';
+        if (course.length) {
+            course.forEach(course => {
+                coursesBox.insertAdjacentHTML('beforeend', `
                 <div class="col-4">
                 <div class="course-box box">
                   <a href="#" class="course__box-linkImg">
@@ -22,8 +24,8 @@ window.addEventListener('load',()=>{
                       <a href="#" class="course__box-teacherLink">${course.creator}</a>
                     </div>
                     <div class="course__box-rating">
-                    ${Array(5 - course.courseAverageScore).fill(0).map(res=>`<img src="../image/svg/star.svg" alt="rating" class="course__box-ratingIcon"/>`).join('')}
-                    ${Array(course.courseAverageScore).fill(0).map(res=>`<img src="../image/svg/star_fill.svg" alt="rating" class="course__box-ratingIcon"/>`).join('')}
+                    ${Array(5 - course.courseAverageScore).fill(0).map(res => `<img src="../image/svg/star.svg" alt="rating" class="course__box-ratingIcon"/>`).join('')}
+                    ${Array(course.courseAverageScore).fill(0).map(res => `<img src="../image/svg/star_fill.svg" alt="rating" class="course__box-ratingIcon"/>`).join('')}
               
                     </div>
                   </div>
@@ -43,39 +45,51 @@ window.addEventListener('load',()=>{
                 </div>
               </div>
                 `)
-              })
-        }else{
-                coursesBox.insertAdjacentHTML('beforeend',`
+            })
+        } else {
+            coursesBox.insertAdjacentHTML('beforeend', `
                 <div class="col-4">
                 <div class="course-box box">
                   <span>ایتمی موجود نیست</span>
                 </div>
               </div>
                 `)
-              
+
         }
-        const topbarright=document.querySelectorAll('.courses-tab-bar');
-        topbarright.forEach(item=>{
-            item.addEventListener('click',(event)=>{
-                topbarright.forEach(elem=>{
+        const topbarright = document.querySelectorAll('.courses-tab-bar');
+        topbarright.forEach(item => {
+            item.addEventListener('click', (event) => {
+                topbarright.forEach(elem => {
                     elem.classList.remove('top-bar__right-column-active')
                 })
                 event.target.classList.add('top-bar__right-column-active')
                 console.log(event.target.className.includes('row'));
-                if(event.target.className.includes('row')){
-                    bydefault='row';
+                if (event.target.className.includes('row')) {
+                    bydefault = 'row';
                     coursesBox.innerHTML = "";
-                    showTemplatecourses(bydefault,coursesBox,course)
-                }else{
-                    bydefault='column';
+                    showTemplatecourses(bydefault, coursesBox, course)
+                } else {
+                    bydefault = 'column';
                     coursesBox.innerHTML = "";
-                    showTemplatecourses(bydefault,coursesBox,course)
+                    showTemplatecourses(bydefault, coursesBox, course)
                 }
             })
-           
-        })
-        
 
+        })
+
+        categorycourseSelection.forEach(item => {
+            item.addEventListener('click', (event) => {
+                console.log(event.target);
+                categorycourseSelection.forEach(elem => { elem.classList.remove('top-bar__selection-item-active') });
+                event.target.classList.add('top-bar__selection-item-active');
+                categorycourscontents.innerHTML = "";
+                categorycourscontents.insertAdjacentHTML('beforeend', `
+                <span class="courses-top-bar__selection-text">
+                    ${event.target.innerHTML}
+                </span>
+                <i class="courses-top-bar__selection-icon-down fas fa-angle-down"></i>
+                `)
+            })
+        })
     })
-    
 })
