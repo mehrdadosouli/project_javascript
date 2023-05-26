@@ -9,11 +9,7 @@ window.addEventListener('load',()=>{
         <div class="col-4">
         <div class="course-box box">
           <a href="#" class="course__box-linkImg">
-            <img
-              src="../image/courses/${course.cover}"
-              alt="freelancer"
-              class="course__box-img"
-            />
+            <img src="../image/courses/${course.cover}" alt="freelancer" class="course__box-img"/>
           </a>
           <h4 class="course__box-title">${course.name}</h4>
           <div class="course__box-status">
@@ -48,5 +44,5 @@ window.addEventListener('load',()=>{
     swipperSliderPresell();
     swipperSliderPopular();
     getAndRenderArticle();
-    getAndRenderMenu().then(result=>console.log(result));
+    getAndRenderMenu()
 })  

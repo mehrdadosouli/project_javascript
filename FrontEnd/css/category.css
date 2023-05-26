@@ -31,12 +31,18 @@
   background-color: rgb(59, 141, 141);
   color: var(--white-color);
 }
+.courses-tab-bar{
+  box-shadow: 0 0 1px 0px gray;
+  cursor: pointer;
+}
+.courses-top-bar__right-column-icon {
+  pointer-events: none;
+}
 .courses-top-bar__right-row {
   margin-left: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 0 1px 0px gray;
   padding: 1rem;
   border-radius: 0.5rem;
   cursor: pointer;
