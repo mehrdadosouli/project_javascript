@@ -199,52 +199,50 @@ const getAndRenderMenu = async () => {
   })
   return data
 }
+// ------------------------------geting url and geting data from database----------------------
 
 const getAndShowCategoryCourses = async () => {
   const resultUrl = getUrlParams("cat");
-  console.log(resultUrl);
   const res = await fetch(`http://localhost:4000/v1/courses`);
   const data = await res.json();
   return data
 }
+// ------------------------------show courses category when you selected by row and column box in category----------------------
 
 const showTemplatecourses = (template, coursesBox,course) => {
   if (template == 'row') {
     coursesBox.innerHTML = "";
     course.forEach(course => {
       coursesBox.insertAdjacentHTML('beforeend', `
-        <div class="col-12">
-        <div class="course-box box">
-          <a href="#" class="course__box-linkImg">
-            <img src="../image/courses/${course.cover}" alt="freelancer" class="course__box-img"/>
-          </a>
-          <h4 class="course__box-title">${course.name}</h4>
-          <div class="course__box-status">
-            <div class="course__box-teacher">
-              <i class="course__box-icon fas fa-chalkboard-teacher"></i>
-              <a href="#" class="course__box-teacherLink">${course.creator}</a>
-            </div>
-            <div class="course__box-rating">
-            ${Array(5 - course.courseAverageScore).fill(0).map(res => `<img src="../image/svg/star.svg" alt="rating" class="course__box-ratingIcon"/>`).join('')}
-            ${Array(course.courseAverageScore).fill(0).map(res => `<img src="../image/svg/star_fill.svg" alt="rating" class="course__box-ratingIcon"/>`).join('')}
-      
-            </div>
+      <div class="row">
+      <div class="col-12" style="display: flex;justify-content: center;align-items: stretch;padding: 3rem;">
+          <div style="display: inline-block;" class="col-3">
+              <img src="../image/courses/${course.cover}" alt="freelancer" class="course__box-img" style="width: 100%;height: 100%;"/>
           </div>
-          <div class="course__box-users">
-            <div class="course__box-user">
-              <i class="course__box-userIcon fas fa-users"></i>
-              <span class="course__box-userStudents">${course.registers}</span>
-            </div>
-            <span class="course__box-userPrice">${course.price === 0 ? "رایگان" : course.price.toLocaleString()}</span>
+          <div class="col-9" style="display:inline-block;box-shadow: 0 0 3px 0px gray;padding: 2rem;">
+                  <a href="#" class="course__box-linkImg">
+                  </a>
+                  <h4 class="course__box-title">${course.name}</h4>
+                  <div class="course__box-status">
+                      <div class="course__box-teacher">
+                          <i class="course__box-icon fas fa-chalkboard-teacher"></i>
+                          <a href="#" class="course__box-teacherLink">${course.creator}</a>
+                      </div>
+                      <div class="course__box-rating">
+                      ${Array(5 - course.courseAverageScore).fill(0).map(res => `<img src="../image/svg/star.svg" alt="rating" class="course__box-ratingIcon"/>`).join('')}
+                      ${Array(course.courseAverageScore).fill(0).map(res => `<img src="../image/svg/star_fill.svg" alt="rating" class="course__box-ratingIcon"/>`).join('')}          
+                      </div>
+                  </div>
+                  <div class="course__box-users">
+                      <div class="course__box-user">
+                          <i class="course__box-userIcon fas fa-users"></i>
+                          <span class="course__box-userStudents">${course.registers}</span>
+                      </div>
+                      <span class="course__box-userPrice">${course.price === 0 ? "رایگان" : course.price.toLocaleString()}</span>
+                  </div>
           </div>
-          <div class="course__box-info">
-            <a href="#" class="course__boxinfoLink"
-              >مشاهده اطلاعات
-              <i class="course__box-infoIcon fas fa-arrow-left"></i>
-            </a>
-          </div>
-        </div>
       </div>
+  </div>
         `)
     })
   } else {
@@ -287,4 +285,31 @@ const showTemplatecourses = (template, coursesBox,course) => {
     })
   }
 }
-export { userInfos, shareTopbarList, getAndRenderCourses, swipperSliderPopular, swipperSliderPresell, getAndRenderArticle, getAndRenderMenu, getAndShowCategoryCourses , showTemplatecourses }
+
+const showFilteringcourses=(datakey,allcourse)=>{
+  let array=[];
+  switch (datakey) {
+    case "default":
+      array=allcourse
+      break;
+    case "free":
+      array=allcourse.filter(item=>item.price == 0 )
+      break;
+    case "expensive":
+      array=allcourse.filter(item=>item.price !== 0 )
+      break;
+    case "first":
+      array=[...allcourse]
+      break;
+    case "last":
+      array=[...allcourse].reverse()
+      break;
+  
+    default:{
+      array=allcourse
+    }
+      break;
+  }
+  return array
+}
+export { userInfos, shareTopbarList, getAndRenderCourses, swipperSliderPopular, swipperSliderPresell, getAndRenderArticle, getAndRenderMenu, getAndShowCategoryCourses , showTemplatecourses,showFilteringcourses }

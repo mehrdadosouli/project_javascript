@@ -1,4 +1,5 @@
-import { getAndShowCategoryCourses, getAndRenderMenu, shareTopbarList, userInfos, showTemplatecourses } from "./funcs/shared.js";
+import { getAndShowCategoryCourses, getAndRenderMenu, shareTopbarList, userInfos, showTemplatecourses,showFilteringcourses } from "./funcs/shared.js";
+import { searchInputValue } from "./funcs/utils.js";
 window.addEventListener('load', () => {
     shareTopbarList()
     getAndRenderMenu()
@@ -8,7 +9,8 @@ window.addEventListener('load', () => {
         const categorycourseSelection = document.querySelectorAll('.courses-top-bar__selection-item');
         const coursesBox = document.getElementById('courses-box');
         let course = [...data];
-        let bydefault = 'row';
+        let bydefault = 'column';
+        // ------------------------------first load page show category items----------------------
         if (course.length) {
             course.forEach(course => {
                 coursesBox.insertAdjacentHTML('beforeend', `
@@ -54,16 +56,16 @@ window.addEventListener('load', () => {
                 </div>
               </div>
                 `)
-
         }
+         // selection row and column selectbtn
+         
         const topbarright = document.querySelectorAll('.courses-tab-bar');
         topbarright.forEach(item => {
             item.addEventListener('click', (event) => {
                 topbarright.forEach(elem => {
                     elem.classList.remove('top-bar__right-column-active')
                 })
-                event.target.classList.add('top-bar__right-column-active')
-                console.log(event.target.className.includes('row'));
+                event.target.classList.add('top-bar__right-column-active');
                 if (event.target.className.includes('row')) {
                     bydefault = 'row';
                     coursesBox.innerHTML = "";
@@ -74,12 +76,11 @@ window.addEventListener('load', () => {
                     showTemplatecourses(bydefault, coursesBox, course)
                 }
             })
-
+            
         })
-
+        // selection input filtering selectbox
         categorycourseSelection.forEach(item => {
             item.addEventListener('click', (event) => {
-                console.log(event.target);
                 categorycourseSelection.forEach(elem => { elem.classList.remove('top-bar__selection-item-active') });
                 event.target.classList.add('top-bar__selection-item-active');
                 categorycourscontents.innerHTML = "";
@@ -88,8 +89,17 @@ window.addEventListener('load', () => {
                     ${event.target.innerHTML}
                 </span>
                 <i class="courses-top-bar__selection-icon-down fas fa-angle-down"></i>
-                `)
+                `);
+                const elementSelected=event.target.dataset.key;
+                const showfilter= showFilteringcourses(elementSelected,[...course]);
+                showTemplatecourses(bydefault,coursesBox,showfilter);
             })
         })
+        const inputsearchvalue=document.querySelector('.courses-top-bar__left-input');
+        inputsearchvalue.addEventListener('input',(event)=>{
+                const result=event.target.value;
+               const resultinputfilter= searchInputValue(course,result);
+               showTemplatecourses(bydefault, coursesBox,resultinputfilter);
+            })
     })
 })

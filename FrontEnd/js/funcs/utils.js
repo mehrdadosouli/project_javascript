@@ -20,10 +20,16 @@ const isLogin = () => {
     const isuserLogin = getToken();
     return isuserLogin ? true : false
 }
-
-const getUrlParams = (key) => { 
-    const getparams=new URLSearchParams(window.location.search);
+// -------------get data from url and redirect to category----------------
+const getUrlParams = (key) => {
+    const getparams = new URLSearchParams(window.location.search);
     return getparams.get(key)
 }
 
-export { showswall, settoLocalStorage, getFromLocalStorage, getToken, isLogin , getUrlParams }
+// -------------search box for category.html------------------------------
+    const searchInputValue = (array, searchval) => {
+        const resultValue = array.filter(item => item.name.includes(searchval));
+        return resultValue;
+    }
+
+export { showswall, settoLocalStorage, getFromLocalStorage, getToken, isLogin, getUrlParams, searchInputValue }
