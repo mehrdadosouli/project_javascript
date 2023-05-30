@@ -95,11 +95,19 @@ window.addEventListener('load', () => {
                 showTemplatecourses(bydefault,coursesBox,showfilter);
             })
         })
+        // ---select input search box for courses
         const inputsearchvalue=document.querySelector('.courses-top-bar__left-input');
         inputsearchvalue.addEventListener('input',(event)=>{
                 const result=event.target.value;
                const resultinputfilter= searchInputValue(course,result);
-               showTemplatecourses(bydefault, coursesBox,resultinputfilter);
+                       if(!resultinputfilter.length){
+                        coursesBox.innerHTML="";
+                        coursesBox.insertAdjacentHTML('beforeend',`
+                            <div style="width:100%;background-Color:#004aff75;height:30px;color:white">هیچ ایتمی وجود ندارد</div>
+                        `)
+                    }else{
+                        showTemplatecourses(bydefault, coursesBox,resultinputfilter);
+                       }
             })
     })
 })
