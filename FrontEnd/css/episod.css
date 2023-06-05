@@ -1,0 +1,113 @@
+@import "variables.css";
+@import "fonts.css";
+@import "top-bar.css";
+@import "defaults.css";
+@import "course-box.css";
+@import "navbarHeader.css";
+@import "footer.css";
+@import "./pagination.css";
+@import "./helper-class.css";
+
+/*----------------------------- accordion    ---------------------------------- */
+.accordion-button::after{
+    position: absolute;
+    left: 1rem;
+}
+.accordion-button{
+    font-size: 1.8rem;
+}
+.accordion-button:not(.collapsed){
+    background-color: #f0f2f7; 
+}
+.accordion-body1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.accordion-body-headers{
+    display: flex;
+    align-items: center;
+}
+.accordion-body__number{
+    background-color: #f0f2f7;
+    border: 1px solid #706e6e;
+    color: var(--light-text);
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1rem;
+}
+.accordion-body__icon{
+    color: var(--light-text);
+    margin-left: 1rem;
+}
+.accordion-body__time{
+    color: var(--light-text);
+}
+.accordion-body__text{
+    font-size: 1.3rem;
+    padding: 1rem;
+    text-align: justify;
+}
+/*----------------------------- accordion    ---------------------------------- */
+.course-info__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+.course-info__header-right{
+    display: flex;
+    align-items: center;
+}
+.course-info__header-right-info{
+    display: flex;
+    flex-direction: column;
+    margin-right: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+.course-info__header-right-img{
+    width: 7rem;
+    height: 7rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.course-info__header-link{
+    font-weight: bold;
+}
+.course-info__header-left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border-radius: 1rem;
+    transition: background-color 0.5s ease-out;
+}
+.course-info__discription{
+    padding: 1rem;
+}
+/* ----------------------main--------------------- */
+.main{
+    display: flex;
+    padding: 2rem ;
+}
+.left-side{
+    width: 100%;
+}
+.right-side{
+    width: 30%;
+}
+#video{
+    width: 100%;
+    height: auto
+}
+.accordion-course{
+    padding: 1rem 0;
+}

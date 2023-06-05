@@ -1,5 +1,5 @@
 import { getMe } from "./auth.js";
-import { isLogin, getUrlParams } from "./utils.js";
+import { isLogin, getUrlParams ,getToken } from "./utils.js";
 const userInfos = () => {
   const navbarUserbtn = document.querySelector('.main-header__left-login');
   const islogin = isLogin();
@@ -312,4 +312,36 @@ const showFilteringcourses=(datakey,allcourse)=>{
   }
   return array
 }
-export { userInfos, shareTopbarList, getAndRenderCourses, swipperSliderPopular, swipperSliderPresell, getAndRenderArticle, getAndRenderMenu, getAndShowCategoryCourses , showTemplatecourses,showFilteringcourses }
+
+const getCourseDetails=async()=>{
+  const geturl=getUrlParams('name');
+  const res=await fetch(`http://localhost:4000/v1/courses/${geturl}`,{
+    method:"POST", 
+    headers:{
+      Authorization:`Bearer ${getToken()}`
+    }
+  });
+  const data=await res.json();
+  return data
+}
+
+const getandshowslidercourse=async()=>{
+  const resulturl=getUrlParams('name');
+  const res=await fetch(`http://localhost:4000/v1/courses/related/${resulturl}`)
+  const data=await res.json();
+  return data
+}
+
+const getandshowepisodecourse=async()=>{
+  const resulturl=getUrlParams('name');
+  const resultid=getUrlParams('id');
+  const res=await fetch(`http://localhost:4000/v1/courses/${resulturl}/${resultid}`,{
+    headers:{
+      Authorization:`Bearer ${getToken()}`
+    }
+  })
+  const data=await res.json();
+  video.setAttribute('src',`http://localhost:4000/courses/covers/${data.session.video}`);
+  return data 
+}
+export { userInfos, shareTopbarList, getAndRenderCourses, swipperSliderPopular, swipperSliderPresell, getAndRenderArticle, getAndRenderMenu, getAndShowCategoryCourses , showTemplatecourses,showFilteringcourses ,getCourseDetails,getandshowslidercourse,getandshowepisodecourse }

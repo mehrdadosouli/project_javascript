@@ -195,13 +195,13 @@
           </li>
           <i class="bread-crumb__icon-left fas fa-arrow-left"></i>
           <li class="bread-crumb__item">
-            <a href="#" class="bread-crumb__link">
+            <a href="#" class="bread-crumb__link" id="bread-crumb__link-course">
               آموزش برنامه نویسی فرانت اند
             </a>
           </li>
           <i class="bread-crumb__icon-left fas fa-arrow-left"></i>
           <li class="bread-crumb__item">
-            <a href="#" class="bread-crumb__link">
+            <a href="#" class="bread-crumb__link" id="bread-crumb__link-title">
               اموزش 20 کتابخانه جاوااسکریپت
             </a>
           </li>
@@ -224,12 +224,7 @@
               اموزش 20 کتابخانه جاوااسکریپت برای بازار کار
             </h1>
             <div class="course-info__right-side-text">
-              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
-              استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله
-              در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد
-              نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد،
-              کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان
-              جامعه و متخصصان
+             
             </div>
             <div class="course-info__right-side-icon">
               <a href="#" class="course-info__right-side-icon-link">
@@ -246,7 +241,7 @@
         </div>
         <div class="col-6">
           <div class="course-info__left-side">
-            <video src="" poster="../image/courses/js_project.png" class="course-info__left-side-video"
+            <video src="" poster=../image/courses/${course.cover}` class="course-info__left-side-video"
               controls></video>
           </div>
         </div>
@@ -267,7 +262,7 @@
                     <i class="course-box__icon fas fa-graduation-cap"></i>
                     <div class="course-box__contents">
                       <span class="course-box__header">وضعیت دوره</span>
-                      <span class="course-box__description">به اتمام رسیده</span>
+                      <span class="course-box__description" id="course-box__description">  </span>
                     </div>
                   </div>
                 </div>
@@ -285,7 +280,7 @@
                     <i class="course-box__icon fas fa-calendar-alt"></i>
                     <div class="course-box__contents">
                       <span class="course-box__header">اخرین بروزرسانی</span>
-                      <span class="course-box__description">1401/03/02</span>
+                      <span class="course-box__description"id="course-box__date"></span>
                     </div>
                   </div>
                 </div>
@@ -296,7 +291,7 @@
                     <i class="course-box__icon fas fa-user"></i>
                     <div class="course-box__contents">
                       <span class="course-box__header">روش</span>
-                      <span class="course-box__description">پشتیبانی انلاین</span>
+                      <span class="course-box__description" id="course-box__suport"></span>
                     </div>
                   </div>
                 </div>
@@ -334,7 +329,7 @@
             <!---------------------   course box progress -------------------------------->
             <div class="course-intrudoction">
               <div class="course-intrudoction__item">
-                <h2 class="course-intrudoction__item-header title">اموزش 20 کتابخانه جاوااسکریپت برای بازار کار</h2>
+                <h2 class="course-intrudoction__item-header title"id="course-intrudoction__item-discription"></h2>
                 <img src="../image/info/1.gif" alt=" کتابخانه جاوااسکریپت" class="course-intrudoction__item-img">
                 <p class="course-intrudoction__item-discription">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
                   چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم
@@ -363,52 +358,12 @@
               </div>
               <!---------------------   course box progress -------------------------------->
               <div class="accordion" id="accordionExample">
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                      معرفی دوره
-                    </button>
-                  </h2>
-                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                    data-bs-parent="#accordionExample">
-                    <div class="accordion-body accordion-body1">
-                      <div class="accordion-body-headers">
-                        <span class="accordion-body__number">1</span>
-                        <i class="accordion-body__icon fab fa-youtube"></i>
-                        <p class="accordion-body__title">معرفی دوره + چرا یادگیری کتابخانه ضروری است؟</p>
-                      </div>
-                      <div class="accordion-body-timer">
-                        <span class="accordion-body__time">17:30</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingTwo">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      کتابخانه swipper
-                    </button>
-                  </h2>
-                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                    data-bs-parent="#accordionExample">
-                    <div class="accordion-body accordion-body2">
-                      <p class="accordion-body__text">
-                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است،
-                        چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است،
-
-                        <strong>
-                          کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا
-                          با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در
-                          زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها،
-                          و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات
-                          پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
-                        </strong>
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    معرفی دوره
+                  </button>
+                </h2>
               </div>
               <!---------------------   course info teacher -------------------------------->
               <div class="course-info__teacher">
@@ -482,26 +437,7 @@
             <!----------------------   course products ------------------------------------------>
             <div class="course-products">
               <h4 class="course-product__title">محصولات</h4>
-              <div class="product-item">
-                
-                  <img src="../image/courses/fareelancer.png" class="product-item__img" alt="fareelancer">
-                  <span class="product-item__text"><a href="#" class="product-item-link">دوره اموزش جاوااسکریپت</a></span>
-              </div>
-              <div class="product-item">
-                
-                  <img src="../image/courses/jango.png" class="product-item__img" alt="jango">
-                  <span class="product-item__text"><a href="#" class="product-item-link">دوره اموزش جنگو</a></span>
-              </div>
-              <div class="product-item">
-                
-                  <img src="../image/courses/nodejs.png" class="product-item__img" alt="nodejs">
-                  <span class="product-item__text"><a href="#" class="product-item-link">دوره اموزش نود جی اس</a></span>
-              </div>
-              <div class="product-item">
-                
-                  <img src="../image/courses/python.png" class="product-item__img" alt="python">
-                  <span class="product-item__text"><a href="#" class="product-item-link">دوره اموزش پایتون</a></span>
-              </div>
+              
             </div>
           </div>
         </div>
@@ -604,8 +540,7 @@
   <script src="../vendor/Bootstrap/bootstrap.bundle.min.js"></script>
   <script src="../vendor/font-awsome5/all.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-  <script src="../js/shared.js" type="module"></script>
-  <script src="../js/script.js"></script>
+  <script src="../js/course.js" type="module"></script>
 </body>
 
 </html>

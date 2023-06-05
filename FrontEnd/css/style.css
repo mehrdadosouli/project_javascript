@@ -162,8 +162,8 @@
 
 .swiper {
     margin: 2rem 0;
-    width: 90%;
-    height: 500px;
+    width: 100%;
+    height: auto;
   }
 .swiper-slide .course-box{
     margin:0 1rem;

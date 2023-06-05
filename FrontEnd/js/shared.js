@@ -3,15 +3,17 @@ window.addEventListener('load',()=>{
     userInfos();
     shareTopbarList();
     getAndRenderCourses().then(data=>{
-        const coursesAll=document.querySelector('#coursesAll');
+    const coursesAll=document.querySelector('#coursesAll');
     data.splice(0,6).map(course=>{
         coursesAll.insertAdjacentHTML('beforeend',`
         <div class="col-4">
         <div class="course-box box">
-          <a href="#" class="course__box-linkImg">
+          <a href="course.html?name=${course.shortName}" class="course__box-linkImg">
             <img src="../image/courses/${course.cover}" alt="freelancer" class="course__box-img"/>
           </a>
-          <h4 class="course__box-title">${course.name}</h4>
+          <a href="course.html?name=${course.shortName}">
+            <h4 class="course__box-title">${course.name}</h4>
+          </a>
           <div class="course__box-status">
             <div class="course__box-teacher">
               <i class="course__box-icon fas fa-chalkboard-teacher"></i>
