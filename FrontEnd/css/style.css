@@ -247,3 +247,9 @@
     color: var(--white-color);
     background-color: var(--primary-color);
 }
+.newsletter{
+    display: flex;
+}
+#inputnewsletter{
+    width: 15rem;
+}

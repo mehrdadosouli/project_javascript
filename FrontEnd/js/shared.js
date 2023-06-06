@@ -22,7 +22,6 @@ window.addEventListener('load',()=>{
             <div class="course__box-rating">
             ${Array(5 - course.courseAverageScore).fill(0).map(res=>`<img src="../image/svg/star.svg" alt="rating" class="course__box-ratingIcon"/>`).join('')}
             ${Array(course.courseAverageScore).fill(0).map(res=>`<img src="../image/svg/star_fill.svg" alt="rating" class="course__box-ratingIcon"/>`).join('')}
-
             </div>
           </div>
           <div class="course__box-users">
