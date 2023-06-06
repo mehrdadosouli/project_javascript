@@ -1,5 +1,5 @@
 import { getMe } from "./auth.js";
-import { isLogin, getUrlParams ,getToken } from "./utils.js";
+import { isLogin, getUrlParams, getToken } from "./utils.js";
 const userInfos = () => {
   const navbarUserbtn = document.querySelector('.main-header__left-login');
   const islogin = isLogin();
@@ -209,7 +209,7 @@ const getAndShowCategoryCourses = async () => {
 }
 // ------------------------------show courses category when you selected by row and column box in category----------------------
 
-const showTemplatecourses = (template, coursesBox,course) => {
+const showTemplatecourses = (template, coursesBox, course) => {
   if (template == 'row') {
     coursesBox.innerHTML = "";
     course.forEach(course => {
@@ -286,62 +286,89 @@ const showTemplatecourses = (template, coursesBox,course) => {
   }
 }
 
-const showFilteringcourses=(datakey,allcourse)=>{
-  let array=[];
+const showFilteringcourses = (datakey, allcourse) => {
+  let array = [];
   switch (datakey) {
     case "default":
-      array=allcourse
+      array = allcourse
       break;
     case "free":
-      array=allcourse.filter(item=>item.price == 0 )
+      array = allcourse.filter(item => item.price == 0)
       break;
     case "expensive":
-      array=allcourse.filter(item=>item.price !== 0 )
+      array = allcourse.filter(item => item.price !== 0)
       break;
     case "first":
-      array=[...allcourse]
+      array = [...allcourse]
       break;
     case "last":
-      array=[...allcourse].reverse()
+      array = [...allcourse].reverse()
       break;
-  
-    default:{
-      array=allcourse
+
+    default: {
+      array = allcourse
     }
       break;
   }
   return array
 }
 
-const getCourseDetails=async()=>{
-  const geturl=getUrlParams('name');
-  const res=await fetch(`http://localhost:4000/v1/courses/${geturl}`,{
-    method:"POST", 
-    headers:{
-      Authorization:`Bearer ${getToken()}`
+const getCourseDetails = async () => {
+  const geturl = getUrlParams('name');
+  const res = await fetch(`http://localhost:4000/v1/courses/${geturl}`, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${getToken()}`
     }
   });
-  const data=await res.json();
+  const data = await res.json();
   return data
 }
 
-const getandshowslidercourse=async()=>{
-  const resulturl=getUrlParams('name');
-  const res=await fetch(`http://localhost:4000/v1/courses/related/${resulturl}`)
-  const data=await res.json();
+const getandshowslidercourse = async () => {
+  const resulturl = getUrlParams('name'); ``
+  const res = await fetch(`http://localhost:4000/v1/courses/related/${resulturl}`)
+  const data = await res.json();
   return data
 }
 
-const getandshowepisodecourse=async()=>{
-  const resulturl=getUrlParams('name');
-  const resultid=getUrlParams('id');
-  const res=await fetch(`http://localhost:4000/v1/courses/${resulturl}/${resultid}`,{
-    headers:{
-      Authorization:`Bearer ${getToken()}`
+const getandshowepisodecourse = async () => {
+  const resulturl = getUrlParams('name');
+  const resultid = getUrlParams('id');
+  const res = await fetch(`http://localhost:4000/v1/courses/${resulturl}/${resultid}`, {
+    headers: {
+      Authorization: `Bearer ${getToken()}`
     }
   })
-  const data=await res.json();
-  video.setAttribute('src',`http://localhost:4000/courses/covers/${data.session.video}`);
-  return data 
+  const data = await res.json();
+  video.setAttribute('src', `http://localhost:4000/courses/covers/${data.session.video}`);
+  return data
 }
-export { userInfos, shareTopbarList, getAndRenderCourses, swipperSliderPopular, swipperSliderPresell, getAndRenderArticle, getAndRenderMenu, getAndShowCategoryCourses , showTemplatecourses,showFilteringcourses ,getCourseDetails,getandshowslidercourse,getandshowepisodecourse }
+
+const commentinput = async () => {
+  let courseShortName = getUrlParams('name');
+  let commentsusercourse = document.querySelector('#comments-user-course');
+  let commenttextarea = document.querySelector('#comment-textarea');
+  let score=5
+   commentsusercourse.addEventListener('change', event => {
+    score = event.target.value
+  })
+  const objcomment = {
+    body: commenttextarea.value,
+    courseShortName,
+    score,
+  }
+  console.log(objcomment);
+
+  const res = await fetch(`http://localhost:4000/v1/comments`, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${getToken()}`,
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify(objcomment),
+  })
+  const data = await res.json();
+  return data
+}
+export { userInfos, shareTopbarList, getAndRenderCourses, swipperSliderPopular, swipperSliderPresell, getAndRenderArticle, getAndRenderMenu, getAndShowCategoryCourses, showTemplatecourses, showFilteringcourses, getCourseDetails, getandshowslidercourse, getandshowepisodecourse, commentinput }

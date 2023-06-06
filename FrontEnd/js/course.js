@@ -1,5 +1,5 @@
-import { getCourseDetails, getandshowslidercourse } from "../js/funcs/shared.js";
-import { userInfos } from "../js/funcs/shared.js";
+import { getCourseDetails, getandshowslidercourse,userInfos,commentinput } from "../js/funcs/shared.js";
+
 const breadcrumb = document.querySelector('#bread-crumb__link-course');
 const breadcrumbtitle = document.querySelector('#bread-crumb__link-title');
 const courseinfo = document.querySelector('.course-info__right-side-title-link');
@@ -14,10 +14,10 @@ const courseviewtext = document.querySelector('.course-point-of-view__text');
 const coursenumberstudents = document.querySelector('.course-information__number-students');
 const accordion = document.querySelector('#accordionExample');
 const courseproduct = document.querySelector('.course-products');
+const commentbtn = document.querySelector('.comment-btn');
 window.addEventListener('load', () => {
     userInfos();
     getCourseDetails().then(course => {
-        console.log(course,'coursesss');
         breadcrumb.innerHTML = `اموزش ${course.categoryID.title}`;
         breadcrumbtitle.innerHTML = `${course.name}`;
         courseinfo.innerHTML = `اموزش ${course.categoryID.title}`;
@@ -106,5 +106,10 @@ window.addEventListener('load', () => {
                 `)
         }
        
+    });
+    commentbtn.addEventListener('click',()=>{
+    })
+    commentinput().then(res=>{
+        console.log(res);
     })
 })

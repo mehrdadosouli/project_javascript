@@ -339,3 +339,23 @@
 .product-item__text{
     color: var(--light-text);
 }
+.comments{
+    height: 35rem;
+    display:flex ;
+    flex-direction: column;
+    padding: 4rem;
+    background-color: #8080804d;
+}
+select#comments-user-course{
+    width: 30%;
+    margin: 1.5rem 0;
+}
+.comment-btn{
+    width: 7rem;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    padding: 1rem;  
+    border-radius: 1rem; 
+    margin-top: 2rem;
+}
