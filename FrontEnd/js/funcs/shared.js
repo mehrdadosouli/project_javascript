@@ -333,6 +333,8 @@ const getandshowslidercourse = async () => {
 }
 
 const getandshowepisodecourse = async () => {
+  const accordion = document.querySelector('#accordionExample');
+  const video = document.querySelector('#video');
   const resulturl = getUrlParams('name');
   const resultid = getUrlParams('id');
   const res = await fetch(`http://localhost:4000/v1/courses/${resulturl}/${resultid}`, {
@@ -341,7 +343,46 @@ const getandshowepisodecourse = async () => {
     }
   })
   const data = await res.json();
+    data.sessions.forEach((item,index)=>{
+  accordion.insertAdjacentHTML('beforeend',`
+  <div class="accordion-course">
+  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+    data-bs-parent="#accordionExample">
+    <div class="accordion-body accordion-body1">
+    <div class="accordion-body-headers">
+    <span class="accordion-body__number">${index+1}</span>
+    <i class="accordion-body__icon fab fa-youtube"></i>
+    ${
+      (item.free)?
+      `<a href="episod.html?name=${resulturl}&id=${item._id}" class="accordion-body__title">${item.title}</a>` 
+      : 
+      `<span class="accordion-body__title">${item.title}</span>` 
+    }
+    
+  </div>
+  <div class="accordion-body-timer">
+  ${
+      (item.free)?
+      `
+      <span class="accordion-body__time">${item.time}</span>
+      <i class="fa fa-lock-open"></i>
+      `:
+      `
+      <span class="accordion-body__time">${item.time}</span>
+      <i class="fa fa-lock"></i>
+      `
+  }
+    
+  </div>
+      
+    </div >
+  </div >
+</div >
+`)
+})
+console.log(data.session.video);
   video.setAttribute('src', `http://localhost:4000/courses/covers/${data.session.video}`);
+  console.log(video.src);
   return data
 }
 
