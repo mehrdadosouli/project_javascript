@@ -318,7 +318,7 @@ const getCourseDetails = async () => {
   const res = await fetch(`http://localhost:4000/v1/courses/${geturl}`, {
     method: "POST",
     headers: {
-      Authorization: `Bearer ${getToken()}`
+      'Authorization': `Bearer ${getToken()}`
     }
   });
   const data = await res.json();
@@ -337,7 +337,7 @@ const getandshowepisodecourse = async () => {
   const resultid = getUrlParams('id');
   const res = await fetch(`http://localhost:4000/v1/courses/${resulturl}/${resultid}`, {
     headers: {
-      Authorization: `Bearer ${getToken()}`
+      'Authorization': `Bearer ${getToken()}`
     }
   })
   const data = await res.json();
@@ -349,7 +349,7 @@ const commentinput = async () => {
   let courseShortName = getUrlParams('name');
   let commentsusercourse = document.querySelector('#comments-user-course');
   let commenttextarea = document.querySelector('#comment-textarea');
-  let score=5
+  let score=5;
    commentsusercourse.addEventListener('change', event => {
     score = event.target.value
   })
@@ -358,17 +358,20 @@ const commentinput = async () => {
     courseShortName,
     score,
   }
-  console.log(objcomment);
 
-  const res = await fetch(`http://localhost:4000/v1/comments`, {
+  const res = await fetch('http://localhost:4000/v1/comments', {
     method: 'POST',
     headers: {
-      Authorization: `Bearer ${getToken()}`,
+      'Authorization': `Bearer ${getToken()}`,
       'content-type': 'application/json'
     },
     body: JSON.stringify(objcomment),
   })
-  const data = await res.json();
-  return data
+  if(res.status==201){
+    const data = await res.json();
+    return data
+  }else{
+    alert('دوباره تلاش کنید')
+  }
 }
 export { userInfos, shareTopbarList, getAndRenderCourses, swipperSliderPopular, swipperSliderPresell, getAndRenderArticle, getAndRenderMenu, getAndShowCategoryCourses, showTemplatecourses, showFilteringcourses, getCourseDetails, getandshowslidercourse, getandshowepisodecourse, commentinput }

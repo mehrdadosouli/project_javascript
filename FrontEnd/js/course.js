@@ -108,8 +108,9 @@ window.addEventListener('load', () => {
        
     });
     commentbtn.addEventListener('click',()=>{
-    })
+    
     commentinput().then(res=>{
         console.log(res);
     })
+})
 })
