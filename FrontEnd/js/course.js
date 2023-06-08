@@ -15,6 +15,8 @@ const coursenumberstudents = document.querySelector('.course-information__number
 const accordion = document.querySelector('#accordionExample');
 const courseproduct = document.querySelector('.course-products');
 const commentbtn = document.querySelector('.comment-btn');
+const courseinfos = document.querySelector('.course-infos');
+
 window.addEventListener('load', () => {
     userInfos();
     getCourseDetails().then(course => {
@@ -30,6 +32,8 @@ window.addEventListener('load', () => {
         studentinformation.innerHTML = `${course.isUserRegisteredToThisCourse ? "شما دانشجوی دوره هستید" : "ثبت نام کنید"}`;
         courseviewtext.innerHTML = `${course.support}`;
         coursenumberstudents.innerHTML = `${course.courseStudentsCount}`;
+        console.log(course);
+        renderComments(course)
         if (course.sessions.length) {
             course.sessions.forEach((item, index) => {
             accordion.insertAdjacentHTML('beforeend', `
@@ -114,3 +118,53 @@ window.addEventListener('load', () => {
     })
 })
 })
+
+
+const renderComments=(courses)=>{
+    console.log(courses.comments.length);
+    if(courses.comments.length){
+    courses.comments.forEach(course=>{
+    courseinfos.insertAdjacentHTML('beforeend',`
+    <div class="course-info-student">
+    <div class="course-info__header">
+      <div class="course-info__header-right">
+        <img src="../image/logo/Bundling-in-.NET-Core-MVC-Applications-with-Gulp-Header-Image.jpg"
+          class="course-info__header-right-img" alt="img">
+        <div class="course-info__header-right-info">
+          <span class="course-info__header-name"><a href="#" class="course-info__header-link" id="course-info__header-link-student"> 
+          ${course.creator.name}  </a></span>
+          <span class="course-info__header-job">Front End</span>
+        </div>
+      </div>
+      <div class="course-info__header-left">
+        <i class="course-info__header-icon fas fa-chalkboard-teacher"></i>
+        <span class="course__header-left-infoteachers" id="course__header-info-student">${course.creator.role}</span>
+      </div>
+    </div>
+    <div class="course-info__discription" id="course-info__discriptionstudent">${course.body}</div>
+  </div>
+  ${course.answerContent ? `
+  <div class="course-answer-teacher">
+  <div class="course-info__header">
+    <div class="course-info__header-right">
+      <img src="../image/logo/Bundling-in-.NET-Core-MVC-Applications-with-Gulp-Header-Image.jpg"
+        class="course-info__header-right-img" alt="img">
+      <div class="course-info__header-right-info">
+        <span class="course-info__header-name"><a href="#" class="course-info__header-link" id="course-info__header-link-teacher"> 
+        ${course.answerContent.creator.name}  </a></span>
+        <span class="course-info__header-job">Front End</span>
+      </div>
+    </div>
+    <div class="course-info__header-left">
+      <i class="course-info__header-icon fas fa-chalkboard-teacher"></i>
+      <span class="course__header-left-infoteachers" id="course__header-info-teacher">${course.answerContent.creator.role}</span>
+    </div>
+  </div>
+  <div class="course-info__discription" id="course-info__discriptionteacher">${course.answerContent.body}</div>
+</div>
+  ` : 
+  ""}
+`)
+})
+}
+}
