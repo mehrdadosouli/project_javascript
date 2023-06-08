@@ -382,7 +382,6 @@ const getandshowepisodecourse = async () => {
 })
 console.log(data.session.video);
   video.setAttribute('src', `http://localhost:4000/courses/covers/${data.session.video}`);
-  console.log(video.src);
   return data
 }
 
