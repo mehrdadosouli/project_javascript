@@ -1,10 +1,13 @@
 import { showswall } from "./funcs/utils.js";
+
 let $ = document
 let landing__title = $.querySelector('.landing__title');
 let timeCounter = $.querySelector('#time-counter');
 let learnCounter = $.querySelector('#learn-counter');
 let userCounter = $.querySelector('#user-counter');
 let inputnewsletter = $.querySelector('#inputnewsletter');
+let landingSearchinput = $.querySelector('#landing__search-input');
+let landingSearchBtn = $.querySelector('#landing__search-btn');
 
 window.addEventListener('load', () => {
     let textTitle = "ما به هر قیمتی دوره اموزشی تولید نمیکنیم!"
@@ -12,7 +15,8 @@ window.addEventListener('load', () => {
     landing_text(textTitle, index);
     counterLanding(136_7, timeCounter)
     counterLanding(40, learnCounter)
-    counterLanding(210_0, userCounter)
+    counterLanding(210_0, userCounter);
+    searchHandler()
 })
 // createe function landing text
 function landing_text(text, index) {
@@ -70,3 +74,13 @@ const sentemailnewsletter = async (sentnewsletter) => {
         })
     }
 } 
+
+const searchHandler=()=>{
+    landingSearchBtn.addEventListener('click',(event)=>{
+        event.preventDefault();
+        const inputValue=landingSearchinput.value.trim();
+        if(inputValue){
+            location.href=`search.html?value=${inputValue}`
+        }
+    })
+}

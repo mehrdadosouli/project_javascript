@@ -414,4 +414,11 @@ const commentinput = async () => {
     alert('دوباره تلاش کنید')
   }
 }
-export { userInfos, shareTopbarList, getAndRenderCourses, swipperSliderPopular, swipperSliderPresell, getAndRenderArticle, getAndRenderMenu, getAndShowCategoryCourses, showTemplatecourses, showFilteringcourses, getCourseDetails, getandshowslidercourse, getandshowepisodecourse, commentinput }
+
+const searchurlParams=async()=>{
+  const resurl=getUrlParams('value');
+  const res=await fetch(`http://localhost:4000/v1/search/${resurl}`)
+  const data=res.json();
+  return data
+}
+export { userInfos, shareTopbarList, getAndRenderCourses, swipperSliderPopular, swipperSliderPresell, getAndRenderArticle, getAndRenderMenu, getAndShowCategoryCourses, showTemplatecourses, showFilteringcourses, getCourseDetails, getandshowslidercourse, getandshowepisodecourse, commentinput ,searchurlParams }
