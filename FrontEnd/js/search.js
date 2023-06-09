@@ -1,10 +1,14 @@
 import { searchurlParams } from "./funcs/shared.js";
+import { userInfos , getAndRenderMenu } from "./funcs/shared.js";
+
 const coursesAll=document.querySelector('#coursesAll');
 const articleWrapper = document.querySelector('#article__wrappers');
 
 
 
 window.addEventListener('load',()=>{
+    userInfos();
+    getAndRenderMenu();
     searchurlParams().then(data=>{
         console.log(data);
         if(data.allResultCourses.length){
