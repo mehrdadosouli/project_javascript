@@ -113,3 +113,6 @@
   cursor: pointer;
   padding: 0.5rem;
 }
+.link-actived{
+  background-color: var(--primary-color);
+}

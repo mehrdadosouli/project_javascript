@@ -1,5 +1,7 @@
 import { getAndShowCategoryCourses, getAndRenderMenu, shareTopbarList, userInfos, showTemplatecourses,showFilteringcourses } from "./funcs/shared.js";
-import { searchInputValue } from "./funcs/utils.js";
+import { searchInputValue ,paginationCategory,getUrlParams,handlepagination } from "./funcs/utils.js";
+
+window.handlepagination=handlepagination
 window.addEventListener('load', () => {
     shareTopbarList()
     getAndRenderMenu()
@@ -8,57 +10,11 @@ window.addEventListener('load', () => {
         const categorycourscontents = document.querySelector('.courses-top-bar__selection-contents');
         const categorycourseSelection = document.querySelectorAll('.courses-top-bar__selection-item');
         const coursesBox = document.getElementById('courses-box');
+        const geturl=getUrlParams('page');
         let course = [...data];
         let bydefault = 'column';
         // ------------------------------first load page show category items----------------------
-        if (course.length) {
-            course.forEach(course => {
-                coursesBox.insertAdjacentHTML('beforeend', `
-                <div class="col-4">
-                <div class="course-box box">
-                  <a href="#" class="course__box-linkImg">
-                    <img src="../image/courses/${course.cover}" alt="freelancer" class="course__box-img"/>
-                  </a>
-                  <h4 class="course__box-title">${course.name}</h4>
-                  <div class="course__box-status">
-                    <div class="course__box-teacher">
-                      <i class="course__box-icon fas fa-chalkboard-teacher"></i>
-                      <a href="#" class="course__box-teacherLink">${course.creator}</a>
-                    </div>
-                    <div class="course__box-rating">
-                    ${Array(5 - course.courseAverageScore).fill(0).map(res => `<img src="../image/svg/star.svg" alt="rating" class="course__box-ratingIcon"/>`).join('')}
-                    ${Array(course.courseAverageScore).fill(0).map(res => `<img src="../image/svg/star_fill.svg" alt="rating" class="course__box-ratingIcon"/>`).join('')}
-              
-                    </div>
-                  </div>
-                  <div class="course__box-users">
-                    <div class="course__box-user">
-                      <i class="course__box-userIcon fas fa-users"></i>
-                      <span class="course__box-userStudents">${course.registers}</span>
-                    </div>
-                    <span class="course__box-userPrice">${course.price === 0 ? "رایگان" : course.price.toLocaleString()}</span>
-                  </div>
-                  <div class="course__box-info">
-                    <a href="#" class="course__boxinfoLink"
-                      >مشاهده اطلاعات
-                      <i class="course__box-infoIcon fas fa-arrow-left"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-                `)
-            })
-        } else {
-            coursesBox.insertAdjacentHTML('beforeend', `
-                <div class="col-4">
-                <div class="course-box box">
-                  <span>ایتمی موجود نیست</span>
-                </div>
-              </div>
-                `)
-        }
-         // selection row and column selectbtn
-         
+         // selection row and column selectbtn         
         const topbarright = document.querySelectorAll('.courses-tab-bar');
         topbarright.forEach(item => {
             item.addEventListener('click', (event) => {
@@ -108,6 +64,12 @@ window.addEventListener('load', () => {
                     }else{
                         showTemplatecourses(bydefault, coursesBox,resultinputfilter);
                        }
-            })
+        })
+
+        
+        const pagination=paginationCategory(3,course,geturl);
+        showTemplatecourses(bydefault,coursesBox,pagination)
+
     })
+    
 })

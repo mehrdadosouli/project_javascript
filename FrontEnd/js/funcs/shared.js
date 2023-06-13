@@ -182,7 +182,7 @@ const getAndRenderMenu = async () => {
   data.forEach((item) => {
     mainheaderlist.insertAdjacentHTML("beforeend",
       `<li class="main-header__item">
-      <a href=category.html?cat=${item.href} class="main-header__link mains">${item.title}</a>
+      <a href=category.html?cat=${item.href}&page=1 class="main-header__link mains">${item.title}</a>
     ${item.submenus.length !== 0 ?
         `<i class="fa-solid fa-chevron-down main-header__icon"></i>
        <ul class="main-header-menu">
@@ -212,6 +212,7 @@ const getAndShowCategoryCourses = async () => {
 const showTemplatecourses = (template, coursesBox, course) => {
   if (template == 'row') {
     coursesBox.innerHTML = "";
+    if(course.length){
     course.forEach(course => {
       coursesBox.insertAdjacentHTML('beforeend', `
       <div class="row">
@@ -245,6 +246,15 @@ const showTemplatecourses = (template, coursesBox, course) => {
   </div>
         `)
     })
+  }else{
+    coursesBox.insertAdjacentHTML('beforeend', `
+        <div class="col-4">
+        <div class="course-box box">
+           <span>ایتمی موجود نیست</span>
+         </div>
+        </div>
+         `)
+  }
   } else {
     coursesBox.innerHTML = "";
     course.forEach(course => {
