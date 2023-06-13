@@ -431,4 +431,11 @@ const searchurlParams=async()=>{
   const data=res.json();
   return data
 }
-export { userInfos, shareTopbarList, getAndRenderCourses, swipperSliderPopular, swipperSliderPresell, getAndRenderArticle, getAndRenderMenu, getAndShowCategoryCourses, showTemplatecourses, showFilteringcourses, getCourseDetails, getandshowslidercourse, getandshowepisodecourse, commentinput ,searchurlParams }
+
+  // -------------get allcourse for courses.html-----------------------------
+  const getanshowAllCourses=async()=>{
+    const res=await fetch(`http://localhost:4000/v1/courses`);
+    const data=await res.json();
+    return data
+  }
+export { userInfos, shareTopbarList, getAndRenderCourses, swipperSliderPopular, swipperSliderPresell, getAndRenderArticle, getAndRenderMenu, getAndShowCategoryCourses, showTemplatecourses, showFilteringcourses, getCourseDetails, getandshowslidercourse, getandshowepisodecourse, commentinput ,searchurlParams ,getanshowAllCourses }
