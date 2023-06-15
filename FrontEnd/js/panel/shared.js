@@ -5,7 +5,7 @@ const $ = document;
 window.addEventListener("load", () => {
   const adminWelcomeNameElem = $.querySelector("#admin-welcome-name");
   const adminNameElem = $.querySelector("#admin-name");
-  const notificationsIconElem = $.querySelector('#notifications-icon')
+  const notificationsIconElem = $.querySelector('.home-notification')
   const notificationsBoxElem = $.querySelector('.home-notification-modal')
   const notificationModalListElem = $.querySelector('.home-notification-modal-list')
 
@@ -38,7 +38,12 @@ window.addEventListener("load", () => {
         `)
       })
     } else {
-
+        notificationModalListElem.insertAdjacentHTML('beforeend', `
+        <li class="home-notification-modal-item">
+            <span class="home-notification-modal-text">پیغامی نیست</span>
+            <a>دیدم</a>
+        </li>
+    `)
     }
 
   });
