@@ -1,5 +1,6 @@
 import { getAdminInfos } from "./funcs/utils.js";
-
+import { notificationalertbox,seeNotification } from "../panel/funcs/notification.js";
+window.seeNotification=seeNotification;
 const $ = document;
 
 window.addEventListener("load", () => {
@@ -7,7 +8,7 @@ window.addEventListener("load", () => {
   const adminNameElem = $.querySelector("#admin-name");
   const notificationsIconElem = $.querySelector('.home-notification')
   const notificationsBoxElem = $.querySelector('.home-notification-modal')
-  const notificationModalListElem = $.querySelector('.home-notification-modal-list')
+  
 
   getAdminInfos().then((admin) => {
     console.log(admin);
@@ -28,23 +29,7 @@ window.addEventListener("load", () => {
       notificationsBoxElem.classList.remove('active-modal-notfication')
     })
 
-    if (admin.notifications.length) {
-      admin.notifications.forEach(notification => {
-        notificationModalListElem.insertAdjacentHTML('beforeend', `
-            <li class="home-notification-modal-item">
-                <span class="home-notification-modal-text">${notification.msg}</span>
-                <a>دیدم</a>
-            </li>
-        `)
-      })
-    } else {
-        notificationModalListElem.insertAdjacentHTML('beforeend', `
-        <li class="home-notification-modal-item">
-            <span class="home-notification-modal-text">پیغامی نیست</span>
-            <a>دیدم</a>
-        </li>
-    `)
-    }
+    notificationalertbox(admin.notifications)
 
   });
 
