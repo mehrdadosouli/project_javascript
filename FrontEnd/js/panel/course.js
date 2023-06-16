@@ -1,7 +1,6 @@
-import { getAllCourses } from "./funcs/courses.js";
+import { getAllCourses ,getCategory} from "./funcs/courses.js";
 
 window.addEventListener('load',()=>{
-    getAllCourses().then(res=>{
-        console.log(res);
-    })
+    getAllCourses()
+    getCategory().then(res=>console.log(res))
 })

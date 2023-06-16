@@ -29,4 +29,21 @@ const getAllCourses=async()=>{
     return data
 }
 
-export{ getAllCourses }
+const getCategory=async()=>{
+    const categoryList=document.querySelector('.category-list')
+    var category_id=-1;
+    const res=await fetch(`http://localhost:4000/v1/category`)
+    const data=await res.json()
+    data.forEach(elem=>{
+        categoryList.insertAdjacentHTML('beforeend',`
+            <option value="${elem._id}">${elem.title}</option>
+        `)
+    })
+    categoryList.addEventListener('change',(event)=>{
+        category_id=event.target.value;
+        console.log(category_id);
+    })
+    return data
+}
+
+export{ getAllCourses,getCategory }
