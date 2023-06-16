@@ -253,6 +253,7 @@ ul {
     top: 45px;
     left: -120px;
     display: none;
+    z-index: 99;
 }
 #home .home-header .home-right .home-notification-modal .home-notification-modal-list {
     list-style-type: none;
