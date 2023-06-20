@@ -1,6 +1,12 @@
-import { getAllCourses ,getCategory} from "./funcs/courses.js";
+import { getAllCourses,prepareCreateCourseForm, createNewCourse ,deleteCourseList} from "./funcs/courses.js";
+window.deleteCourseList=deleteCourseList;
 
-window.addEventListener('load',()=>{
+window.addEventListener('load', () => {
+    const createCourseBtn = document.querySelector('#create-course-btn');
     getAllCourses()
-    getCategory().then(res=>console.log(res))
+    prepareCreateCourseForm()
+    createCourseBtn.addEventListener('click', (event) => {
+        event.preventDefault()
+        createNewCourse()
+    })
 })
