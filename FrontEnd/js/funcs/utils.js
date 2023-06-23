@@ -1,7 +1,13 @@
-const showswall = (title, icon, button, callback) => {
-    swal({ title, icon, button })
-        .then(result => callback(result))
+
+const showswall = (title, icon, buttons, callback) => {
+    swal({ 
+        title,
+         icon,
+          buttons,
+         })
+        .then((result) => callback(result));
 }
+
 
 const settoLocalStorage = (key, value) => {
     return localStorage.setItem(key, JSON.stringify(value))

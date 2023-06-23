@@ -9,7 +9,7 @@ window.addEventListener('load',()=>{
         <div class="col-4">
         <div class="course-box box">
           <a href="course.html?name=${course.shortName}" class="course__box-linkImg">
-            <img src="../image/courses/${course.cover}" alt="freelancer" class="course__box-img"/>
+            <img src="http://localhost:4000/courses/covers/${course.cover}" alt="freelancer" class="course__box-img"/>
           </a>
           <a href="course.html?name=${course.shortName}">
             <h4 class="course__box-title">${course.name}</h4>

@@ -11,7 +11,6 @@ window.addEventListener("load", () => {
   
 
   getAdminInfos().then((admin) => {
-    console.log(admin);
     // Protect Cms Routes
     if (admin.role === "ADMIN") {
       // Show Admin Name In Cms Homepage

@@ -1,6 +1,7 @@
+4
 import { getToken, showswall } from "../../funcs/utils.js";
 let category_id = -1;
-let courseCover = null;
+let courseCovers = null;
 let status = "start";
 const getAllCourses = async () => {
   const table = document.querySelector('.table')
@@ -41,7 +42,7 @@ const prepareCreateCourseForm = async () => {
   const start = document.querySelector('#start')
   const presell = document.querySelector('#presell')
   const categoryList = document.querySelector('.category-list')
-  const coursecover = document.querySelector('#coursecover')
+  let coursecover = document.querySelector('#coursecover')
   const res = await fetch(`http://localhost:4000/v1/category`)
   const data = await res.json()
   data.forEach(elem => {
@@ -53,8 +54,8 @@ const prepareCreateCourseForm = async () => {
     category_id = event.target.value;
   })
   coursecover.addEventListener('change', (event) => {
-    courseCover = event.target.files[0];
-    console.log(courseCover);
+    courseCovers = event.target.files[0];
+    console.log(courseCovers);
   })
 
   start.addEventListener('change', (event) => {
@@ -81,7 +82,7 @@ const createNewCourse = async () => {
   formData.append('support', courseSupport.value.trim())
   formData.append('categoryID', category_id)
   formData.append('status', status)
-  formData.append('cover', courseCover)
+  formData.append('cover', courseCovers)
 
   const res = await fetch(`http://localhost:4000/v1/courses`, {
     method: "POST",
@@ -102,7 +103,7 @@ const deleteCourseList = async (id) => {
   showswall(
     "آیا از حذف دوره اطمینان دارید؟",
     "warning",
-    "آره",
+    ["نه","اره"],
     async (result) => {
       if (result) {
         const res = await fetch(`http://localhost:4000/v1/courses/${id}`, {
@@ -112,13 +113,15 @@ const deleteCourseList = async (id) => {
           }
         })
        if(res.ok){
-        swal(
+        showswall(
           "دوره با موفقیت حذف شد!",
            "success",
            "ok"
-        )
+        ),()=>{}
+          getAllCourses()
+        
       } else {
-        swal("دوره حذف نشد!");
+        showswall("دوره حذف نشد!"),()=>{};
       }
     }
     }

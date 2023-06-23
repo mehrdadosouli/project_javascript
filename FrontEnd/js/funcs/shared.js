@@ -44,8 +44,8 @@ const swipperSliderPresell = async () => {
       <div class="course-box box">
         <a href="#" class="course__box-linkImg"
           ><img
-            src="../image/courses/${course.cover}"
-            alt="freelancer"
+            src="http://localhost:4000/courses/covers/${course.cover}"
+            alt="Course img"
             class="course__box-img"
         /></a>
         <h4 class="course__box-title">${course.name}</h4>
@@ -99,7 +99,7 @@ const swipperSliderPopular = async () => {
       <div class="course-box box">
         <a href="#" class="course__box-linkImg">
         <img
-            src="../image/courses/${course.cover}"
+            src="http://localhost:4000/courses/covers/${course.cover}"
             alt="freelancer"
             class="course__box-img"
         /></a>
@@ -202,10 +202,14 @@ const getAndRenderMenu = async () => {
 // ------------------------------geting url and geting data from database----------------------
 
 const getAndShowCategoryCourses = async () => {
-  const resultUrl = getUrlParams("cat");
-  const res = await fetch(`http://localhost:4000/v1/courses`);
-  const data = await res.json();
-  return data
+  const categoryName = getUrlParams("cat");
+
+  const res = await fetch(
+    `http://localhost:4000/v1/courses`
+  );
+  const courses = await res.json();
+console.log(courses);
+  return courses;
 }
 // ------------------------------show courses category when you selected by row and column box in category----------------------
 
@@ -218,7 +222,7 @@ const showTemplatecourses = (template, coursesBox, course) => {
       <div class="row">
       <div class="col-12" style="display: flex;justify-content: center;align-items: stretch;padding: 3rem;">
           <div style="display: inline-block;" class="col-3">
-              <img src="../image/courses/${course.cover}" alt="freelancer" class="course__box-img" style="width: 100%;height: 100%;"/>
+              <img src="http://localhost:4000/courses/covers/${course.cover}" alt="freelancer" class="course__box-img" style="width: 100%;height: 100%;"/>
           </div>
           <div class="col-9" style="display:inline-block;box-shadow: 0 0 3px 0px gray;padding: 2rem;">
                   <a href="#" class="course__box-linkImg">
@@ -262,7 +266,7 @@ const showTemplatecourses = (template, coursesBox, course) => {
         <div class="col-4">
         <div class="course-box box">
           <a href="#" class="course__box-linkImg">
-            <img src="../image/courses/${course.cover}" alt="freelancer" class="course__box-img"/>
+            <img src="http://localhost:4000/courses/covers/${course.cover}" alt="freelancer" class="course__box-img"/>
           </a>
           <h4 class="course__box-title">${course.name}</h4>
           <div class="course__box-status">
