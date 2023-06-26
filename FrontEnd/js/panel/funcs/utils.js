@@ -1,7 +1,6 @@
+import { getToken } from "../../funcs/utils.js";
+const homeProfileName=document.querySelector('#home-profile-name');
 
-import { getToken } from "./../../funcs/utils.js";
-
-const getAdminInfos = async () => {
   const res = await fetch(`http://localhost:4000/v1/auth/me`, {
     headers: {
       Authorization: `Bearer ${getToken()}`,
@@ -9,10 +8,5 @@ const getAdminInfos = async () => {
   });
   
   const admin = await res.json()
+  homeProfileName.innerHTML=admin.name
 
-  return admin
-};
-
-export {
-    getAdminInfos
-}

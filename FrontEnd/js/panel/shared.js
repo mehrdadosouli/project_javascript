@@ -1,4 +1,4 @@
-import { getAdminInfos } from "./funcs/utils.js";
+import { getAdminInfos } from "../../panel/funcs/utils.js";
 import { notificationalertbox,seeNotification } from "../panel/funcs/notification.js";
 window.seeNotification=seeNotification;
 const $ = document;
