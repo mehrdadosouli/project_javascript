@@ -31,8 +31,7 @@ const register = () => {
             showswall("شما با این اسم یا ایمیل قبلا ثبت نام کرده اید","error","تصحیح اطلاعات",()=>{})
         }
         return res.json()})
-    .then(data=>settoLocalStorage('user',{token:data.accessToken})
-    )
+    .then(data=>settoLocalStorage('user',{token:data.accessToken}))
 }
 
 const login=()=>{

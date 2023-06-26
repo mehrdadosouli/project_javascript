@@ -1,6 +1,7 @@
-import { getAndRenderUser } from "./funcs/users.js";
+import { getAndRenderUser , createUserHandler } from "./funcs/users.js";
 
 window.addEventListener('load',()=>{
+    let addbtn=document.querySelector('#addbtn')
 
     getAndRenderUser().then((users)=>{
         console.log(users);
@@ -28,4 +29,8 @@ window.addEventListener('load',()=>{
      })
     })
     
+    addbtn.addEventListener('click',(event)=>{
+        event.preventDefault();
+        createUserHandler()
+    })
 })
