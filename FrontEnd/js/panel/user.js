@@ -1,35 +1,10 @@
-import { getAndRenderUser , createUserHandler } from "./funcs/users.js";
-
-window.addEventListener('load',()=>{
-    let addbtn=document.querySelector('#addbtn')
-
-    getAndRenderUser().then((users)=>{
-        console.log(users);
-        let table=document.querySelector('table tbody');
-        users.forEach((user,index)=>{
-        table.insertAdjacentHTML('beforeend',`
-        <tr>
-            <td>${index + 1}</td>
-            <td>${user.name}</td>
-            <td>${user.username}</td>
-            <td>${user.phone}</td>
-            <td>${user.email}</td>
-            <td>${user.role === "ADMIN" ? "مدیر" : "کاربر عادی"}</td>
-        <td>
-            <button type='button' class='btn btn-primary edit-btn'>ویرایش</button>
-        </td>
-        <td>
-            <button type='button' class='btn btn-danger delete-btn'>حذف</button>
-        </td>
-        <td>
-            <button type='button' class='btn btn-danger delete-btn'>بن</button>
-        </td>
-    </tr>
-        `)
-     })
-    })
-    
-    addbtn.addEventListener('click',(event)=>{
+import { getAndRenderUser, createUserHandler ,deleteBtnUser,banBtnUser  } from "./funcs/users.js";
+window.deleteBtnUser=deleteBtnUser;
+window.banBtnUser=banBtnUser
+window.addEventListener('load', () => {
+    let addbtn = document.querySelector('#addbtn')
+    getAndRenderUser();
+    addbtn.addEventListener('click', (event) => {
         event.preventDefault();
         createUserHandler()
     })
