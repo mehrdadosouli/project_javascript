@@ -1,13 +1,12 @@
 
 const showswall = (title, icon, buttons, callback) => {
-    swal({ 
+    swal({
         title,
-         icon,
-          buttons,
-         })
+        icon,
+        buttons,
+    })
         .then((result) => callback(result));
 }
-
 
 const settoLocalStorage = (key, value) => {
     return localStorage.setItem(key, JSON.stringify(value))
@@ -74,4 +73,4 @@ const handlepagination = (i, page) => {
     url.search = setparam.toString()
     location.href = url.toString()
 }
-export { showswall, settoLocalStorage, getFromLocalStorage, getToken, isLogin, getUrlParams, searchInputValue, paginationCategory, handlepagination }
+export { showswall, settoLocalStorage, getFromLocalStorage, getToken, isLogin, getUrlParams, searchInputValue, paginationCategory, handlepagination  }
