@@ -45,23 +45,15 @@
                                 <input type="text" class="search-bar" placeholder="جستجو...">
                             </div>
                             <div class="home-notification">
-                                <button type="button">
+                                <button type="button" id="notifications-icon">
                                     <i class="far fa-bell"></i>
                                 </button>
                             </div>
                             <div class="home-notification-modal">
                                 <ul class="home-notification-modal-list">
-                                   <!-- js -->
+                                   <!-- Notifications Loaded From JS -->
                                 </ul>
                             </div>
-                            <!-- <div class="mode">
-                                <ul class="mode-list">
-                                    <div class="mode-list-item mode-red"></div>
-                                    <div class="mode-list-item mode-blue"></div>
-                                    <div class="mode-list-item mode-dark"></div>
-                                    <div class="mode-list-item mode-light"></div>
-                                </ul>
-                            </div> -->
                         </div>
                         <div class="home-left">
                             <div class="home-profile">
@@ -84,7 +76,7 @@
             <div class="container-fluid" id="home-content">
                 <div class="container">
                     <div class="home-content-title">
-                        <span class="welcome">خوش آمدید,<span class="name" id="admin-welcome-name">احسان خورمهر</span></span>
+                        <span class="welcome">خوش آمدید,<span class="name" id="admin-welcome-name"></span></span>
                     </div>
                     <div class="home-content-boxes">
                         <div class="row">
@@ -215,7 +207,10 @@
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="vendor/swiperSlider/swiper.js"></script>
     <script src="js/custom.js"></script>
-    <script src="./../../js/panel/index.js" type="module"></script>
+    <script type="module" src="../../js/panel/shared.js"></script>
+    <script type="module" src="../../js/panel/funcs/utils.js"></script>
+
+
 </body>
 
 </html>

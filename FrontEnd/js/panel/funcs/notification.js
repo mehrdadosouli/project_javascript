@@ -1,43 +1,57 @@
-import { getToken } from "../../funcs/utils.js"
+import { getToken } from "../../funcs/utils.js";
 
+const insertNotificationHtmlTemplate = (notifications) => {
+  const notificationModalListElem = document.querySelector(
+    ".home-notification-modal-list"
+  );
 
-const notificationModalListElem = document.querySelector('.home-notification-modal-list')
-const notificationalertbox=(notifications)=>{
-    
-    if (notifications.length) {
-        notifications.forEach(notification => {
-          notificationModalListElem.insertAdjacentHTML('beforeend', `
-              <li class="home-notification-modal-item">
-                  <span class="home-notification-modal-text">${notification.msg}</span>
-                  <a onclick='seeNotification(${JSON.stringify(notifications)},${JSON.stringify(notification._id)})'>دیدم</a>
-              </li>
-          `)
-        })
-      } else {
-          notificationModalListElem.insertAdjacentHTML('beforeend', `
-          <li style="background-color:green" class="home-notification-modal-item">
-              <span class="home-notification-modal-text">پیغامی نیست</span>
+  notificationModalListElem.innerHTML = ''
+
+  if (notifications.length) {
+    notifications.forEach((notification) => {
+      console.log(notification);
+      notificationModalListElem.insertAdjacentHTML(
+        "beforeend",
+        `
+          <li class="home-notification-modal-item">
+              <span class="home-notification-modal-text">${notification.msg}</span>
+              <a style="cursor: pointer" onclick='seenNotification(${JSON.stringify(notifications)}, ${JSON.stringify(notification._id)})'>دیدم</a>
           </li>
-      `)
-      }
-
-    }
-    const seeNotification=async(notifications,notificationsid)=>{
-      const res = await fetch(`http://localhost:4000/v1/notifications/see/${notificationsid}`,{
-      method:'PUT',
-      headers:{
-          Authorization:`Bearer ${getToken()}`
-      }
+      `
+      );
     });
-    filteredNotification(notifications,notificationsid);
-    const data=await res.json();
-    console.log(data);
-    }
+  } else {
+    notificationModalListElem.insertAdjacentHTML(
+      "beforeend",
+      `
+      <li class="alert alert-danger text-center">
+          هیچ نوتیفیکیشنی وجود ندارد
+      </li>
+    `
+    );
+  }
+};
 
-    const filteredNotification=(notifications,notificationsid)=>{
-        notificationModalListElem.innerHTML="";
-       const resultFiltered= notifications.filter(elem=>elem._id !== notificationsid);
-       notificationalertbox(resultFiltered)
+const seenNotification = async (notifications, notificationID) => {
+  const res = await fetch(
+    `http://localhost:4000/v1/notifications/see/${notificationID}`,
+    {
+      method: "PUT",
+      headers: {
+        Authorization: `Bearer ${getToken()}`,
+      },
     }
+  );
 
-export { notificationalertbox ,seeNotification}
+  removeNotification(notifications, notificationID)
+
+  const result = await res.json();
+};
+
+const removeNotification = (notifications, notificationID) => {
+  const filteredNotifications = notifications.filter(notification => notification._id !== notificationID)
+  
+  insertNotificationHtmlTemplate(filteredNotifications)
+}
+
+export { insertNotificationHtmlTemplate, seenNotification };
