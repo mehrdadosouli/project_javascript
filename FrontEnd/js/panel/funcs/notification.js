@@ -9,7 +9,6 @@ const insertNotificationHtmlTemplate = (notifications) => {
 
   if (notifications.length) {
     notifications.forEach((notification) => {
-      console.log(notification);
       notificationModalListElem.insertAdjacentHTML(
         "beforeend",
         `
