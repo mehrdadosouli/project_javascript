@@ -1,5 +1,7 @@
 import { getToken, showswall  } from "../../funcs/utils.js";
 const table = document.querySelector(".table tbody");
+const inputTitle = document.querySelector("#inputTitle");
+const inputHref = document.querySelector("#inputHref");
 const getAllCategory = async () => {
     const res = await fetch('http://localhost:4000/v1/category');
     const data = await res.json();
@@ -39,10 +41,10 @@ const deleteBtncourse=(id)=>{
               "دوره با موفقیت حذف شد!",
                "success",
                "ok"
-            ),()=>{}
+            ,()=>{})
             getAllCategory()
           } else {
-            showswall("دوره حذف نشد!"),()=>{};
+            showswall("دوره حذف نشد!",()=>{});
           }
         }
         }
@@ -72,9 +74,9 @@ const editeBtncourse=async(id)=>{
                     " با موفقیت تغییر یافت!",
                      "success",
                      "ok"
-                  ),()=>{
+                  ,()=>{
                       getAllCategory()
-                  }
+                  })
             }
       }
       
@@ -82,4 +84,28 @@ const editeBtncourse=async(id)=>{
       
 }
 
-export { getAllCategory , deleteBtncourse ,editeBtncourse}
+const createCategory=async()=>{
+    const valinputTitle=inputTitle.value.trim()
+    const valinputHref=inputHref.value.trim();
+    const contents={
+        title:valinputTitle,
+        name:valinputHref
+    }
+    const res = await fetch(`http://localhost:4000/v1/category`, {
+              method: "POST",
+              headers: {
+                Authorization: `Bearer ${getToken()}`,
+                "Content-Type":"application/json"
+              },
+              body:JSON.stringify(contents)
+            })
+            if(res.status==201){
+                showswall(
+                    "دوره با موفقیت اظافه شد!",
+                     "success",
+                     "ok"
+                  ,()=>{})
+                getAllCategory()
+            }
+}
+export { getAllCategory , deleteBtncourse ,editeBtncourse , createCategory}

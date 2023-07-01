@@ -92,7 +92,7 @@ const createNewCourse = async () => {
     body: formData
   })
   if (res.ok) {
-    showswall("دوره اظافه شد", "succsess", "ok"), () => { }
+    showswall("دوره اظافه شد", "succsess", "ok", () => {})
   }
 
 
@@ -117,11 +117,11 @@ const deleteCourseList = async (id) => {
           "دوره با موفقیت حذف شد!",
            "success",
            "ok"
-        ),()=>{}
+        ,()=>{})
           getAllCourses()
         
       } else {
-        showswall("دوره حذف نشد!"),()=>{};
+        showswall("دوره حذف نشد!",()=>{});
       }
     }
     }

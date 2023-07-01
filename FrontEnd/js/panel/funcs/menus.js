@@ -70,7 +70,7 @@ const addNewMenuToList = async () => {
 
 
     } else {
-        showswall("افزوده نشد", "warning", "ok"),()=>{}
+        showswall("افزوده نشد", "warning", "ok",()=>{})
     }
 
 
@@ -88,9 +88,9 @@ const deleteHandler = async (id) => {
                 }
             })
             if(res.ok){
-                showswall("حذف شد", "success", "ok"),()=>{
+                showswall("حذف شد", "success", "ok",()=>{
                 getAllMenu()
-                }
+                })
             }
         }
     })   
