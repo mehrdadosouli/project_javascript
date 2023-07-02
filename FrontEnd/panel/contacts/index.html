@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>category</title>
+    <title>Home</title>
     <link rel="stylesheet" href="vendor/FontAwesome/FontAwesome.min.css" />
     <link rel="stylesheet" href="vendor/BootStrap/Bootstrap5.min.css" />
     <link rel="stylesheet" href="css/main.css" />
@@ -25,13 +25,13 @@
         <div class="sidebar-menu">
           <ul>
             <li class="active-menu"><a href="../main/index.html"><span>صفحه اصلی</span></a></li>
-            <li><a href="../courses/index.html"><span>دوره ها</span></a></li>
-            <li><a href="../D-Menus/index.html"><span>منو ها</span></a></li>
-            <li><a href="../NewBlog/index.html"><span>مقاله ها</span></a></li>
-            <li><a href="../D-Users/"><span>کاربران</span></a></li>
-            <li><a href="..//index.html"><span>کدهای تخفیف</span></a></li>
-            <li><a href="../C-Categories/index.html"><span>دسته‌بندی‌ها</span></a></li>
-            <li><a href="../contacts/index.html"><span>پیغام ها</span></a></li>
+                    <li><a href="../courses/index.html"><span>دوره ها</span></a></li>
+                    <li><a href="../D-Menus/index.html"><span>منو ها</span></a></li>
+                    <li><a href="../NewBlog/index.html"><span>مقاله ها</span></a></li>
+                    <li><a href="../D-Users/"><span>کاربران</span></a></li>
+                    <li><a href="..//index.html"><span>کدهای تخفیف</span></a></li>
+                    <li><a href="../C-Categories/index.html"><span>دسته‌بندی‌ها</span></a></li>
+                    <li><a href="../contacts/index.html"><span>پیغام ها</span></a></li>
           </ul>
         </div>
       </div>
@@ -54,9 +54,37 @@
                 </div>
                 <div class="home-notification-modal">
                   <ul class="home-notification-modal-list">
-                    <!-- from js -->
+                    <li class="home-notification-modal-item">
+                      <span class="home-notification-modal-text">پیغام ها</span>
+                      <label class="switch">
+                        <input type="checkbox" checked />
+                        <span class="slider round"></span>
+                      </label>
+                    </li>
+                    <li class="home-notification-modal-item">
+                      <span class="home-notification-modal-text">پیغام ها</span>
+                      <label class="switch">
+                        <input type="checkbox" checked />
+                        <span class="slider round"></span>
+                      </label>
+                    </li>
+                    <li class="home-notification-modal-item">
+                      <span class="home-notification-modal-text">پیغام ها</span>
+                      <label class="switch">
+                        <input type="checkbox" checked />
+                        <span class="slider round"></span>
+                      </label>
+                    </li>
+                    <li class="home-notification-modal-item">
+                      <span class="home-notification-modal-text">پیغام ها</span>
+                      <label class="switch">
+                        <input type="checkbox" checked />
+                        <span class="slider round"></span>
+                      </label>
+                    </li>
                   </ul>
                 </div>
+               
               </div>
               <div class="home-left">
                 <div class="home-profile">
@@ -79,52 +107,26 @@
         <div class="container-fluid" id="home-content">
 
           <div class="container">
-            <div class="home-title">
-                <span>افزودن دسته‌بندی‌ جدید</span>
-            </div>
-            <form class="form">
-                <div class="col-6">
-                    <div class="name input">
-                        <label class="input-title">عنوان</label>
-                        <input id="inputTitle" type="text" id="title" isValid="false" placeholder="لطفا عنوان را وارد کنید...">
-                        <span class="error-message text-danger"></span>
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="name input">
-                        <label class="input-title">مقصد</label>
-                        <input id="inputHref" type="text" id="name" isValid="false" placeholder="لطفا مقصد را وارد کنید...">
-                        <span class="error-message text-danger"></span>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <div class="bottom-form">
-                        <div class="submit-btn">
-                            <input type="submit" id="create-categorybtn" value="افزودن">
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-
-          <div class="container">
             <div class="home-content-latset-users">
               <div class="home-content-users-title">
-                <span>لیست<span class="signup">دسته بندی‌ها</span></span>
+                <span>لیست <span class="signup">پیغام‌ها</span></span>
               </div>
               <div class="home-content-users-table">
                 <table class="table">
                   <thead>
                     <tr>
                       <th>شماره</th>
-                      <th>عنوان</th>
-                      <th>مقصد</th>
+                      <th>ارسال کننده</th>
+                      <th>ایمیل</th>
+                      <th>شماره تماس</th>
+                      <th>تاریخ ثبت</th>
+                      <th>مشاهده</th>
                       <th>ویرایش</th>
                       <th>حذف</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <!-- Categories Data Loaded From JS -->
+                    <!-- Contact Data Loaded From JS -->
                   </tbody>
                 </table>
               </div>
@@ -137,6 +139,6 @@
     <script src="vendor/FontAwesome/FontAwesome.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="../../js/panel/shared.js" type="module"></script>
-    <script src="../../js/panel/category.js" type="module"></script>
+    <script src="../../js/panel/contacts.js" type="module"></script>
   </body>
 </html>
