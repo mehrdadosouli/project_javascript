@@ -22,7 +22,7 @@ window.addEventListener("load", () => {
     notificationsIconElem.addEventListener('mouseenter', () => {
       notificationsBoxElem.classList.add('active-modal-notfication')
     })
-
+    
     notificationsBoxElem.addEventListener('mouseleave', () => {
       notificationsBoxElem.classList.remove('active-modal-notfication')
     })
