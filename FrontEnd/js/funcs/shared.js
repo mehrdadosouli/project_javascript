@@ -154,7 +154,7 @@ const getAndRenderArticle = async () => {
                 <div class="article-content__header">
                   <a href="#" class="article-content__header-link">
                     <img
-                      src="../image/blogs/${course.cover}"
+                      src="http://localhost:4000/courses/covers/${course.cover}"
                       alt=""
                       class="article-content-img"
                     />

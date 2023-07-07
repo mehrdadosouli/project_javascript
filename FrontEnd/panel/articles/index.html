@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>article</title>
     <link rel="stylesheet" href="vendor/FontAwesome/FontAwesome.min.css">
     <link rel="stylesheet" href="vendor/swiperSlider/swiper.css" />
     <link rel="stylesheet" href="vendor/BootStrap/Bootstrap5.min.css">
     <link rel="stylesheet" href="css/main.css">
+    
+    
 </head>
 
 <body>
@@ -77,6 +79,48 @@
             </div>
             <div class="container-fluid" id="home-content">
                 <div class="container">
+                            <div class="home-title">
+                                <span>افزودن مقاله جدید</span>
+                            </div>
+                            <form class="form">
+                                <div class="row">
+                                <div class="col-6">
+                                    <div class="name input">
+                                        <label class="inputName">نام مقاله</label>
+                                        <input type="text" style="width: 100%" id="inputName" isValid="false" placeholder="لطفا نام مقاله را وارد کنید...">
+                                        <span class="error-message text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="price input">
+                                        <label class="input-title">href مقاله</label>
+                                        <input type="text" style="width: 100%" id="articleHref" isValid="false" placeholder="لطفا لینک مقاله را وارد کنید...">
+                                        <span class="error-message text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                                <div class="col-12">
+                                    <div class="number input">
+                                        <label class="input-title">توضیحات مقاله</label>
+                                        <textarea id="articleDescription" cols="30" rows="15" class="w-100" placeholder="توضیحات دوره را وارد کنید"></textarea>
+                                        <span class="error-message text-danger"></span>
+                                    </div>
+                                </div>
+                                <lable style="padding: 1rem;display: inline-block;">محتوای مقاله </lable>
+                                <div id="editor"></div>
+                                <div class="row">
+                                    <label style="padding: 1rem;"> کاور </label>
+                                    <div class="col-6">
+                                        <input type="file" id="articleCover">
+                                    </div>
+                                    <div class="col-6" style="width: 50%;">
+                                        <select name="article" id="articleSelect">
+                                            <!-- from js -->
+                                        </select>
+                                    </div>
+                                </div>
+                                <input type="submit" value="افزودن" id="btnForm" style="padding: 0.5rem;width: 20rem; margin-top: 1rem;background-color: green;color: white;border: none;border-radius: 1rem;"/>
+                            </form>
                     <div class="home-content-products" style="width: 100%;">
                         <div class="home-content-products-title">
                             <span>لیست <span class="signup">مقالات</span></span>
@@ -115,6 +159,7 @@
     </div>
     <script src="vendor/FontAwesome/FontAwesome.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../../vendor/ckEditor/cdn.ckeditor.com_ckeditor5_38.1.0_classic_ckeditor.js"></script>
     <script src="js/custom.js"></script>
     <script src="js/script.js"></script>
     <script src="../../js/panel/shared.js" type="module"></script>
