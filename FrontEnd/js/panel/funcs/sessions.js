@@ -5,14 +5,13 @@ const free=document.querySelector('#free')
 const notFree=document.querySelector('#not-free')
 const video=document.querySelector('#video')
 let isfree=1;
-let sessionId = null;
-let sessionVideo=null
+let sessionId ="64a5c4724ac740f0be9ae660";
+let sessionVideo=null;
 const getAllSessions = async () => {
     const res = await fetch('http://localhost:4000/v1/courses/sessions');
     const data = await res.json();
     table.innerHTML = "";
     data.forEach((session, index) => {
-        console.log(session);
         table.insertAdjacentHTML('beforeend', `
             <tr>
                 <td>${index + 1}</td>
@@ -63,6 +62,7 @@ const getCourses = async () => {
     
 }
 coursesSelect.addEventListener('change',(event)=>{
+    console.log(event.target.value);
     sessionId=event.target.value
 })
 
@@ -82,25 +82,34 @@ video.addEventListener('change', (event) => {
 const createSessions = async () => {
     const title=document.querySelector('#title').value.trim()
     const time=document.querySelector('#time').value.trim()
-    
-    let formSession=new FormData();
-    formSession.append("title",title);
-    formSession.append("time",time);
-    formSession.append("video",sessionVideo);
-    formSession.append("free",isfree);
-    
-    const res = await fetch(`http://localhost:4000/v1/courses/${sessionId}/sessions`, {
-        method: "POST",
-        headers: {
-            Authorization: `Bearer ${getToken()}`,
-        },
-        body: formSession
-    })
-    if(res.status==201){
-        showswall("دوره ثبت شد ", "success", "ok", async () => {
-            await getAllSessions()
-        })
-    }
 
+        if(sessionVideo && title && time){
+            
+            let formSession=new FormData();
+            formSession.append("title",title);
+            formSession.append("time",time);
+            formSession.append("video",sessionVideo);
+            formSession.append("free",isfree);
+            console.log(sessionId);
+            
+            const res = await fetch(`http://localhost:4000/v1/courses/${sessionId}/sessions`, {
+                method: "POST",
+                headers: {
+                    Authorization: `Bearer ${getToken()}`,
+                },
+                body: formSession
+            })
+            if(res.ok){
+                showswall("دوره ثبت شد ", "success", "ok", async () => {
+                    await getAllSessions()
+                })
+            }
+        }else{
+
+        showswall("اینپوت ها را انتخاب کنید", "warning", "ok", async () => {})
+
+    }
 }
+
+
 export { getAllSessions, deleteHandler, getCourses ,createSessions }
