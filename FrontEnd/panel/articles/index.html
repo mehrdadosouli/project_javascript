@@ -29,7 +29,6 @@
                     <li class="active-menu"><a href="../main/index.html"><span>صفحه اصلی</span></a></li>
                     <li><a href="../courses/index.html"><span>دوره ها</span></a></li>
                     <li><a href="../D-Menus/index.html"><span>منو ها</span></a></li>
-                    <li><a href="../NewBlog/index.html"><span>مقاله ها</span></a></li>
                     <li><a href="../D-Users/"><span>کاربران</span></a></li>
                     <li><a href="..//index.html"><span>کدهای تخفیف</span></a></li>
                     <li><a href="../C-Categories/index.html"><span>دسته‌بندی‌ها</span></a></li>
@@ -48,13 +47,13 @@
                                 <input type="text" class="search-bar" placeholder="جستجو...">
                             </div>
                             <div class="home-notification">
-                                <button type="button">
+                                <button type="button" id="notifications-icon">
                                     <i class="far fa-bell"></i>
                                 </button>
                             </div>
                             <div class="home-notification-modal">
                                 <ul class="home-notification-modal-list">
-                                    <!-- from js -->
+                                   <!-- Notifications Loaded From JS -->
                                 </ul>
                             </div>
                         </div>
@@ -66,7 +65,7 @@
                                     </a>
                                 </div>
                                 <div class="home-profile-name">
-                                    <a href="#" id="home-profile-name"> </a>
+                                    <a href="#" id="admin-name"> </a>
                                 </div>
                                 <div class="home-profile-icon">
                                     <i class="fas fa-angle-down"></i>
@@ -78,7 +77,7 @@
             </div>
             <div class="container-fluid" id="home-content">
                 <div class="container">
-                    <div class="home-content-products">
+                    <div class="home-content-products" style="width: 100%;">
                         <div class="home-content-products-title">
                             <span>لیست <span class="signup">مقالات</span></span>
                         </div>
@@ -118,6 +117,7 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="js/custom.js"></script>
     <script src="js/script.js"></script>
+    <script src="../../js/panel/shared.js" type="module"></script>
     <script src="../../js/panel/article.js" type="module"></script>
 </body>
 
