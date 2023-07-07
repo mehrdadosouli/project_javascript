@@ -9,6 +9,7 @@ const getAllCourses = async () => {
   const res = await fetch('http://localhost:4000/v1/courses')
   const data = await res.json();
   data.forEach((item, index) => {
+    console.log(item);
     table.insertAdjacentHTML('beforeend', `
         <tbody>
         <tr>

@@ -1,7 +1,7 @@
 import { getAndShowCategoryCourses, getAndRenderMenu, shareTopbarList, userInfos, showTemplatecourses,showFilteringcourses } from "./funcs/shared.js";
 import { searchInputValue ,paginationCategory,getUrlParams,handlepagination } from "./funcs/utils.js";
 
-window.handlepagination=handlepagination
+window.handlepagination=handlepagination;
 window.addEventListener('load', () => {
     shareTopbarList()
     getAndRenderMenu()
@@ -11,7 +11,7 @@ window.addEventListener('load', () => {
         const categorycourseSelection = document.querySelectorAll('.courses-top-bar__selection-item');
         const coursesBox = document.getElementById('courses-box');
         const geturl=getUrlParams('page');
-        let course = [...data];
+        var course =data;
         let bydefault = 'column';
         // ------------------------------first load page show category items----------------------
          // selection row and column selectbtn         

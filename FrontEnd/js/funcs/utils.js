@@ -32,7 +32,7 @@ const getUrlParams = (key) => {
 
 // -------------search box for category.html------------------------------
 const searchInputValue = (array, searchval) => {
-    const resultValue = array.filter(item => item.name.includes(searchval));
+    let resultValue = array.filter(item => item.name.includes(searchval));
     return resultValue;
 }
 

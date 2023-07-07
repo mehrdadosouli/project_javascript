@@ -1,18 +1,25 @@
-import { showswall , getToken } from "../../funcs/utils.js";
-const table = document.querySelector('table tbody');
-
+import { showswall, getToken } from "../../funcs/utils.js";
+const table = document.querySelector('.table tbody');
+const coursesSelect = document.querySelector('#courses-select');
+const free=document.querySelector('#free')
+const notFree=document.querySelector('#not-free')
+const video=document.querySelector('#video')
+let isfree=1;
+let sessionId = null;
+let sessionVideo=null
 const getAllSessions = async () => {
     const res = await fetch('http://localhost:4000/v1/courses/sessions');
     const data = await res.json();
     table.innerHTML = "";
     data.forEach((session, index) => {
+        console.log(session);
         table.insertAdjacentHTML('beforeend', `
             <tr>
                 <td>${index + 1}</td>
                 <td>${session.title}</td>
                 <td>${session.time}</td>
                 <td>${session.updatedAt.slice(0, 10)}</td>
-                <td>${session.shortName ? session.shortName : "-----"}</td>
+                <td>${session.course ? session.course.name : "-----"}</td>
                 <td>
                   <button type='button' class='btn btn-primary edit-btn'>ویرایش</button>
                 </td>
@@ -36,12 +43,64 @@ const deleteHandler = async (id) => {
                     }
                 })
                 if (res.ok) {
-                    showswall("حذف شد", "success", "ok", async() => {
-                       await getAllSessions()
+                    showswall("حذف شد", "success", "ok", async () => {
+                        await getAllSessions()
                     })
                 }
             }
         })
 }
 
-export { getAllSessions , deleteHandler }
+const getCourses = async () => {
+    const res = await fetch('http://localhost:4000/v1/courses')
+    const data = await res.json();
+    data.forEach(course => {
+
+        coursesSelect.insertAdjacentHTML('beforeend', `
+            <option value='${course._id}'>${course.name}</option>
+        `)
+    })
+    
+}
+coursesSelect.addEventListener('change',(event)=>{
+    sessionId=event.target.value
+})
+
+
+free.addEventListener('change',(event)=>{
+    isfree=Number(event.target.value)
+})
+
+notFree.addEventListener('change',(event)=>{
+    isfree=Number(event.target.value)
+})
+
+video.addEventListener('change', (event) => {
+    sessionVideo = event.target.files[0];
+  })
+
+const createSessions = async () => {
+    const title=document.querySelector('#title').value.trim()
+    const time=document.querySelector('#time').value.trim()
+    
+    let formSession=new FormData();
+    formSession.append("title",title);
+    formSession.append("time",time);
+    formSession.append("video",sessionVideo);
+    formSession.append("free",isfree);
+    
+    const res = await fetch(`http://localhost:4000/v1/courses/${sessionId}/sessions`, {
+        method: "POST",
+        headers: {
+            Authorization: `Bearer ${getToken()}`,
+        },
+        body: formSession
+    })
+    if(res.status==201){
+        showswall("دوره ثبت شد ", "success", "ok", async () => {
+            await getAllSessions()
+        })
+    }
+
+}
+export { getAllSessions, deleteHandler, getCourses ,createSessions }
