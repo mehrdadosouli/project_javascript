@@ -157,9 +157,12 @@ const getAndRenderArticle = async () => {
                       src="http://localhost:4000/courses/covers/${course.cover}"
                       alt=""
                       class="article-content-img"
+                      style="object-fit: cover;
+                      height: 35rem;"
                     />
                   </a>
 
+                  </div>
                   <h5 class="article-content-heading">
                     ${course.title}
                   </h5>
@@ -167,7 +170,6 @@ const getAndRenderArticle = async () => {
                     ${course.description}
                   </h6>
                   <button class="article-content-btn">بیشتر بخوانید</button>
-                </div>
               </div>
             </div>`
     )

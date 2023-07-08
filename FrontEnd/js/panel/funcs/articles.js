@@ -3,7 +3,6 @@ const table=document.querySelector('.table tbody')
 const articleName=document.querySelector('#inputName')
 const articleHref=document.querySelector('#articleHref')
 const articleDescription=document.querySelector('#articleDescription')
-const editor=document.querySelector('#editor')
 const articleSelect=document.querySelector('#articleSelect')
 const articleCover=document.querySelector('#articleCover')
 let selectedId="6345cbd132c10de974957632";

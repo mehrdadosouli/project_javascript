@@ -3,8 +3,9 @@ window.deleteArticle=deleteArticle
 const btnForm=document.querySelector('#btnForm')
 
 window.addEventListener('load',()=>{
+
     getAllArticle()
-    getCategory()
+    getCategory()    
     
 })
 btnForm.addEventListener('click',(event)=>{
