@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>contact</title>
+    <title>comments</title>
     <link rel="stylesheet" href="vendor/FontAwesome/FontAwesome.min.css" />
     <link rel="stylesheet" href="vendor/BootStrap/Bootstrap5.min.css" />
     <link rel="stylesheet" href="css/main.css" />
@@ -24,69 +24,62 @@
         </div>
         <div class="sidebar-menu">
           <ul>
-            <li class="active-menu"><a href="../main/index.html"><span>صفحه اصلی</span></a></li>
+                    <li class="active-menu"><a href="../main/index.html"><span>صفحه اصلی</span></a></li>
                     <li><a href="../courses/index.html"><span>دوره ها</span></a></li>
                     <li><a href="../D-Menus/index.html"><span>منو ها</span></a></li>
-                    <li><a href="../D-Users/"><span>کاربران</span></a></li>
-                    <li><a href="..//index.html"><span>کدهای تخفیف</span></a></li>
+                    <li><a href="../D-Users/index.html"><span>کاربران</span></a></li>
+                    <li><a href="../D-Users/index.html"><span>کدهای تخفیف</span></a></li>
                     <li><a href="../C-Categories/index.html"><span>دسته‌بندی‌ها</span></a></li>
                     <li><a href="../contacts/index.html"><span>پیغام ها</span></a></li>
-                    <li><a href="../sessions/index.html"><span>جلسات دوره ها</span></a></li>
+                    <li><a href="../sessions/index.htmlbferd"><span>جلسات دوره ها</span></a></li>
                     <li><a href="../articles/index.html"><span>مقاله ها</span></a></li>
                     <li><a href="../comments/index.html"><span>کامنت ها</span></a></li>
-
-
           </ul>
         </div>
       </div>
       <div id="home" class="col-10">
         <div class="container-fluid">
           <div class="container">
-            <div class="home-header">
-              <div class="home-right">
-                <div class="home-searchbar">
-                  <input
-                    type="text"
-                    class="search-bar"
-                    placeholder="جستجو..."
-                  />
-                </div>
-                <div class="home-notification">
-                  <button type="button" id="notifications-icon">
-                    <i class="far fa-bell"></i>
-                  </button>
-                </div>
-                <div class="home-notification-modal">
-                  <ul class="home-notification-modal-list">
-                    <!-- from js -->
-                  </ul>
-                </div>
-               
+              <div class="home-header">
+                  <div class="home-right">
+                      <div class="home-searchbar">
+                          <input type="text" class="search-bar" placeholder="جستجو...">
+                      </div>
+                      <div class="home-notification">
+                          <button type="button" id="notifications-icon">
+                              <i class="far fa-bell"></i>
+                          </button>
+                      </div>
+                      <div class="home-notification-modal">
+                          <ul class="home-notification-modal-list">
+                             <!-- js -->
+                          </ul>
+                      </div>
+                  </div>
+                  <div class="home-left">
+                      <div class="home-profile">
+                          <div class="home-profile-image">
+                              <a href="#">
+                                  <img src="img/profile.png" alt="">
+                              </a>
+                          </div>
+                          <div class="home-profile-name">
+                              <a href="#" id="admin-name"></a>
+                          </div>
+                          <div class="home-profile-icon">
+                              <i class="fas fa-angle-down"></i>
+                          </div>
+                      </div>
+                  </div>
               </div>
-              <div class="home-left">
-                <div class="home-profile">
-                  <div class="home-profile-image">
-                    <a href="#">
-                      <img src="img/profile.png" alt="" />
-                    </a>
-                  </div>
-                  <div class="home-profile-name">
-                    <a href="#" id="admin-name"></a>
-                  </div>
-                  <div class="home-profile-icon">
-                    <i class="fas fa-angle-down"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
-        </div>
+      </div>
         <div class="container-fluid" id="home-content">
 
           <div class="container">
             <div class="home-content-latset-users">
               <div class="home-content-users-title">
-                <span>لیست <span class="signup">پیغام‌ها</span></span>
+                <span>لیست <span class="signup">کامنت‌ها</span></span>
               </div>
               <div class="home-content-users-table">
                 <table class="table">
@@ -94,11 +87,13 @@
                     <tr>
                       <th>شماره</th>
                       <th>ارسال کننده</th>
-                      <th>ایمیل</th>
-                      <th>شماره تماس</th>
+                      <th>دوره</th>
                       <th>تاریخ ثبت</th>
+                      <th>امتیاز</th>
                       <th>مشاهده</th>
-                      <th>ویرایش</th>
+                      <th>پاسخ</th>
+                      <th>تایید</th>
+                      <th>رد</th>
                       <th>حذف</th>
                     </tr>
                   </thead>
@@ -116,6 +111,6 @@
     <script src="vendor/FontAwesome/FontAwesome.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="../../js/panel/shared.js" type="module"></script>
-    <script src="../../js/panel/contact.js" type="module"></script>
+    <script src="./../../js/panel/comments.js" type="module"></script>
   </body>
 </html>
