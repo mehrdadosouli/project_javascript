@@ -59,21 +59,17 @@ const addNewMenuToList = async () => {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(datas)
-
     })
+
     if (res.status == 201) {
         console.log(datas);
         showswall("افزوده شد", "sucsses", "ok", () => {
             getAllMenu()
         })
-
-
-
     } else {
         showswall("افزوده نشد", "warning", "ok",()=>{})
     }
-
-
+    
 }
 
 const deleteHandler = async (id) => {
