@@ -1,4 +1,4 @@
-import { getCourseDetails, getandshowslidercourse,userInfos,commentinput } from "../js/funcs/shared.js";
+import { getCourseDetails, getandshowslidercourse,userInfos, commentinput  } from "../js/funcs/shared.js";
 
 const breadcrumb = document.querySelector('#bread-crumb__link-course');
 const breadcrumbtitle = document.querySelector('#bread-crumb__link-title');
@@ -32,7 +32,6 @@ window.addEventListener('load', () => {
         studentinformation.innerHTML = `${course.isUserRegisteredToThisCourse ? "شما دانشجوی دوره هستید" : "ثبت نام کنید"}`;
         courseviewtext.innerHTML = `${course.support}`;
         coursenumberstudents.innerHTML = `${course.courseStudentsCount}`;
-        console.log(course);
         renderComments(course)
         if (course.sessions.length) {
             course.sessions.forEach((item, index) => {
@@ -92,6 +91,7 @@ window.addEventListener('load', () => {
                 `)
         }
     });
+    //------------------------------ mahsoolat sidebar---------------------------------------------------------
     getandshowslidercourse().then(courses => {
         if(courses.length){
             courses.forEach(item=>{
@@ -112,16 +112,13 @@ window.addEventListener('load', () => {
        
     });
     commentbtn.addEventListener('click',()=>{
-    
-    commentinput().then(res=>{
-        
+      
+      commentinput()
+       })
     })
-})
-})
 
 
 const renderComments=(courses)=>{
-    console.log(courses.comments.length);
     if(courses.comments.length){
     courses.comments.forEach(course=>{
     courseinfos.insertAdjacentHTML('beforeend',`

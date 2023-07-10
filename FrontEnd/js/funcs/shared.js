@@ -1,5 +1,5 @@
 import { getMe } from "./auth.js";
-import { isLogin, getUrlParams, getToken } from "./utils.js";
+import { isLogin, getUrlParams, getToken, showswall } from "./utils.js";
 const userInfos = () => {
   const navbarUserbtn = document.querySelector('.main-header__left-login');
   const islogin = isLogin();
@@ -144,9 +144,11 @@ const swipperSliderPopular = async () => {
 }
 
 const getAndRenderArticle = async () => {
+  console.log("hi");
   const articleWrapper = document.querySelector('#article__wrappers');
   const res = await fetch('http://localhost:4000/v1/articles');
   const data = await res.json();
+  console.log(articleWrapper);
   data.slice(0, 6).map(course => {
     articleWrapper.insertAdjacentHTML('beforeend', `
     <div class="col-4">
@@ -334,7 +336,7 @@ const getCourseDetails = async () => {
   const res = await fetch(`http://localhost:4000/v1/courses/${geturl}`, {
     method: "POST",
     headers: {
-      'Authorization': `Bearer ${getToken()}`
+      Authorization: `Bearer ${getToken()}`
     }
   });
   const data = await res.json();
@@ -355,7 +357,7 @@ const getandshowepisodecourse = async () => {
   const resultid = getUrlParams('id');
   const res = await fetch(`http://localhost:4000/v1/courses/${resulturl}/${resultid}`, {
     headers: {
-      'Authorization': `Bearer ${getToken()}`
+      Authorization: `Bearer ${getToken()}`
     }
   })
   const data = await res.json();
@@ -403,13 +405,13 @@ console.log(data.session.video);
 
 const commentinput = async () => {
   let courseShortName = getUrlParams('name');
-  let commentsusercourse = document.querySelector('#comments-user-course');
   let commenttextarea = document.querySelector('#comment-textarea');
-  let score=5;
-   commentsusercourse.addEventListener('change', event => {
-    score = event.target.value
-  })
-  const objcomment = {
+  let commentsusercourse = document.querySelector('#comments-user-course');
+      let score=5;
+      commentsusercourse.addEventListener('change', (event) => {
+       score = event.target.value
+     })
+  let objcomment = {
     body: commenttextarea.value,
     courseShortName,
     score,
@@ -418,16 +420,14 @@ const commentinput = async () => {
   const res = await fetch('http://localhost:4000/v1/comments', {
     method: 'POST',
     headers: {
-      'Authorization': `Bearer ${getToken()}`,
-      'content-type': 'application/json'
+      Authorization: `Bearer ${getToken()}`,
+      'Content-Type':'application/json'
     },
-    body: JSON.stringify(objcomment),
-  })
+      body: JSON.stringify(objcomment),
+    })
+    console.log(res);
   if(res.status==201){
-    const data = await res.json();
-    return data
-  }else{
-    alert('دوباره تلاش کنید')
+    showswall("کامنت' با موفقیت اظافه شد!","success","ok",()=>{})
   }
 }
 

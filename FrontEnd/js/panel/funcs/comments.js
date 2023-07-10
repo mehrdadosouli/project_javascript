@@ -60,7 +60,7 @@ const answerComments=async(id)=>{
             },
             body:JSON.stringify(bodys)
         })
-        if(res.ok){
+        if(res.status==201){
             showswall("با موفقیت ارسال شد","success","ok",()=>{
                 getAndRenderComments()
             })
@@ -81,6 +81,7 @@ const acceptBtn=async(id)=>{
         })
     }
 }
+
 const rejectBtn=async(id)=>{
     const res=await fetch(`http://localhost:4000/v1/comments/reject/${id}`,{
         method:"PUT",
@@ -94,6 +95,7 @@ const rejectBtn=async(id)=>{
         })
     }
 }
+
 const deleteBtn=async(id)=>{
     const res=await fetch(`http://localhost:4000/v1/comments/${id}`,{
         method:"DELETE",
