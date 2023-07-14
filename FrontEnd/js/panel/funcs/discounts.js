@@ -1,6 +1,10 @@
-import { getToken } from "../../funcs/utils.js"
+import { getToken, showswall } from "../../funcs/utils.js"
 const table=document.querySelector('.table tbody')
-
+const title=document.querySelector('#title')
+const time=document.querySelector('#time')
+const takhfif=document.querySelector('#takhfif')
+const coursesSelect=document.getElementsByTagName('select')[0]
+let courseval="64a5c4724ac740f0be9ae660";
 const getAndRnderDiscount=async()=>{
     const res=await fetch('http://localhost:4000/v1/offs',{
         method:"GET",
@@ -10,7 +14,6 @@ const getAndRnderDiscount=async()=>{
     })
     const data =await res.json()
     data.forEach((off,index)=>{
-        console.log(off);
         table.insertAdjacentHTML('beforeend',`
         <tr>
         <th style="text-align:center">${index+1}</th>
@@ -30,5 +33,47 @@ const getAndRnderDiscount=async()=>{
         `)
     })
 }
+const RenderCourse=async()=>{
+    const res=await fetch('http://localhost:4000/v1/courses');
+    const data=await res.json();
+    data.forEach(course=>{
+        if(!course.price==0){
 
-export { getAndRnderDiscount }
+            coursesSelect.insertAdjacentHTML('beforeend',`
+                <option id="${course._id}">${course.name}</option>
+            `)
+
+        }
+    })
+}
+
+
+coursesSelect.addEventListener('change',(event)=>{
+    console.log(event.target.selectedOptions[0].id);
+    courseval=event.target.selectedOptions[0].id
+})
+
+const createDiscount=async()=>{
+    let contents={
+        code:title.value.trim(),
+        percent:takhfif.value.trim(),
+        course:courseval,
+        max:time.value.trim()
+    }
+    const res=await fetch('http://localhost:4000/v1/offs',{
+        method:"POST",
+        headers:{
+            Authorization:`Bearer ${getToken()}`,
+            "Content-Type":"application/json"
+        },
+        body:JSON.stringify(contents)
+    })
+    if(res.ok){
+        showswall("با موفقیت اذسال شد","success","ok",()=>{
+            
+            getAndRnderDiscount()
+        })
+    }
+}
+
+export { getAndRnderDiscount , createDiscount , RenderCourse}
