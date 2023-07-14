@@ -58,6 +58,33 @@ window.addEventListener('load', () => {
                   }
                 }
               })
+              }else{
+                showswall("ایا میخواهید ثبت نام کنید؟","success",["نه","اره"],async(res)=>{
+                  if(res){
+                    showswall("ایا کد تخفیف دارید؟","success",["نه","اره"],async(res)=>{
+                      if(res){
+
+                      }else{
+                        let contentregister={
+                          price:course.price
+                        }
+                        const result=await fetch(`http://localhost:4000/v1/courses/${course._id}/register`,{
+                          method:"POST",
+                          headers:{
+                            Authorization:`Bearer ${getToken()}`,
+                            "Content-Type":"application/json"
+                          },
+                          body:JSON.stringify(contentregister)
+                        })
+                        if(result.ok){
+                          showswall("با موفقیت ثبت نام شدید","success","ok",()=>{
+                            location.reload()
+                          })
+                        }
+                      }
+                    })
+                    }
+                  })
               }
           })
           
