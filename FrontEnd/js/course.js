@@ -1,4 +1,5 @@
 import { getCourseDetails, getandshowslidercourse,userInfos, commentinput  } from "../js/funcs/shared.js";
+import { getToken, showswall } from "./funcs/utils.js";
 
 const breadcrumb = document.querySelector('#bread-crumb__link-course');
 const breadcrumbtitle = document.querySelector('#bread-crumb__link-title');
@@ -10,13 +11,16 @@ const courseboxsuport = document.querySelector('#course-box__suport');
 const courseboxstext = document.querySelector('.course-info__right-side-text');
 const courseboxvideo = document.querySelector('.course-info__left-side-video');
 const studentinformation = document.querySelector('.course-information-student__text');
+const studentregisterbtn = document.querySelector('.course-information-student');
 const courseviewtext = document.querySelector('.course-point-of-view__text');
 const coursenumberstudents = document.querySelector('.course-information__number-students');
 const accordion = document.querySelector('#accordionExample');
 const courseproduct = document.querySelector('.course-products');
 const commentbtn = document.querySelector('.comment-btn');
 const courseinfos = document.querySelector('.course-infos');
-
+studentregisterbtn.addEventListener('mouseenter',()=>{
+  studentregisterbtn.style.cursor="pointer"
+})
 window.addEventListener('load', () => {
     userInfos();
     getCourseDetails().then(course => {
@@ -29,7 +33,39 @@ window.addEventListener('load', () => {
         courseboxsuport.innerHTML = `${course.support}`;
         courseboxstext.innerHTML = `${course.description}`;
         courseboxvideo.poster = `../image/courses/${course.cover}`;
-        studentinformation.innerHTML = `${course.isUserRegisteredToThisCourse ? "شما دانشجوی دوره هستید" : "ثبت نام کنید"}`;
+        if(!course.isUserRegisteredToThisCourse){
+          studentinformation.innerHTML = 'ثبت نام کنید';
+          studentregisterbtn.addEventListener('click',()=>{
+            if(course.price==0){
+            showswall("ایا میخواهید ثبت نام کنید؟","success",["نه","اره"],async(res)=>{
+              console.log(course);
+              if(res){
+                  let contentregister={
+                    price:0
+                  }
+                  const result=await fetch(`http://localhost:4000/v1/courses/${course._id}/register`,{
+                    method:"POST",
+                    headers:{
+                      Authorization:`Bearer ${getToken()}`,
+                      "Content-Type":"application/json"
+                    },
+                    body:JSON.stringify(contentregister)
+                  })
+                  if(result.ok){
+                    showswall("با موفقیت ثبت نام شدید","success","ok",()=>{
+                      location.reload()
+                    })
+                  }
+                }
+              })
+              }
+          })
+          
+        }else{
+          studentinformation.innerHTML = 'شما دانشجوی دوره هستید';
+
+        }
+        // ${course.isUserRegisteredToThisCourse ? "شما دانشجوی دوره هستید" : "ثبت نام کنید"}
         courseviewtext.innerHTML = `${course.support}`;
         coursenumberstudents.innerHTML = `${course.courseStudentsCount}`;
         renderComments(course)
