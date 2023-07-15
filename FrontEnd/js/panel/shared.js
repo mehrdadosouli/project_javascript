@@ -1,4 +1,5 @@
 import { getAdminInfos } from "../../panel/funcs/utils.js";
+import { showswall } from "../funcs/utils.js";
 import { insertNotificationHtmlTemplate, seenNotification } from "../panel/funcs/notification.js";
 
 window.seenNotification = seenNotification
@@ -30,5 +31,20 @@ window.addEventListener("load", () => {
 
   });
 
+  const logOut=()=>{
+    let log_out=document.querySelector('#log_out');
+    log_out.addEventListener('click',(event)=>{
+      event.preventDefault();
+      showswall("ایا میخواهید خارج شوید؟","success",["نه","اره"],(res)=>{
+        if(res){
+          showswall("خارج شدید","success","home page",()=>{
+            localStorage.removeItem('user')
+            location.href="../../html/index.html"
+          })
+        }
+      })
+    })
+  }
+  logOut()
 
 });

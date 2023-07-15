@@ -1,15 +1,14 @@
-4
+
 import { getToken, showswall } from "../../funcs/utils.js";
 let category_id = -1;
 let courseCovers = null;
 let status = "start";
 const getAllCourses = async () => {
-  const table = document.querySelector('.table')
+  const table = document.querySelector('.table tbody')
   table.innerHTML = ""
   const res = await fetch('http://localhost:4000/v1/courses')
   const data = await res.json();
   data.forEach((item, index) => {
-    console.log(item);
     table.insertAdjacentHTML('beforeend', `
         <tbody>
         <tr>
@@ -20,7 +19,7 @@ const getAllCourses = async () => {
             </td>
             <td id="register">${item.registers}</td>
             <td id="support">${item.support} </td>
-            <td id="category">${item.categoryID} </td>
+            <td id="category">${item.categoryID.name} </td>
             <td id="avrage">${item.courseAverageScore} </td>
             <td id="iscomplat">${item.isComplete ? item.isComplete : "دوره در حال برگذاری است"}</td>
             <td>

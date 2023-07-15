@@ -144,11 +144,9 @@ const swipperSliderPopular = async () => {
 }
 
 const getAndRenderArticle = async () => {
-  console.log("hi");
   const articleWrapper = document.querySelector('#article__wrappers');
   const res = await fetch('http://localhost:4000/v1/articles');
   const data = await res.json();
-  console.log(articleWrapper);
   data.slice(0, 6).map(course => {
     articleWrapper.insertAdjacentHTML('beforeend', `
     <div class="col-4">
@@ -192,7 +190,7 @@ const getAndRenderMenu = async () => {
        <ul class="main-header-menu">
      ${item.submenus.map((list) => (
           `<li class="main-header-menu__item">
-        <a href="#" class="main-header-menu__link">
+        <a href="course.html?name=${list.href}" class="main-header-menu__link">
           ${list.title}
         </a>
       </li>`
@@ -207,12 +205,8 @@ const getAndRenderMenu = async () => {
 
 const getAndShowCategoryCourses = async () => {
   const categoryName = getUrlParams("cat");
-
-  const res = await fetch(
-    `http://localhost:4000/v1/courses`
-  );
+  const res = await fetch(`http://localhost:4000/v1/courses/category/${categoryName}`);
   const courses = await res.json();
-console.log(courses);
   return courses;
 }
 // ------------------------------show courses category when you selected by row and column box in category----------------------
@@ -334,7 +328,7 @@ const showFilteringcourses = (datakey, allcourse) => {
 const getCourseDetails = async () => {
   const geturl = getUrlParams('name');
   const res = await fetch(`http://localhost:4000/v1/courses/${geturl}`, {
-    method: "POST",
+    method: "GET",
     headers: {
       Authorization: `Bearer ${getToken()}`
     }

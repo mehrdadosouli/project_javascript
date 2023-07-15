@@ -24,6 +24,7 @@ studentregisterbtn.addEventListener('mouseenter',()=>{
 window.addEventListener('load', () => {
     userInfos();
     getCourseDetails().then(course => {
+      console.log(course);
         breadcrumb.innerHTML = `اموزش ${course.categoryID.title}`;
         breadcrumbtitle.innerHTML = `${course.name}`;
         courseinfo.innerHTML = `اموزش ${course.categoryID.title}`;
