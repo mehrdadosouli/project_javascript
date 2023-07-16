@@ -10,7 +10,7 @@ const userInfos = () => {
     })
   } else {
     navbarUserbtn.setAttribute('href', "login.html");
-    navbarUserbtn.innerHTML = '<span class="login-text">ورود/ ثبت نام</span>'
+    navbarUserbtn.innerHTML = '<a href="./login.html" class="login-text">ورود/ ثبت نام</a>'
   }
 }
 

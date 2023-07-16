@@ -46,4 +46,6 @@ window.addEventListener('load',()=>{
     swipperSliderPopular();
     getAndRenderArticle();
     getAndRenderMenu()
+
+    
 })  

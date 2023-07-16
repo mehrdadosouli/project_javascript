@@ -5,7 +5,7 @@ const free=document.querySelector('#free')
 const notFree=document.querySelector('#not-free')
 const video=document.querySelector('#video')
 let isfree=1;
-let sessionId ="64a5c4724ac740f0be9ae660";
+let sessionId ="64b2d7ddc7989ca7f535612c";
 let sessionVideo=null;
 const getAllSessions = async () => {
     const res = await fetch('http://localhost:4000/v1/courses/sessions');
@@ -72,7 +72,7 @@ free.addEventListener('change',(event)=>{
 })
 
 notFree.addEventListener('change',(event)=>{
-    isfree=Number(event.target.value)
+    isfree=Number(event.target.value);
 })
 
 video.addEventListener('change', (event) => {
@@ -81,7 +81,7 @@ video.addEventListener('change', (event) => {
 
 const createSessions = async () => {
     const title=document.querySelector('#title').value.trim()
-    const time=document.querySelector('#time').value.trim()
+    const time=document.querySelector('#time').value.trim();
 
         if(sessionVideo && title && time){
             

@@ -32,14 +32,16 @@ window.addEventListener("load", () => {
   });
 
   const logOut=()=>{
-    let log_out=document.querySelector('#log_out');
-    log_out.addEventListener('click',(event)=>{
+    let logout=document.querySelector('#log_out');
+    logout.addEventListener('click',(event)=>{
       event.preventDefault();
       showswall("ایا میخواهید خارج شوید؟","success",["نه","اره"],(res)=>{
         if(res){
-          showswall("خارج شدید","success","home page",()=>{
-            localStorage.removeItem('user')
-            location.href="../../html/index.html"
+          showswall("خارج شدید","success","home page",(result)=>{
+            if(result){
+              localStorage.removeItem('user')
+              location.href="../../html/index.html"
+            }
           })
         }
       })
