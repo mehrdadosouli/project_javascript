@@ -6,6 +6,7 @@ const takhfif=document.querySelector('#takhfif')
 const coursesSelect=document.getElementsByTagName('select')[0]
 let courseval="64a5c4724ac740f0be9ae660";
 const getAndRnderDiscount=async()=>{
+    table.innerHTML=""
     const res=await fetch('http://localhost:4000/v1/offs',{
         method:"GET",
         headers:{
@@ -14,6 +15,7 @@ const getAndRnderDiscount=async()=>{
     })
     const data =await res.json()
     data.forEach((off,index)=>{
+        console.log(off);
         table.insertAdjacentHTML('beforeend',`
         <tr>
         <th style="text-align:center">${index+1}</th>
@@ -38,7 +40,6 @@ const RenderCourse=async()=>{
     const data=await res.json();
     data.forEach(course=>{
         if(!course.price==0){
-
             coursesSelect.insertAdjacentHTML('beforeend',`
                 <option id="${course._id}">${course.name}</option>
             `)
@@ -76,4 +77,18 @@ const createDiscount=async()=>{
     }
 }
 
-export { getAndRnderDiscount , createDiscount , RenderCourse}
+
+const deleteDiscount=async(id)=>{
+    const res=await fetch(`http://localhost:4000/v1/offs/${id}`,{
+        method:"DELETE",
+        headers:{
+            Authorization:`Bearer ${getToken()}`
+        }
+    })
+    if(res.ok){
+        showswall("با موفقیت حذف شد","success","ok",()=>{
+            getAndRnderDiscount()
+        })
+    }
+}
+export { getAndRnderDiscount , createDiscount , RenderCourse , deleteDiscount}

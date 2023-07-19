@@ -5,9 +5,11 @@ window.addEventListener('load',()=>{
     getAndRenderCourses().then(data=>{
     const coursesAll=document.querySelector('#coursesAll');
     data.splice(0,6).map(course=>{
+      console.log(course);
         coursesAll.insertAdjacentHTML('beforeend',`
         <div class="col-4">
-        <div class="course-box box">
+        <div style="position:relative" class="course-box box">
+        <div id="discount_elem" style="position:absolute;right:350px;color:red;border-radius:6px">${course.discount&&course.price ?` ${course.discount} تخفیف `: ""}</div>
           <a href="course.html?name=${course.shortName}" class="course__box-linkImg">
             <img src="http://localhost:4000/courses/covers/${course.cover}" alt="freelancer" class="course__box-img"/>
           </a>
@@ -29,7 +31,13 @@ window.addEventListener('load',()=>{
               <i class="course__box-userIcon fas fa-users"></i>
               <span class="course__box-userStudents">${course.registers}</span>
             </div>
-            <span class="course__box-userPrice">${course.price === 0 ? "رایگان" : course.price.toLocaleString()}</span>
+           ${course.price === 0 ? "رایگان" : (!course.price==0 && course.discount)&&`
+            <div>
+               <span class="">${course.price - (course.price * course.discount / 100)}</span>
+               <span style="text-decoration: line-through" class="course__box-userPrice">${course.price.toLocaleString()}</span>
+            </div>
+          `
+          }
           </div>
           <div class="course__box-info">
             <a href="#" class="course__boxinfoLink"

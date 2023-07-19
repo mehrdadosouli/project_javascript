@@ -1,6 +1,6 @@
-import { getAndRnderDiscount , createDiscount , RenderCourse} from "./funcs/discounts.js"
+import { getAndRnderDiscount , createDiscount , RenderCourse , deleteDiscount} from "./funcs/discounts.js"
 const creatediscountelem=document.querySelector('#create-discount')
-
+window.deleteDiscount=deleteDiscount
 
 window.addEventListener('load',()=>{
     RenderCourse()
