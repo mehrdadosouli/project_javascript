@@ -6,7 +6,7 @@ const userInfos = () => {
   if (islogin) {
     getMe().then((data) => {
       navbarUserbtn.setAttribute('href', "index.html");
-      navbarUserbtn.innerHTML = `<a href="../" class="login-text">${data.name}</a>`
+      navbarUserbtn.innerHTML = `<a href="../my-account/Account/index.html" class="login-text">${data.name}</a>`
     })
   } else {
     navbarUserbtn.setAttribute('href', "login.html");
