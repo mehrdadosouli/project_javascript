@@ -5,7 +5,6 @@ window.addEventListener('load',()=>{
     getAndRenderCourses().then(data=>{
     const coursesAll=document.querySelector('#coursesAll');
     data.splice(0,6).map(course=>{
-      console.log(course);
         coursesAll.insertAdjacentHTML('beforeend',`
         <div class="col-4">
         <div style="position:relative" class="course-box box">
@@ -40,8 +39,7 @@ window.addEventListener('load',()=>{
           }
           </div>
           <div class="course__box-info">
-            <a href="#" class="course__boxinfoLink"
-              >مشاهده اطلاعات
+            <a href="#" class="course__boxinfoLink">مشاهده اطلاعات
               <i class="course__box-infoIcon fas fa-arrow-left"></i>
             </a>
           </div>

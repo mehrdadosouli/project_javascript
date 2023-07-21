@@ -1,16 +1,16 @@
-import { getToken, showswall  } from "../../funcs/utils.js";
+import { getToken, showswall } from "../../funcs/utils.js";
 
-const getAndRenderUser=async()=>{
-    const res=await fetch(`http://localhost:4000/v1/users`,{
-        method:"GET",
-        headers:{
-            Authorization:`Bearer ${getToken()}`
+const getAndRenderUser = async () => {
+    const res = await fetch(`http://localhost:4000/v1/users`, {
+        method: "GET",
+        headers: {
+            Authorization: `Bearer ${getToken()}`
         }
     });
-    const data=await res.json();
-        let table = document.querySelector('table tbody');
-        data.forEach((user, index) => {
-            table.insertAdjacentHTML('beforeend', `
+    const data = await res.json();
+    let table = document.querySelector('table tbody');
+    data.forEach((user, index) => {
+        table.insertAdjacentHTML('beforeend', `
         <tr>
             <td>${index + 1}</td>
             <td>${user.name}</td>
@@ -22,6 +22,9 @@ const getAndRenderUser=async()=>{
             <button type='button' class='btn btn-primary edit-btn'>ویرایش</button>
         </td>
         <td>
+            <button type='button' class='btn btn-warning' onclick="changeuser_btn('${user._id}')">تغییر کاربر</button>
+        </td>
+        <td>
             <button type='button' onclick="deleteBtnUser('${user._id}')" class='btn btn-danger delete-btn'>حذف</button>
         </td>
         <td>
@@ -29,76 +32,107 @@ const getAndRenderUser=async()=>{
         </td>
     </tr>
         `)
-        })
+    })
 }
 const deleteBtnUser = (id) => {
 
     showswall("ایا از حذف ان مطمعن هستید؟", "warning", ["خیر", "بله"], async (result) => {
-                if (result) {
-                    const res =await fetch(`http://localhost:4000/v1/users/${id}`, {
-                        method: "DELETE",
-                        headers: {
-                            Authorization: `Bearer ${getToken()}`
-                        }
-                    })
-                    if (res.ok) {
-                        showswall("حذف شد", "success", "ok",() => {})
-                            getAndRenderUser()
-                        
-                    }
+        if (result) {
+            const res = await fetch(`http://localhost:4000/v1/users/${id}`, {
+                method: "DELETE",
+                headers: {
+                    Authorization: `Bearer ${getToken()}`
                 }
             })
+            if (res.ok) {
+                showswall("حذف شد", "success", "ok", () => { })
+                getAndRenderUser()
+
+            }
+        }
+    })
 }
 const banBtnUser = (id) => {
 
     showswall("ایا از بن ان مطمعن هستید؟", "warning", ["خیر", "بله"], async (result) => {
-                if (result) {
-                    const res =await fetch(`http://localhost:4000/v1/users/ban/${id}`, {
-                        method: "PUT",
-                        headers: {
-                            Authorization: `Bearer ${getToken()}`
-                        }
-                    })
-                    if (res.ok) {
-                        showswall("بن شد", "success", "ok",() => {})
-                            getAndRenderUser()
-                    }
+        if (result) {
+            const res = await fetch(`http://localhost:4000/v1/users/ban/${id}`, {
+                method: "PUT",
+                headers: {
+                    Authorization: `Bearer ${getToken()}`
                 }
             })
+            if (res.ok) {
+                showswall("بن شد", "success", "ok", () => { })
+                getAndRenderUser()
+            }
+        }
+    })
+}
+const changeuser_btn = (ids) => {
+
+    showswall(` ایا از تغییر مطمعن هستید؟`, "warning", ["خیر", "بله"],(result) => {
+        if (result) {
+            swal({ title: "نوع دسترسی رو مشخص کن", content: "input", button: "تغییر نقش" }).then(res => {
+                    let contents = {
+                        role: res,
+                        id:ids
+                    }
+                    console.log(contents);
+                     fetch(`http://localhost:4000/v1/users/role`, {
+                        method: "PUT",
+                        headers: {
+                            Authorization: `Bearer ${getToken()}`,
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(contents)
+                    }).then(data=>{
+                        console.log(data);
+                        if(data.ok){
+                            showswall("با موفقیت تغییر یاقت", "success", "ok", () => {})
+                            getAndRenderUser()
+                        }
+                    })
+                
+            })
+        }})
+        
+        
 }
 
-let usernameinput=document.querySelector('#usernameinput')
-let userfamilyinput=document.querySelector('#userfamilyinput')
-let userpassinput=document.querySelector('#userpassinput')
-let userphoneinput=document.querySelector('#userphoneinput')
-let deleteBtn=document.querySelector('.delete-btn')
+let usernameinput = document.querySelector('#usernameinput')
+let userfamilyinput = document.querySelector('#userfamilyinput')
+let userpassinput = document.querySelector('#userpassinput')
+let userphoneinput = document.querySelector('#userphoneinput')
+let deleteBtn = document.querySelector('.delete-btn')
 
-const createUserHandler=()=>{
-    let infouser={
+const createUserHandler = () => {
+    let infouser = {
         name: usernameinput.value.trim(),
         username: userfamilyinput.value.trim(),
         email: userfamilyinput.value.trim(),
-        phone:userphoneinput.value.trim(),
+        phone: userphoneinput.value.trim(),
         password: userpassinput.value.trim(),
-        confirmPassword:userpassinput.value.trim()
+        confirmPassword: userpassinput.value.trim()
     }
-      fetch('http://localhost:4000/v1/auth/register', {
-         method:"POST",
-         headers:{
-            "Content-Type":"application/json"
-         },
-         body:JSON.stringify(infouser)
-    }).then(res=>{
-        if(res.status==201){
-            showswall("با موفقیت ثبت نام انجام شد.","success","ورود به پنل",()=>{
-                location.href="http://127.0.0.1:5500/FrontEnd/html/index.html"
+    fetch('http://localhost:4000/v1/auth/register', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(infouser)
+    }).then(res => {
+        if (res.status == 201) {
+            showswall("با موفقیت ثبت نام انجام شد.", "success", "ورود به پنل", () => {
+                location.href = "http://127.0.0.1:5500/FrontEnd/html/index.html"
             })
-        }else if(res.status==409){
-            showswall("شما با این اسم یا ایمیل قبلا ثبت نام کرده اید","error","تصحیح اطلاعات",()=>{})
+        } else if (res.status == 409) {
+            showswall("شما با این اسم یا ایمیل قبلا ثبت نام کرده اید", "error", "تصحیح اطلاعات", () => { })
         }
-        return res.json()})
+        return res.json()
+    })
 }
 
 
 
-export { getAndRenderUser , createUserHandler ,deleteBtnUser ,banBtnUser}
+export { getAndRenderUser, createUserHandler, deleteBtnUser, banBtnUser, changeuser_btn }

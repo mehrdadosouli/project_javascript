@@ -8,15 +8,15 @@ let userCounter = $.querySelector('#user-counter');
 let inputnewsletter = $.querySelector('#inputnewsletter');
 let landingSearchinput = $.querySelector('#landing__search-input');
 let landingSearchBtn = $.querySelector('#landing__search-btn');
+let topbarPhone = $.querySelector('#top-bar__phone-link');
+let topbarEmail = $.querySelector('#top-bar__email-linK');
 
 window.addEventListener('load', () => {
     let textTitle = "ما به هر قیمتی دوره اموزشی تولید نمیکنیم!"
     let index = 0
     landing_text(textTitle, index);
-    counterLanding(136_7, timeCounter)
-    counterLanding(40, learnCounter)
-    counterLanding(210_0, userCounter);
     searchHandler()
+    infoInfoPage()
 })
 // createe function landing text
 function landing_text(text, index) {
@@ -24,6 +24,7 @@ function landing_text(text, index) {
         landing__title.innerHTML += text[index];
         index++
     }
+    
     setTimeout(() => {
         landing_text(text, index)
     }, 100);
@@ -73,14 +74,25 @@ const sentemailnewsletter = async (sentnewsletter) => {
             location.href = "index.html"
         })
     }
-} 
+}
 
-const searchHandler=()=>{
-    landingSearchBtn.addEventListener('click',(event)=>{
+const searchHandler = () => {
+    landingSearchBtn.addEventListener('click', (event) => {
         event.preventDefault();
-        const inputValue=landingSearchinput.value.trim();
-        if(inputValue){
-            location.href=`search.html?value=${inputValue}`
+        const inputValue = landingSearchinput.value.trim();
+        if (inputValue) {
+            location.href = `search.html?value=${inputValue}`
         }
     })
+}
+
+const infoInfoPage = async () => {
+    const res = await fetch('http://localhost:4000/v1/infos/index')
+    const data = await res.json();
+    topbarPhone.innerHTML=data.phone
+    topbarEmail.innerHTML=data.email
+    counterLanding(data.totalTime, timeCounter)
+    counterLanding(data.coursesCount, learnCounter)
+    counterLanding(data.usersCount, userCounter);
+
 }
