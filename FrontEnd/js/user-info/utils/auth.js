@@ -3,4 +3,14 @@ const getToken=()=>{
     return data ? data : null
 }
 
-export { getToken }
+const showswall=(title,icon,buttons,callback)=>{
+    swal({    
+      title,
+      icon ,
+      buttons,
+    }).then(result=>callback(result))
+}
+
+
+export { getToken , showswall}
+
