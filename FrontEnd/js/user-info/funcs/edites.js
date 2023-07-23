@@ -26,14 +26,12 @@ const changeInfoUser = async () => {
     let edit__input2 = document.querySelector('#edit__input2');
     let edit__input3 = document.querySelector('#edit__input3');
     let edit__input4 = document.querySelector('#edit__input4');
-    let pass1 = document.querySelector('#pass1');
     let pass2 = document.querySelector('#pass2');
-    let repeat_pass2 = document.querySelector('#repeat_pass2');
     let contents={
         name: edit__input2.value.trim(),
         username:edit__input3.value.trim() ,
         email: edit__input4.value.trim(),
-        password:pass2.value.trim() == repeat_pass2.value.trim() ? pass2.value.trim() : "",
+        password: pass2.value.trim(),
         phone: edit__input1.value.trim()
     }
     console.log(contents);
