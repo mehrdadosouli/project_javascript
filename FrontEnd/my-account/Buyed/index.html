@@ -5,179 +5,87 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="vendor/BootStrap/BootStrap.css">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="../../vendor/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../vendor/font-awsome5/all.min.css" />
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/responsive.css">
+    <title>buyed course</title>
 
 </head>
 
 <body>
-    <!--------------------------------  Header  -------------------------------->
-    <header class="header">
-        <div class="top-bar">
-            <div class="container-fluid">
-                <div class="top-bar__content">
-                    <div class="top-bar__right">
-                        <ul class="top-bar__menu">
-                            <li class="top-bar__item">
-                                <a class="top-bar__link" href="#">آموزش HTML</a>
-                            </li>
-                            <li class="top-bar__item">
-                                <a class="top-bar__link" href="#">آموزش CSS</a>
-                            </li>
-                            <li class="top-bar__item">
-                                <a class="top-bar__link" href="#">آموزش جاوا اسکریپت</a>
-                            </li>
-                            <li class="top-bar__item">
-                                <a class="top-bar__link" href="#">آموزش بوت استرپ</a>
-                            </li>
-                            <li class="top-bar__item">
-                                <a class="top-bar__link" href="#">آموزش پایتون</a>
-                            </li>
-                            <li class="top-bar__item">
-                                <a class="top-bar__link" href="#">آموزش ریکت</a>
-                            </li>
-                        </ul>
-                        <div class="top-bar__walet">
-                            <a class="top-bar__walet-text top-bar__link" href="#">29,000 تومان</a>
-                        </div>
-                    </div>
-                    <div class="top-bar__left">
-                        <div class="top-bar__email">
-                            <a href="#" class="top-bar__email-text top-bar__link">sabzlearn@gmail.com</a>
-                            <i class="fas fa-envelope top-bar__email-icon"></i>
-                        </div>
-                        <div class="top-bar__phone">
-                            <a href="#" class="top-bar__phone-text top-bar__link">09334008385</a>
-                            <i class="fas fa-phone top-bar__phone-icon"></i>
-                        </div>
-                    </div>
-                </div>
+ <!-------------------------- header     ------------------------------------------------->
+ <header class="header">
+    <div class="top-bar">
+      <div class="container-fluid">
+        <div class="top-bar__content">
+          <div class="top-bar__right">
+            <ul class="top-bar__list">
+              <li class="top-bar__item">
+                <a href="#" class="top-bar__item-link"> اموزش html</a>
+              </li>
+              <li class="top-bar__item">
+                <a href="#" class="top-bar__item-link"> اموزش css</a>s
+              </li>
+              <li class="top-bar__item">
+                <a href="#" class="top-bar__item-link"> اموزش javascript</a>
+              </li>
+              <li class="top-bar__item">
+                <a href="#" class="top-bar__item-link"> اموزش payton</a>
+              </li>
+              <li class="top-bar__item">
+                <a href="#" class="top-bar__item-link"> اموزش react</a>
+              </li>
+              <li class="top-bar__item">
+                <a href="#" class="top-bar__item-link"> 20000 تومان</a>
+              </li>
+            </ul>
+          </div>
+          <div class="top-bar__left">
+            <div class="top-bar__email">
+              <a href="#" id="top-bar__email-linK"></a>
+              <i class="fa fa-envelope top-bar__icon-email"></i>
             </div>
-        </div>
-        <div class="main-header">
-            <div class="container-fluid">
-                <div class="main-header-content">
-                    <div class="main-header__right">
-                        <img class="main-header__logo img-fluid" src="images/logo/Logo.png" alt="">
-                        <ul class="main-header__menu">
-                            <li class="main-header__item">
-                                <a href="#" class="main-header__link">صفحه اصلی</a>
-                            </li>
-                            <li class="main-header__item">
-                                <a href="#" class="main-header__link">فرانت اند
-                                    <i class="fas fa-angle-down	main-header__link-icon"></i>
-                                    <ul class="main-header__dropdown">
-                                        <li class="main-header__dropdown-item">
-                                            <a class="main-header__dropdown-link" href="#">آموزش HTML</a>
-                                        </li>
-                                        <li class="main-header__dropdown-item">
-                                            <a class="main-header__dropdown-link" href="#">آموزش CSS</a>
-                                        </li>
-                                        <li class="main-header__dropdown-item">
-                                            <a class="main-header__dropdown-link" href="#">آموزش FLEX BOX</a>
-                                        </li>
-                                        <li class="main-header__dropdown-item">
-                                            <a class="main-header__dropdown-link" href="#">آموزش بوت استرپ</a>
-                                        </li>
-                                        <li class="main-header__dropdown-item">
-                                            <a class="main-header__dropdown-link" href="#">آموزش جاوا اسکریپت</a>
-                                        </li>
-                                    </ul>
-                                </a>
-                            </li>
-                            <li class="main-header__item">
-                                <a href="#" class="main-header__link">امنیت
-                                    <i class="fas fa-angle-down	main-header__link-icon"></i>
-                                    <ul class="main-header__dropdown">
-                                        <li class="main-header__dropdown-item">
-                                            <a class="main-header__dropdown-link" href="#">آموزش HTML</a>
-                                        </li>
-                                        <li class="main-header__dropdown-item">
-                                            <a class="main-header__dropdown-link" href="#">آموزش CSS</a>
-                                        </li>
-                                        <li class="main-header__dropdown-item">
-                                            <a class="main-header__dropdown-link" href="#">آموزش FLEX BOX</a>
-                                        </li>
-                                        <li class="main-header__dropdown-item">
-                                            <a class="main-header__dropdown-link" href="#">آموزش بوت استرپ</a>
-                                        </li>
-                                        <li class="main-header__dropdown-item">
-                                            <a class="main-header__dropdown-link" href="#">آموزش جاوا اسکریپت</a>
-                                        </li>
-                                    </ul>
-                                </a>
-                            </li>
-                            <li class="main-header__item">
-                                <a href="#" class="main-header__link">مقالات
-                                    <i class="fas fa-angle-down	main-header__link-icon"></i>
-                                    <ul class="main-header__dropdown">
-                                        <li class="main-header__dropdown-item">
-                                            <a class="main-header__dropdown-link" href="#">آموزش HTML</a>
-                                        </li>
-                                        <li class="main-header__dropdown-item">
-                                            <a class="main-header__dropdown-link" href="#">آموزش CSS</a>
-                                        </li>
-                                        <li class="main-header__dropdown-item">
-                                            <a class="main-header__dropdown-link" href="#">آموزش FLEX BOX</a>
-                                        </li>
-                                        <li class="main-header__dropdown-item">
-                                            <a class="main-header__dropdown-link" href="#">آموزش بوت استرپ</a>
-                                        </li>
-                                        <li class="main-header__dropdown-item">
-                                            <a class="main-header__dropdown-link" href="#">آموزش جاوا اسکریپت</a>
-                                        </li>
-                                    </ul>
-                                </a>
-                            </li>
-                            <li class="main-header__item">
-                                <a href="#" class="main-header__link">پایتون
-                                    <i class="fas fa-angle-down	main-header__link-icon"></i>
-                                    <ul class="main-header__dropdown">
-                                        <li class="main-header__dropdown-item">
-                                            <a class="main-header__dropdown-link" href="#">آموزش HTML</a>
-                                        </li>
-                                        <li class="main-header__dropdown-item">
-                                            <a class="main-header__dropdown-link" href="#">آموزش CSS</a>
-                                        </li>
-                                        <li class="main-header__dropdown-item">
-                                            <a class="main-header__dropdown-link" href="#">آموزش FLEX BOX</a>
-                                        </li>
-                                        <li class="main-header__dropdown-item">
-                                            <a class="main-header__dropdown-link" href="#">آموزش بوت استرپ</a>
-                                        </li>
-                                        <li class="main-header__dropdown-item">
-                                            <a class="main-header__dropdown-link" href="#">آموزش جاوا اسکریپت</a>
-                                        </li>
-                                    </ul>
-                                </a>
-                            </li>
-                            <li class="main-header__item">
-                                <a href="#" class="main-header__link">مهارت های نرم</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="main-header__left">
-                        <a class="main-header__search-btn" href="#">
-                            <i class="fas fa-search	main-header__search-icon"></i>
-                        </a>
-                        <a class="main-header__cart-btn" href="#">
-                            <i class="fas fa-shopping-cart	 main-header__cart-icon"></i>
-                        </a>
-                        <a class="main-header__profile" href="#">
-                            <span class="main-header__profile-text">Ehsan_Khormehr</span>
-                        </a>
-                    </div>
-                </div>
+            <div class="top-bar__phone">
+              <a href="#" id="top-bar__phone-link"></a>
+              <i class="fas fa-phone top-bar__icon-phone"></i>
             </div>
+          </div>
         </div>
-    </header>
-    <!--------------------------------  Header  -------------------------------->
-
+      </div>
+    </div>
+    <!-------------------------- menu     ------------------------------------------------->
+    <div class="main-header">
+      <div class="container-fluid">
+        <div class="main-header__content">
+          <div class="main-header__right">
+            <img src="../" alt="" id="main-header__logo" />
+            <ul class="main-header__list">
+              <li class="main-header__item">
+                <a href="#" class="main-header__link mains">صفحه اصلی</a>
+              </li>
+              <li class="main-header__item">
+                <a href="contact-us.html" class="main-header__link mains">ارتباط با ما </a>
+              </li>
+              <!-- the element in the js -->
+            </ul>
+          </div>
+          <div class="main-header__left">
+            <a href="#" class="main-header__left-iconsearch">
+              <i class="fas fa-search main-header__left-search"></i>
+            </a>
+            <a href="#" class="main-header__left-iconbasket"><i
+                class="fas fa-shopping-basket main-header__left-shop"></i></a>
+            <div class="main-header__left-login">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
     <!--------------------------------  Content-Section  -------------------------------->
     <section class="content">
         <div class="content-header">
@@ -206,7 +114,7 @@
                                     <a class="sidebar__link" href="#">جزئیات حساب کاربری</a>
                                 </li>
                                 <li class="sidebar__item">
-                                    <a class="sidebar__link" href="#">دوره های خریداری شده</a>
+                                    <a class="sidebar__link" href="../Buyed/index.html">دوره های خریداری شده</a>
                                 </li>
                                 <li class="sidebar__item">
                                     <a class="sidebar__link" href="#">تیکت های پشتیبانی</a>
@@ -235,73 +143,7 @@
                                 </ul>
                             </div>
                             <div class="main">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="main__box">
-                                            <div class="main__box-right">
-                                                <a class="main__box-img-link" href="#">
-                                                    <img class="main__box-img img-fluid"
-                                                        src="images/courses/js_project.png">
-                                                </a>
-                                            </div>
-                                            <div class="main__box-left">
-                                                <a href="#" class="main__box-title">آموزش جاوا اسکریپت</a>
-                                                <div class="main__box-bottom">
-                                                    <div class="main__box-all">
-                                                        <span class="main__box-all-text">کل دروس:</span>
-                                                        <span class="main__box-all-value">75</span>
-                                                    </div>
-                                                    <div class="main__box-completed">
-                                                        <span class="main__box-completed-text">دروس تکمیل شده:</span>
-                                                        <span class="main__box-completed-value">0/75</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="main__box">
-                                            <div class="main__box-right">
-                                                <a class="main__box-img-link" href="#">
-                                                    <img class="main__box-img img-fluid"
-                                                        src="images/courses/js_project.png">
-                                                </a>
-                                            </div>
-                                            <div class="main__box-left">
-                                                <a href="#" class="main__box-title">آموزش جاوا اسکریپت</a>
-                                                <div class="main__box-bottom">
-                                                    <div class="main__box-all">
-                                                        <span class="main__box-all-text">کل دروس:</span>
-                                                        <span class="main__box-all-value">75</span>
-                                                    </div>
-                                                    <div class="main__box-completed">
-                                                        <span class="main__box-completed-text">دروس تکمیل شده:</span>
-                                                        <span class="main__box-completed-value">0/75</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="main__box">
-                                            <div class="main__box-right">
-                                                <a class="main__box-img-link" href="#">
-                                                    <img class="main__box-img img-fluid"
-                                                        src="images/courses/js_project.png">
-                                                </a>
-                                            </div>
-                                            <div class="main__box-left">
-                                                <a href="#" class="main__box-title">آموزش جاوا اسکریپت</a>
-                                                <div class="main__box-bottom">
-                                                    <div class="main__box-all">
-                                                        <span class="main__box-all-text">کل دروس:</span>
-                                                        <span class="main__box-all-value">75</span>
-                                                    </div>
-                                                    <div class="main__box-completed">
-                                                        <span class="main__box-completed-text">دروس تکمیل شده:</span>
-                                                        <span class="main__box-completed-value">0/75</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -389,7 +231,12 @@
     </footer>
     <!--------------------------------  Footer-Section  -------------------------------->
 
-    <script src="vendor/FontAwesome5/font_awesome.js"></script>
+    <script src="../../vendor/font-awsome5/all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="../../vendor/swiper-slider/swipper.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="./js/script.js" type="module"></script>
+    <script type="module" src="../../js/user-info/buyed.js"></script>
 </body>
 
 </html>
