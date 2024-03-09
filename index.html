@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../vendor/bootstrap/bootstrap.min.css" />
+  <link rel="stylesheet" href="../vendor/font-awsome5/all.min.css" />
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <title>صفحه اصلی</title>
+</head>
+
+<body>
+  <!-------------------------- header     ------------------------------------------------->
+  <header class="header">
+    <div class="top-bar">
+      <div class="container-fluid">
+        <div class="top-bar__content">
+          <div class="top-bar__right">
+            <ul class="top-bar__list">
+              <li class="top-bar__item">
+                <a href="#" class="top-bar__item-link"> اموزش html</a>
+              </li>
+              <li class="top-bar__item">
+                <a href="#" class="top-bar__item-link"> اموزش css</a>s
+              </li>
+              <li class="top-bar__item">
+                <a href="#" class="top-bar__item-link"> اموزش javascript</a>
+              </li>
+              <li class="top-bar__item">
+                <a href="#" class="top-bar__item-link"> اموزش payton</a>
+              </li>
+              <li class="top-bar__item">
+                <a href="#" class="top-bar__item-link"> اموزش react</a>
+              </li>
+              <li class="top-bar__item">
+                <a href="#" class="top-bar__item-link"> 20000 تومان</a>
+              </li>
+            </ul>
+          </div>
+          <div class="top-bar__left">
+            <div class="top-bar__email">
+              <a href="#" id="top-bar__email-linK"></a>
+              <i class="fa fa-envelope top-bar__icon-email"></i>
+            </div>
+            <div class="top-bar__phone">
+              <a href="#" id="top-bar__phone-link"></a>
+              <i class="fas fa-phone top-bar__icon-phone"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-------------------------- menu     ------------------------------------------------->
+    <div class="main-header">
+      <div class="container-fluid">
+        <div class="main-header__content">
+          <div class="main-header__right">
+            <img src="../" alt="" id="main-header__logo" />
+            <ul class="main-header__list">
+              <li class="main-header__item">
+                <a href="#" class="main-header__link mains">صفحه اصلی</a>
+              </li>
+              <li class="main-header__item">
+                <a href="contact-us.html" class="main-header__link mains">ارتباط با ما </a>
+              </li>
+              <!-- the element in the js -->
+            </ul>
+          </div>
+          <div class="main-header__left">
+            <a href="#" class="main-header__left-iconsearch">
+              <i class="fas fa-search main-header__left-search"></i>
+            </a>
+            <a href="#" class="main-header__left-iconbasket"><i
+                class="fas fa-shopping-basket main-header__left-shop"></i></a>
+            <div class="main-header__left-login">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-------------------------- landing    ------------------------------------------------->
+  <section class="landings">
+    <section class="landing">
+      <h1 class="landing__title">
+      </h1>
+      <h2 class="landing__subtitle">
+        با اکادمی سبزلرن برناامه نویسی رو با خیال راحت یاد بگیر
+      </h2>
+      <div class="landing__search">
+        <input type="text" placeholder="چی دوس داری یاد بگیری؟" class="landing__search-input" id="landing__search-input" />
+        <button class="landing__search-btn" id="landing__search-btn">
+          <i class="landing__search-icon fas fa-search"></i>
+        </button>
+      </div>
+    </section>
+    <section class="landing__status">
+      <div class="landing__status__item">
+        <i class="fa-solid fa-stopwatch landing__status-icon"></i>
+        <span class="landing__status-counter" id="time-counter"></span>
+        <span class="landing__status-text">دقیقه اموزش تولید کردیم</span>
+      </div>
+      <div class="landing__status__item">
+        <i class="fa fa-book landing__status-icon"></i>
+        <span class="landing__status-counter" id="learn-counter"></span>
+        <span class="landing__status-text">دوره اموزشی داریم</span>
+      </div>
+      <div class="landing__status__item">
+        <i class="fa-solid fa-user-graduate landing__status-icon"></i>
+        <span class="landing__status-counter" id="user-counter"></span>
+        <span class="landing__status-text">کاربر توی سبزلرن داریم</span>
+      </div>
+    </section>
+  </section>
+  <!-------------------------- course-boxs header   --------------------------------------->
+  <div class="container">
+    <div class="course__header">
+      <div class="course__header-right">
+        <h3 class="course__header-title title">جدیدترین دوره ها</h3>
+        <span class="course__header-parag">سکوی موفقیت شما به سوی موفقیت</span>
+      </div>
+      <div class="course__header-left">
+        <span class="course__header-link"><a href="courses.html?page=1">تمامی دوره ها </a></span>
+        <i class="course__header-icon fa-solid fa-arrow-left"></i>
+      </div>
+    </div>
+  </div>
+  <!-------------------------- course-boxs content    ------------------------------------->
+  <div class="courses__box">
+    <div class="container">
+      <div class="row" id="coursesAll">
+
+      </div>
+    </div>
+  </div>
+  <!-------------------------- aboute us heading  ----------------------------------------->
+  <div class="about-us">
+    <div class="container">
+      <div class="about-us__header">
+        <h4 class="about-us__title title">
+          ما چه کمکی میتوانیم به شما بکنیم؟
+        </h4>
+        <span class="about-us__caption">از انجایی که اکادمی سبزلرن یک اکادمی خصوصی است</span>
+      </div>
+    </div>
+  </div>
+  <!-------------------------- aboute us content  ----------------------------------------->
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <div class="about__us-box">
+          <div class="about__us-right">
+            <i class="about__us-icon far fa-copyright"></i>
+          </div>
+          <div class="about__us-left">
+            <span class="about__us-title">دوره های تخصصی</span>
+            <span class="about__us-caption">با پشتیبانی و کیفیت بالا ارائه می دهد</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <div class="about__us-box">
+          <div class="about__us-right">
+            <i class="about__us-icon fas fa-leaf"></i>
+          </div>
+          <div class="about__us-left">
+            <span class="about__us-title">اجازه تدریس</span>
+            <span class="about__us-caption">به هر مدرسی رو نمیده چون تدریس واسش مهمه</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <div class="about__us-box">
+          <div class="about__us-right">
+            <i class="about__us-icon fas fa-gem"></i>
+          </div>
+          <div class="about__us-left">
+            <span class="about__us-title">دوره پولی و رایگان</span>
+            <span class="about__us-caption">براش مهم نیست به مدرسینش حقوق میده تا کیفیت دوره ها عالی
+              باشن</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <div class="about__us-box">
+          <div class="about__us-right">
+            <i class="about__us-icon fas fa-crown"></i>
+          </div>
+          <div class="about__us-left">
+            <span class="about__us-title">اهمیت به کار</span>
+            <span class="about__us-caption">با پشتیبانی و کیفیت بالا ارائه می دهد</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-------------------------- populer-courses heading slider  ---------------------------->
+  <div class="populer__course">
+    <div class="container">
+      <div class="populer__course-header">
+        <span class="populer__course-title title">محبوب ترین دوره ها</span>
+      </div>
+    </div>
+  </div>
+  <!-------------------------- popular-courses slider ------------------------------------->
+  <div class="container">
+  <div class="swiper populer">
+    <div class="swiper-wrapper" id="popular-slider-parent">
+
+    </div>
+    <!-- <div class="swiper-pagination"></div> -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-scrollbar"></div>
+  </div>
+  <!-------------------------- presell-courses heading slider   --------------------------->
+  <div class="container">
+  <div class="presell__course">
+    <div class="container">
+      <div class="presell__course-header">
+        <span class="presell__course-title title">دوره های پیش فروش</span>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-------------------------- presell-courses slider   ----------------------------------->
+  <div class="container">
+  <div class="swiper presell">
+    <div class="swiper-wrapper" id="presell-slider-parent">
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-scrollbar"></div>
+  </div>
+  </div>
+  <!-------------------------- articles   ------------------------------------------------->
+  <div class="container">
+  <section class="articles">
+    <div class="container">
+      <div class="article__header">
+        <div class="article__header-right">
+          <h3 class="article__header-title title">جدیدترین مقاله ها</h3>
+          <span class="article__header-parag">سکوی موفقیت شما به سوی موفقیت</span>
+        </div>
+        <div class="article__header-left">
+          <span class="article__header-link"> تمامی مقاله ها</span>
+          <i class="article__header-icon fa-solid fa-arrow-left"></i>
+        </div>
+      </div>
+      <div class="article-content">
+        <div class="row" id="article__wrappers">
+        </div>
+      </div>
+
+    </div>
+  </section>
+  </div>
+  <!-------------------------- footer  ---------------------------------------------------->
+  <footer>
+    <div class="footer__contents">
+      <div class="container">
+        <div class="footer-box">
+          <div class="row">
+            <div class="col-4">
+              <div class="footer-box__item">
+                <span class="footer-box__header">درباره ی ما</span>
+                <p class="footer-box__text">
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و
+                  با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه
+                  و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی
+                  تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای
+                  کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و
+                  آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم
+                  افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص
+                  طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این
+                  صورت می توان امید داشت که تمام و دشواری موجود در ارائه
+                  راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز
+                  شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل
+                  دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                </p>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="footer-box__item">
+                <span class="footer-box__header">اخرین مطالب</span>
+                <p class="footer-box__text">
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و
+                  با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه
+                  و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی
+                  تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای
+                  کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و
+                  آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم
+                  افزارها شناخت بیشتری پیوسته اهل دنیای موجود طراحی اساسا مورد
+                  استفاده قرار گیرد.
+                </p>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="footer-box__item">
+                <span class="footer-box__header">دسترسی سریع</span>
+                <div class="row">
+                  <div class="col-6">
+                    <div class="footer-box__items">
+                      <h6 class="footer-box__text">جاوا</h6>
+                      <h6 class="footer-box__text">سریع</h6>
+                      <h6 class="footer-box__text">دسترسی</h6>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="footer-box__items">
+                      <h6 class="footer-box__text">جاوا</h6>
+                      <h6 class="footer-box__text">سریع</h6>
+                      <h6 class="footer-box__text">دسترسی</h6>
+                      <div class="newsletter">
+                        <label for="inputnewsletter">خبرنامه</label>
+                        <input type="email" id="inputnewsletter" placeholder="enter your email">
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__content-copyright">
+        © کلیه حقوق برای سبز لرن محفوظ است 1401
+      </div>
+    </div>
+  </footer>
+
+  <script src="../vendor/font-awsome5/all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="../vendor/swiper-slider/swipper.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="../js/shared.js" type="module"></script>
+  <script src="../js/script.js" type="module"></script>
+</body>
+
+</html>
